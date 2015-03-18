@@ -15,9 +15,11 @@ The [Reactive Manifesto](http://www.reactivemanifesto.org) by Typesafe identifie
 * **Elastic**, meaning that it must react to variable load pressure, avoiding contention on shared resources and ensuring scalability.
 * **Message Driven**, meaning that it must react to inputs, abstracted in the form of messages.The message driven nature ensure loose coupling, isolation, location transparency, and provides the means to delegate errors as messages.
 
-![](../_book/gitbook/images/reactive-traits.svg)
+![](http://www.reactivemanifesto.org/images/reactive-traits.svg)
 
 The Reactive Manifesto captures insights learned by the software development community in building internet-scale systems.
+
+Recently, Reactive Programming has been put in Gartner's [Hype Cycle for Application Development](https://www.gartner.com/doc/2810920/hype-cycle-application-development-) as a trend *on the rise*.
 
 From a Jonas Bonér (Founder & CTO of Typesafe) quote:
 >Reactive Systems are all about principles, core fundamental CS principles that have been known to work for years. It is just that they are more valid and important today than ever, and sadly most people are rediscovering them over and over again.
@@ -25,4 +27,7 @@ From a Jonas Bonér (Founder & CTO of Typesafe) quote:
 From the abstract of *Principles of Reactive Programming* course of [Coursera](https://www.coursera.org):
 >Reactive programming is an emerging discipline which combines concurrency and event-based and asynchronous systems. It is essential for writing any kind of web-service or distributed system and is also at the core of many high-performance concurrent systems. Reactive programming can be seen as a natural extension of higher-order functional programming to concurrent systems that deal with distributed state by coordinating and orchestrating asynchronous data streams exchanged by actors.
 
-In this chapter we will explore some of the main techniques that enable an application to be considered *reactive*.
+From a [blog post](http://techblog.netflix.com/2013/02/rxjava-netflix-api.html) of Netflix (that has been using Reactive Programming extensively):
+>Reactive programming with RxJava has enabled Netflix developers to leverage server-side conconcurrency without the typical thread-safety and synchronization concerns. The API service layer implementation has control over concurrency primitives, which enables us to pursue system performance improvements without fear of breaking client code. RxJava is effective on the server for us and it spreads deeper into our code the more we use it.
+
+This chapter will explore some of the main techniques that enable an application to be considered *reactive*.
