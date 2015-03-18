@@ -2,8 +2,7 @@
 
 * [Introduction](README.md)
 * [Reactive application](reactive_application/README.md)
-   * [Parallelization and concurrency](reactive_application/parallelization_and_concurrency.md)
-   * [Latency](reactive_application/latency)
+   * [Latency, concurrency, parallelism](reactive_application/parallelization_and_concurrency.md)
    * [Failure handling](reactive_application/failure_handling.md)
    * [Event orientation](reactive_application/event_orientation.md)
    * [Consistency](reactive_application/consistency.md)

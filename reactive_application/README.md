@@ -21,7 +21,7 @@ The Reactive Manifesto captures insights learned by the software development com
 
 Recently, Reactive Programming has been put in Gartner's [Hype Cycle for Application Development](https://www.gartner.com/doc/2810920/hype-cycle-application-development-) as a trend *on the rise*.
 
-From a Jonas Bonér (Founder & CTO of Typesafe) quote:
+From a Jonas Bonér's (Founder & CTO of Typesafe) quote:
 >Reactive Systems are all about principles, core fundamental CS principles that have been known to work for years. It is just that they are more valid and important today than ever, and sadly most people are rediscovering them over and over again.
 
 From the abstract of *Principles of Reactive Programming* course of [Coursera](https://www.coursera.org):
