@@ -27,7 +27,7 @@ From a Jonas Bonér's (Founder & CTO of Typesafe) quote:
 From the abstract of *Principles of Reactive Programming* course of [Coursera](https://www.coursera.org):
 >Reactive programming is an emerging discipline which combines concurrency and event-based and asynchronous systems. It is essential for writing any kind of web-service or distributed system and is also at the core of many high-performance concurrent systems. Reactive programming can be seen as a natural extension of higher-order functional programming to concurrent systems that deal with distributed state by coordinating and orchestrating asynchronous data streams exchanged by actors.
 
-From a [blog post](http://techblog.netflix.com/2013/02/rxjava-netflix-api.html) of Netflix (that has been using Reactive Programming extensively):
+From a [blog post](http://techblog.netflix.com/2013/02/rxjava-netflix-api.html) of Netflix (that is using Reactive Programming extensively):
 >Reactive programming with RxJava has enabled Netflix developers to leverage server-side conconcurrency without the typical thread-safety and synchronization concerns. The API service layer implementation has control over concurrency primitives, which enables us to pursue system performance improvements without fear of breaking client code. RxJava is effective on the server for us and it spreads deeper into our code the more we use it.
 
-This chapter will explore some of the main techniques that enable an application to be considered *reactive*.
+This chapter will explore some of the main techniques and principles that enable an application to be considered *reactive*.
