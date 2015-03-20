@@ -53,4 +53,4 @@ These concepts are nothing new to telecommunications engineers, which have alrea
 
 A further technique to reduce latency is *shielding users from overwhelmed services*. If a service is struggling under an heavy load (with an increasing latency and, consequently, failed requests) it is a good idea to immediatly insulate users from it. This will also give the chance to the server to recover and empty its queues. Ideally, this concept may be formalized with the notion of **circuit breakers** from electrical engineering. Circuit breakers enable to codify failure strategies to address failures of external systems in advance.
 
-![A circuit breaker representation](http://akimboyko.in.ua/presentations/images/circuitBreakerStates.png)
+![A circuit breaker representation. Image from a Typesafe's presentantion.](https://dl.dropboxusercontent.com/u/5045423/circuit-breaker.png)
