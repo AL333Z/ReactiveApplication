@@ -4,7 +4,7 @@ In the previous section some core concepts have been introduced. This section wi
 
 In distribuited systems **latency is a fact of life**. Their design implicitly hide latency where each component interact with each others.
 
-A means to put latency down is represented by *concurrency* (and *parallelism*).
+A mean to put latency down is represented by *concurrency* (and *parallelism*).
 Concurrency stuff is well-researched, with literature increasingly available.
 
 From the Wikipedia's definition of **concurrency**:

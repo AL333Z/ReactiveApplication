@@ -22,5 +22,5 @@ From Wikipedia:
 The key point here is the loss of strong consistency, in favor of **eventual consistency**. Eventual consistency may be defined as:
 > a consistency model used in distributed computing to achieve high availability that informally guarantees that, if no new updates are made to a given data item, eventually all accesses to that item will return the last updated value.
 
-What eventual consistency means is, for example, that when modifying data changes need time to travel between each part of the system and during this time an external observer may see data which are inconsistent.
+What eventual consistency means is that when modifying data, the changes need time to travel between each part of the system, and during this time an external observer may see data which are inconsistent, but that eventually will become consistent.
 

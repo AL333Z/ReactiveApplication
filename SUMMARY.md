@@ -1,14 +1,14 @@
 # Summary
 
 * [Introduction](README.md)
-* [Reactive application](reactive_application/README.md)
+* [Reactive applications](reactive_application/README.md)
    * [Latency, concurrency, parallelism](reactive_application/parallelization_and_concurrency.md)
    * [Failure handling](reactive_application/failure_handling.md)
    * [Event orientation](reactive_application/event_orientation.md)
    * [Consistency](reactive_application/consistency.md)
 * [Funcional programming](funcional_programming/README.md)
-   * [Immutability](funcional_programming/immutability.md)
-       * [ADTs](funcional_programming/adts.md)
+   * [Functional domain modelling](funcional_programming/immutability.md)
+       * [ADTs and Immutability](funcional_programming/adts.md)
        * [Updating immutable entities](funcional_programming/updating_immutable_entities.md)
    * [Referential trasparency](funcional_programming/referential_trasparency.md)
        * [Equational reasoning](funcional_programming/equational_reasoning.md)

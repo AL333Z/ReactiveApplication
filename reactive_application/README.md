@@ -1,4 +1,4 @@
-# Reactive application
+# Reactive applications
 
 In recent years a lot of changes are happening in the IT world. The main causes of these changes are to be found in how **application requirements** and **user expectations** evolved.
 
