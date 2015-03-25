@@ -10,7 +10,6 @@
    * [Functional domain modelling](funcional_programming/immutability.md)
        * [Algebraic data types](funcional_programming/algebraic_data_types.md)
        * [ADTs and Immutability](funcional_programming/adts.md)
-       * [Updating immutable entities](funcional_programming/updating_immutable_entities.md)
    * [Referential trasparency](funcional_programming/referential_trasparency.md)
        * [Equational reasoning](funcional_programming/equational_reasoning.md)
    * [High-order functions](funcional_programming/high-order_functions.md)
