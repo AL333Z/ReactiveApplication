@@ -23,6 +23,8 @@
       1. Effects
       1. Latency as effects
 
+1. Reactive programming
+
 1. Implementations
   1. Future and Promises
   1. Actor Model Akka
