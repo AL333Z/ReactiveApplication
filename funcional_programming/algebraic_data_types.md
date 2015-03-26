@@ -62,4 +62,4 @@ Values of algebraic data types are analyzed with **pattern matching**, which hel
   }
 ```
 
-Algebraic data structures, pattern matching and the power of a strongly typed language as Scala really help in the domain modelling phase.
+Algebraic data structures, pattern matching and the power of a strongly typed language like Scala really help in the domain modelling phase.
