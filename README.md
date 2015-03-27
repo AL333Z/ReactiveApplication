@@ -11,17 +11,16 @@
 
 1. Functional programming and side effects
   1. Immutability
-    1. ADTs
-    1. Updating immutable entities
+    1. Algebraic data types
+    1. ADTs and Immutability
   1. Referential trasparency
     1. Equational reasoning
-  1. High-order functions
   1. Patterns
     1. Monoid
     1. Functor
     1. Monad
-      1. Effects
-      1. Latency as effects
+        1. Effects
+        1. Latency as effects
 
 1. Reactive programming
 

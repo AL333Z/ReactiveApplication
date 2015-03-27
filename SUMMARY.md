@@ -12,7 +12,6 @@
        * [ADTs and Immutability](funcional_programming/adts.md)
    * [Referential trasparency](funcional_programming/referential_trasparency.md)
        * [Equational reasoning](funcional_programming/equational_reasoning.md)
-   * [High-order functions](funcional_programming/high-order_functions.md)
    * [Patterns](funcional_programming/patterns.md)
        * [Monoids](funcional_programming/monoid.md)
        * [Functors](funcional_programming/functor.md)
