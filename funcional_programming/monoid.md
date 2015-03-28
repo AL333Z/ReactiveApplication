@@ -4,7 +4,7 @@
 - the concatenation operation is a binary operation and is associative
 - both List and String have an identity element and the operation applied with the identity yields the same value as the other argument
 
-The points depicted above are a valid algebra of the abstraction of a monoid. In Scala a monoid can be expressed as follows.
+The points depicted above are a valid algebra for the abstraction of a monoid. In Scala a monoid can be expressed as follows.
 
 ```scala
 trait Monoid[A] {
@@ -14,9 +14,9 @@ trait Monoid[A] {
 ```
 
 More formally, a monoid needs to satysfy the following laws:
-- Left identity: `op(zero, a) == a`
-- Right identity: `op(a, zero) == a`
-- Associativity: `op(a1, op(a2, a3)) == op(op(a1, a2), a3)`
+- *Left identity*: `op(zero, a) == a`
+- *Right identity*: `op(a, zero) == a`
+- *Associativity*: `op(a1, op(a2, a3)) == op(op(a1, a2), a3)`
 
 Back to the initial example, with the given definition List and String concatenation can be expressed as monoids as folllows.
 
