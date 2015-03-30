@@ -29,7 +29,7 @@ trait Future[T] {
 }
 ```
 
-The fact that the callback receives a Try is really meaningful, since it keeps explicit the fact that the computation can fail. The power of futures is all about having both asynchronous computation wrapped in a functional abstraction.
+The fact that the callback receives a Try is really meaningful, since it keeps explicit the fact that the computation can fail. The power of futures is all about having an asynchronous computation wrapped in a functional abstraction.
 
 The generalization of a future that asynchrounosly returns many values is called **Observable**. A possible trait for Observable is the following.
 
