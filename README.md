@@ -20,7 +20,6 @@
     1. Functor
     1. Monad
         1. Effects
-        1. Latency as effects
 
 1. Reactive programming
 
