@@ -18,6 +18,7 @@
        * [Monads](funcional_programming/monad.md)
            * [Effects](funcional_programming/effects.md)
 * [Reactive programming](reactive_programming/README.md)
+   * [Functional Reactive Programming](reactive_programming/functional_reactive_programming.md)
 * [Implementations that supports Reactive](implementations/README.md)
    * [Futures and Promises](implementations/future_and_promises.md)
    * [Actors](implementations/actors.md)
