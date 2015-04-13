@@ -34,7 +34,7 @@ Monad extends functor, implementing `map`. The trait introduced above is generic
 
 **NB**: in the literature, `flatMap` is often called `bind` and `unit` is often called `return`.
 
-Two example of monads are represented by `Option` and `List`. Starting from the implementation of Monad, they can be defined as follows.
+Two example of monads are represented by `Option` and `List`. Starting from the definition of Monad, they can be defined as follows (reusing the implementation provided by the Scala standard library):
 
 ```scala
 val optionMonad = new Monad[Option] {

@@ -24,7 +24,7 @@ trait Functor[F[_]] {
 
 **NB**: in the example provided above (from the Scala library), the signatures of the map function are different from the signature of map in the trait introduced below. The reason of this difference is due to the object oriented nature of the classes in the Scala library. The new signature has a more "functional" approach, with an additional parameter (the first one) that takes the object to map on.
 
-With this new abstraction defined, it's possible to define functors explicitely for List and Option in the following way:
+With this new abstraction defined, it's possible to define functors explicitely for List and Option in the following way, reusing the object oriented implementation provided by the Scala standard library:
 
 ```scala
 def listFunctor: Functor[List] = new Functor[List] {

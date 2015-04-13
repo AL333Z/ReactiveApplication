@@ -1,6 +1,6 @@
 #Behaviors and Event Streams
 
-Fran introduces two special abstractions:
+Reactive programming introduces two special abstractions:
 - **behaviors**, values that are continuos functions of time.
 - **event streams**, values which are discrete functions of time.
 
