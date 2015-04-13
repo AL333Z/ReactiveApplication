@@ -23,9 +23,7 @@ Parallelizing computations generally brings some form of *interaction* (and prob
 
 Formally, the maximum speedup parallelizing a system:
 
-$$
-S = {1 \over {1 - P + {P \over N} }}.
-$$
+$$S = {1 \over {1 - P + {P \over N} }}.$$
 
 Where:
 - `P` is the portion of a program that can be made parallel
@@ -38,9 +36,7 @@ From the graph emerges that serializations and sequentializations of jobs are ba
 
 Another variable to keep in mind is *efficiency*, that is a normalized measure of speed-up indicating how effectively each processor is used. Formally:
 
-$$
-E = {S \over P}.
-$$
+$$ E = {S \over P}. $$
 
 One of the biggest issue when designing distribuited systems is represented by their capability of *partial failure*, which means that in addition to a failure within the target service it has to be considered the possibility that, for example, either the request or the response might be lost. In order to recognize that a request has failed it may be introduced the concept of *bounded latency*, which means formulating a dependable budget for which latency is allowed.
 
