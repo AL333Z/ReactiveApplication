@@ -22,6 +22,11 @@
         1. Effects
 
 1. Reactive programming
+    1. Functional Reactive Programming
+    2. Behaviors and Event Streams
+    3. Evaluation model
+    4. Glitches
+    5. Lifting
 
 1. Implementations
   1. Future and Promises
