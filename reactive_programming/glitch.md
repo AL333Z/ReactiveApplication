@@ -15,4 +15,4 @@ var3 = var1 + var2
 
 The image related to the program above shows how the state of the program results incorrect (`var3` is evaluated as 3 instead of 4) and that this also leads to a wasteful recomputation (since `var3` is computed one time more than the necessary).
 
-Glitches only happens when using a *push-based* evaluation model and can be avoided by arranging expressions in a topologically sorted graph. This implementation detail ensures that an expression in always evaluated after all its dependets have been evaluated.
+Glitches only happens when using a *push-based* evaluation model and can be avoided by arranging expressions in a topologically sorted graph. This implementation detail ensures that an expression is always evaluated after all its dependants have been evaluated.
