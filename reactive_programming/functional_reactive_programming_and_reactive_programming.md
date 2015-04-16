@@ -1,4 +1,4 @@
-# Functional Reactive Programming and Reactive Programming confusion
+# Reactive confusion
 
 In these days **Reactive Programming** and **Functional Reactive Programming** are two terms that create a lot of **confusion**, and maybe are over-hyped.
 The definitions that come from Wikipedia are still pretty vague and only Functional Reactive Programming introduced by Connal Elliott has a clear and simple denotative semantics. From another point of view, Elliott himself doesn't like the name he gave to the paradigm.

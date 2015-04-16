@@ -23,7 +23,7 @@
    * [Evaluation model](reactive_programming/evaluation_model.md)
    * [Glitches](reactive_programming/glitch.md)
    * [Lifting](reactive_programming/lifting.md)
-   * [Functional Reactive Programming and Reactive Programming](reactive_programming/functional_reactive_programming_and_reactive_programming.md)
+   * [Reactive confusion](reactive_programming/functional_reactive_programming_and_reactive_programming.md)
 * [Implementations that supports Reactive](implementations/README.md)
    * [Futures and Promises](implementations/future_and_promises.md)
    * [Actors](implementations/actors.md)
