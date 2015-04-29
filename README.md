@@ -1,42 +1,36 @@
-#Reactive application development: Future and Promises, Actors and Reactive Extensions in Scala
+#Toward a more declarative paradigm for big data: asynchronous stream processing
 
 1. Intro
 
-1. Reactive application
-  1. Parallelization and concurrency
-  1. Latency
-  1. Failure handling
-  1. Event orientation
-  1. Consistency
-
-1. Functional programming and side effects
+2. Functional programming
   1. Immutability
     1. Algebraic data types
-    1. ADTs and Immutability
-  1. Referential trasparency
+    2. ADTs and Immutability
+  2. Referential trasparency
     1. Equational reasoning
-  1. Patterns
+  4. Patterns
     1. Monoid
-    1. Functor
-    1. Monad
+    2. Functor
+    3. Monad
         1. Effects
 
-1. Reactive programming
+3. Reactive programming
     1. Functional Reactive Programming
     2. Behaviors and Event Streams
     3. Evaluation model
     4. Glitches
     5. Lifting
+    6. Reactive confusion
 
-1. Implementations
+4. Actor Model Akka
+  1. Async
+  2. Supervision
+  3. Location transparency
+  4. Concurrency
+
+5. Implementations
   1. Future and Promises
-  1. Actor Model Akka
-    1. Async
-    1. Supervision
-    1. Location transparency
-    1. Concurrency
-    1. ...
-  1. Reactive Extensions
+  2. Reactive Extensions
     1. RxScala
-    1. AkkaStreams
-    1. ReactiveStreams
+    2. AkkaStreams
+    3. ReactiveStreams

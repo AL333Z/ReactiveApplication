@@ -1,4 +1,4 @@
-# Functional domain modelling
+# Functional Programming
 
 As introduced previously, functional programming doesn't allow side effects and mutable state. Mutable **state** may be easily represented by any variable that is not stable or final, and can be changed or updated inside of an application. A **mutation** is the act of updating some state in place.
 
