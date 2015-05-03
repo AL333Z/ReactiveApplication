@@ -1,15 +1,16 @@
 # Functional Reactive Programming
 
 Functional reactive programming has its origin with *Fran* (Functional reactive animation), a Haskell library by Conal Elliott for interactive animations.
-Fran's author found it difficult to express the *what* of an interactive animation abstracting from the *how* and built a set of expressive and recursive data types, combined with a declarative programming language.
+Elliott found it difficult to express the *what* of an interactive animation abstracting from the *how*, and built a set of expressive and recursive data types, combined with a declarative programming language.
 
-Informally, **functional reactive programming** is a programming paradigm which brings a notion of **time** in the functional programming paradigm.
+Informally, **functional reactive programming** is a programming paradigm which brings a notion of **time** in the functional programming paradigm, providing a conceptual framework for implementing reactive systems. Infact, FRP let the application achieve reactivity by providing constructs for specifying *how behaviors change in response to events*.
 
-Conal Elliott says that FRP is all about two main things: *denotative* and *temporally continuos*. Infact, he also likes the term "*denotative, continuos-time programming*" to replace functional reactive programming, since it reduces the confusion.
+Elliott says that FRP is all about two main things: *denotative* and *temporally continuos*. Infact, he also likes the term "*denotative, continuos-time programming*" to replace functional reactive programming, since it reduces the confusion.
 
 Always about the **denotative** part, he means that the paradigm should be founded on a precise, simple, implementation-independent, compositional semantics that exactly specifies the meaning of each type and building block. The compositional nature of the semantics then determines the meaning of all type-correct combinations of the building blocks.
 
->For me, denotative is the heart and essence of functional programming, and is what enables precise and tractable reasoning and thus a foundation for correctness, derivation, and optimization.
+From an Elliott's quote:
+>Denotative is the heart and essence of functional programming, and is what enables precise and tractable reasoning and thus a foundation for correctness, derivation, and optimization.
 
 About the **continuous time** part, there's some confusion. Some claim that it's an idea somehow unnatural or impossible to implement considering the discrete nature of computers. To this issues, Elliott answers in the following way:
 

@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Reactive programming](reactive_programming/README.md)
    * [Functional Reactive Programming](reactive_programming/functional_reactive_programming.md)
-   * [Behaviors and Event Streams](reactive_programming/behaviors_and_event_streams.md)
+       * [Behaviors and Event Streams](reactive_programming/behaviors_and_event_streams.md)
    * [Evaluation model](reactive_programming/evaluation_model.md)
    * [Glitches](reactive_programming/glitch.md)
    * [Lifting](reactive_programming/lifting.md)

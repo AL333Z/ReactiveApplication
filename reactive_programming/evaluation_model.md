@@ -1,6 +1,6 @@
 # Evaluation model
 
-The core of languages that support Reactive Programming is about **how changes are propagated**. From the user's point of view (the programmer) everything is transparent. In other words, a change of a value is automatically propagated to all dependent computations.
+The core of languages that support Reactive Programming is about **how changes are propagated**. From the user's point of view (the programmer) this should be as much transparent as possible. In other words, a change of a value is automatically propagated to all dependent computations without the user has to manually propagate the changes by himself.
 
 At the language level this means that there should be a mechanism that is triggered when there's an event occurence at an event source. This mechanism will fire a notification about the changes to dependent computations, that will possibly trigger a recomputation, and so on.
 
