@@ -22,3 +22,5 @@ About the **continuous time** part, there's some confusion. Some claim that it's
 Another name that Elliott suggests for continuous is *resolution-independent*, and thus able to be transformed in time and space with ease and without propagating and amplifying sampling artifacts. As an example, he propose the "finite vs infinite" data structure issue:
 
 >We only access a finite amount of data *in the end*. However, allowing infinite data structures *in the middle* makes for a much more composable programming style. Each event has a stream (finite or infinite) of occurrences. Each occurrence has an associated time and value.
+
+The main idea of FRP is to model user inputs as functions that changes over time.

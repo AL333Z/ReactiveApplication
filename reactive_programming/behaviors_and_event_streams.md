@@ -4,9 +4,11 @@ FRP introduces two special abstractions:
 - **behaviors or signals**, values that are continuos functions of time.
 - **event streams**, values which are discrete functions of time.
 
-**Behaviors** are dynamic/evolving values, and are first class values in themselves. Behaviors can be defined them and combined them, pass them into and out of functions.
+**Behaviors** are dynamic/evolving values, and are first class values in themselves. Behaviors can be defined them and *combined* them, *pass* them into and out of functions.
 
 Behaviors are built up out of a few primitives, like constant (static) behaviors and time (like a clock), and then with sequential and parallel combination. n-behaviors are combined by applying an n-ary function (on static values), "point-wise", i.e., continuously over time.
+
+In other terms, a Behavior simply **sends values over time** until it either **completes**, or **errors out**, at which point it stops sending values forever.
 
 Examples of behaviours are the following:
 - time
