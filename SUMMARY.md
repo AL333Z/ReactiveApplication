@@ -14,6 +14,8 @@
    * [Events and Signals](reactivecocoa/event.md)
        * [Signal](reactivecocoa/signal.md)
        * [SignalProducer](reactivecocoa/signalproducer.md)
+   * [Actions](reactivecocoa/actions.md)
+   * [ProperyType](reactivecocoa/properytype.md)
 * [Akka Streams](akka_streams/README.md)
 * [Appendix](implementations/README.md)
    * [Functional Programming](implementations/functional_programming.md)
