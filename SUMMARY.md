@@ -11,7 +11,7 @@
 * [Scala.React](scalareact/README.md)
 * [RxJava](rxjava/README.md)
 * [ReactiveCocoa](reactivecocoa/README.md)
-   * [Events and Signals](reactivecocoa/event.md)
+   * [Event and Signal](reactivecocoa/event.md)
        * [Signal](reactivecocoa/signal.md)
        * [SignalProducer](reactivecocoa/signalproducer.md)
    * [PropertyType](reactivecocoa/propertytype.md)

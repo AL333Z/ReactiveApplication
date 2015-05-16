@@ -1,4 +1,4 @@
-# Events and Signals
+# Event and Signal
 
 The first abstraction that the framework introduces is the notion of event. An **event** enables to account for *discrete phenomena*, and each of which has a stream (finite or infinite) of occurrences.* Each occurrence is a value paired with a time*. Events are considered to be improving list of occurences.
 Or, in simpler words, *events are things that happens*.
