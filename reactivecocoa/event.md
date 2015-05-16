@@ -26,13 +26,13 @@ public final class Signal<T, E: ErrorType>
 
 A signal is just a sequence of events in time that is conforms to the grammar `Next* (Error | Completed | Interrupted)?`.
 The grammar introduces a precise semantics and clearify the meaning of the concrete possible instances for the Event type:
-- `.Next` represents an event that carry information of type `T`
-- `.Error` represents an event that carry an error of type `E`
+- `.Next` represents an event that carry information of a given type `T`
+- `.Error` represents an event that carry an error of a given type `E`
 - `.Completed` represents a successful terminal event
 - `.Interrupted` represents an event that indicates that the signal has been interrupted
 
-Just like `RxJava`'s Observable, also `RAC`'s signal can be distincted in two main categories: hot and cold signals. The main difference from RxJava's implementation is that in RAC this foundamental distinction can be found directly in the types. Infact, RAC defines `Signal`as hot and `SignalProducer` as cold signals.
+Just like RxJava's Observable, also RAC's signal can be distincted in two main categories: hot and cold signals. The main difference from RxJava's implementation is that in RAC this foundamental distinction can be found directly in the types. Infact, RAC defines `Signal`as hot and `SignalProducer` as cold signals.
 
 *NB*: the previous introduction of Signal is general and applicable on both Signal and SignalProducer.
 
-The next sections will go deeper and explore more of Signals and SignalProducers.
+The next sections will go deeper and explore more on Signals and SignalProducers.

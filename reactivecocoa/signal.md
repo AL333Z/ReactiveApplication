@@ -10,11 +10,11 @@ Using a popular philosophical metaphore:
 
 Looking at the documentation, a Signal is defined as a *push-driven stream that sends Events over time*. Events will be sent to all observers at the same time. So, if a Signal has different observers subscribed to its events, every observer will always see the same sequence of events.
 
-The documentation says another crucial thing, that clarifies the choice of abstration made by the developers:
+The documentation says another crucial thing, that clarifies the modelling choice made by the developers:
 
 > Signals are generally used to represent event streams that are already "in progress", like notifications, user input, etc. To represent streams that must first be _started_, see the SignalProducer type.
 
-The developers of RAC decided to keep the distinction between hot and cold Signal at the type level, so RAC offers both `Signal` and `SignalProducer` types.
+The RAC' mantainers decided to keep the distinction between hot and cold Signal at the type level, so RAC offers both the `Signal` and `SignalProducer` types.
 
 The `Signal` type is defined as follows:
 
@@ -57,11 +57,11 @@ func createSignal() -> Signal<String, NoError> {
 }
 ```
 
-To use Signals, for example to attach some side effect at each `Next`, `Error` or `Completed` event that is produced, the terminology for the `Signal` type is **observe**. RAC provides the `observe` method, that accepts closures or functions for any of the event types the user of the API is interested in.
+To attach some side effect at each `Next`, `Error` or `Completed` event that is produced by a `Signal`, an observer has to register its interest using **observe**. The `observe` operator accepts some closures or functions for any of the event types the user of the API is interested in.
 
 The real deal in using Signals is their power in term of declarativeness when combining Signals with operators to create new Signals to work with.
 
-In RAC, all **operations** that can be applied to signals are simply **free functions**, in contrast to the "classical-method-definition-on-the-Signal-type approach". As an example, the `map` operator signature is defined as follows, with the Signal on which will be applied the transformation passed as an argument:
+In RAC, all **operations** that can be applied to signals are simply **free functions**, in contrast to the "classical-method-definition-on-the-Signal-type approach". As an example, the `map` operator signature is defined as follows, with the Signal on which the transformation will be applied passed as an argument:
 
 ```swift
 public func map<T, U, E>(transform: T -> U)
@@ -70,7 +70,7 @@ public func map<T, U, E>(transform: T -> U)
 }
 ```
 
-RAC mantainers, to keep the APIs fluent, also introduced the pipe-forward operator `|>`, defined as follows:
+To keep the APIs fluent RAC also introduces the pipe-forward operator `|>`, defined as follows:
 
 ```swift
 public func |> <T, E, X>(signal: Signal<T, E>,
@@ -79,7 +79,7 @@ public func |> <T, E, X>(signal: Signal<T, E>,
 }
 ```
 
-The `|>` operator doesn't do anything, it only creates a specification.
+The `|>` operator doesn't do anything special, it only creates a specification.
 
 RAC already offers a numbers of built in operators as free functions, such as `combineLatest`, `zip`, `takeUntil`, `concat`, ...
 
@@ -91,6 +91,5 @@ createSignal()
   |> observe(next: { println($0) })
 ```
 
-The beauty of this approach is that the chain of operations fits the types of each operation, so when the code compile (and if the user of the APIs has learnead the semantics of each operators) the computation acts as expected.
-All the relevant work for the newcomers of the paradigm is in taking time to try and play with the types and the operators.
-
+The beauty of this approach is that the chain of operations fits the types of each operation, so when the code compiles (and if the user of the APIs has learnead the semantics of each operators) the computation acts as expected.
+All the relevant work for the newcomers of the paradigm consist in taking the time needed to learn the basics and play with the types and the operators.

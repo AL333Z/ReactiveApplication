@@ -30,6 +30,16 @@ Using a popular philosophical metaphore, again:
 
 Or, in other words, if no one subscribes to the SignalProducer, nothing happens. For SignalProducer, the terminology for subscribing to its events is `start( )`.
 
-If more than one observer subscribe to the same SignalProducer, the resources are allocated for each observer. In the example above, every time an observer invoke the `start( )` method on the SignalProducer, a new istance of NSTimer is allocated.
+If more than one observer subscribe to the same SignalProducer, the resources are allocated for each observer. In the example above, every time an observer invoke the `start( )` method on the same SignalProducer instance, a new istance of NSTimer is allocated.
 
+Also on SignalProducers can be applied a wide range of operators. RAC doesn't implement all the operators twice for Signal and SignalOperator, but it offers a pipe-forward operator that lifts the operators and transformation that can be applied to `Signal` to also operate on `SignalProducer`.
+
+The implementation of `|>`, that applies on the SignalProducer type using Signal's operator, is the following:
+
+```swift
+public func |> <T, E, U, F>(producer: SignalProducer<T, E>,
+      transform: Signal<T, E> -> Signal<U, F>) -> SignalProducer<U, F> {
+  return producer.lift(transform)
+}
+```
 
