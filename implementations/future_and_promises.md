@@ -1,6 +1,8 @@
 # Future and Promises
 
-The chapter about Functional Programming ended with a section that introduced a possible classification of the essential effects in programming.
+The appendix about Functional Programming introduced the main patterns and principles that help when dealing with computations that imply some effects. Moving a step forward, we can consider also the latency as an effect.
+
+The following table represents a possible classification of the effects in programming.
 
 | | One | Many |
 | -- | -- | -- |
