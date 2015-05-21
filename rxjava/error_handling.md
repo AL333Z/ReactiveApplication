@@ -1,5 +1,11 @@
 # Error handling
 
+The previous sections introduced the basics of `Observable` and `Operator`. This section will introduce how errors are handled in RxJava.
+
+As introduced previously, every Observable ends with either a single call to `onCompleted()` **or** `onError()`.
+
+What follows is an example of a chain of operators that contains some transformation that may also fail.
+
 ```java
 Observable.just("Hello, world!")
   .map(s -> potentialException(s))
@@ -13,13 +19,7 @@ Observable.just("Hello, world!")
 
       @Override
       public void onError(Throwable e) { System.out.println("Ouch!"); }
-});
+    });
 ```
 
-Every Observable ends with either a single call to `onCompleted()` **or** `onError()`.
-
-- `onError()` is called if an `Exception` is thrown **at any time**
-- the operators don't have to handle exceptions
-- exceptions are **propagated** to the `Subscriber`, which has to manage all the error handling
-
----
+The `onError()` callback is called if an `Exception` is thrown **at any time** in the chain, thus the operators don't have to handle exceptions in first place since they are **propagated** to the `Subscriber`, which has to manage all the error handling.

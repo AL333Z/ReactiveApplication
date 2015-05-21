@@ -11,7 +11,7 @@
 * [Scala.React](scalareact/README.md)
 * [RxJava](rxjava/README.md)
    * [Observable](rxjava/observale.md)
-       * [Operators](rxjava/operators.md)
+       * [Operator](rxjava/operators.md)
        * [Error handling](rxjava/error_handling.md)
    * [Subscription](rxjava/subscriptions.md)
    * [Scheduler](rxjava/scheduler.md)

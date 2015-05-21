@@ -1,12 +1,12 @@
-# Operators
+# Operator
 
-In RxJava, operators are what enable the devolper to **express** the actual computation. An operator allows to perform **almost each type of manipulation** on the source observer.
+In RxJava, operators are what enable the devolper to **model** the actual computation. An operator allows to perform **almost each type of manipulation** on the source observer in a declarative way.
 
-Expressing a computation in terms of a stream of values is translated in building a **chain of proper operators**. Usually, looking at the signatures of the operators and at the types is really helpful when choosing which operator is the right one for the goal to achieve.
+Expressing a computation in terms of a stream of values is translated in building a **chain of proper operators**. Usually, looking at the signatures and at the types of the operators  is really helpful when choosing which operator is the right one for the goal to achieve.
 
 An operator, to be applicable to an Observable, has to implement the `Operator` interface and has to be lifted. The `lift` function lifts a function (inside an `Operator`) to the current Observable and returns a new Observable that when subscribed to will pass the values of the current Observable through the `Operator` function.
 
-Operators are methods of `Observable` class, so creating a chain of operators starting from a source observable is a pretty straightforward process.
+Operators are methods of the `Observable` class, so creating a chain of operators starting from a source observable is a pretty straightforward process.
 
 RxJava provides a huge sets of operators, and a lot of them is defined in terms of others. What follows is only a small introductive subset.
 
@@ -14,9 +14,9 @@ RxJava provides a huge sets of operators, and a lot of them is defined in terms 
 
 `Map` is an operator that returns an Observable that **applies a specified function to each item** emitted by the source Observable and emits the results of these function applications. Its marble diagram is the following.
 
-![](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/map.png)
+![Map operator](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/map.png)
 
-To better clarify the concept of lifting, let's also look at its definition and implementation.
+To better clarify the concept of lifting introduced previously, let's also look at the definition and implementation for `Map`.
 
 ```java
 public final <R> Observable<R> map(Func1<? super T, ? extends R> func) {
@@ -59,34 +59,34 @@ public final class OperatorMap<T, R> implements Operator<R, T> {
 
 `FlatMap` returns an Observable that **emits items based on applying a function that is supplied to each item emitted by the source Observable, where that function returns an Observable**, and then merging those resulting Observables and emitting the results of this merger.
 
-![](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/flatMap.png)
+![FlatMap operator](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/flatMap.png)
 
 ## Filter
 
 `Filter` is quite obvious.
 
-![](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/filter.png)
+![Filter operator](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/filter.png)
 
 ## Scan
 
-`Scan` returns an Observable that **applies a specified accumulator function** to the first item emitted by a source Observable, then feeds the result of that function along with the second item emitted by the source Observable into the same function, and so on until all items have been emitted by the source Observable, and emits the final result from the final call to your function as its sole item.
+`Scan` returns an Observable that **applies a specified accumulator function** to the first item emitted by a source Observable, then **feeds the result of that function along** with the second item emitted by the source Observable into the same function, and so on until all items have been emitted by the source Observable, and emits the final result from the final call to your function as its sole item.
 
-![](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/scan.png)
+![Scan operator](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/scan.png)
 
 ## Take
 
 `Take` returns an Observable that emits only the first n items emitted by the source Observable.
 
-![](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/take.png)
+![Take operator](https://raw.githubusercontent.com/AL333Z/RxAndroid-overview/master/images/take.png)
 
 ## A complex example
 
 ```java
 // Returns a List of website URLs based on a text search
-Observable<List<String>> query(String text);
+Observable<List<String>> query(String text) { ... }
 
 // Returns the title of a website, or null if 404
-Observable<String> getTitle(String URL);
+Observable<String> getTitle(String URL){ ... }
 
 query("Hello, world!")                    // -> Observable<List<String>>
   .flatMap(urls -> Observable.from(urls)) // -> Observable<String>
@@ -100,4 +100,9 @@ query("Hello, world!")                    // -> Observable<List<String>>
       System.out.println("Pos: " + indexItemPair.first + ": title:" + indexItemPair.second ));
 ```
 
+The example starts with the hyphotesis of having two methods that returns observable, for example coming from the network layer of an application. `query` return a list of url given a text and `getTitle` returns the title of a website or null.
+
+The computation aims to return all the title of the websites that match the "Hello, World!" string.
+
 The code itself is pretty self-explanatory, and shows how concise and elegant a computation can be using the approach suggested by RxJava in respect to its imperative-style counterpart.
+
