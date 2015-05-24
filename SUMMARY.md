@@ -19,6 +19,7 @@
        * [Error handling](rxjava/error_handling.md)
    * [Subscription](rxjava/subscriptions.md)
    * [Scheduler](rxjava/scheduler.md)
+   * [Subject](rxjava/subject.md)
    * [RxAndroid](rxjava/rxandroid.md)
 * [ReactiveCocoa](reactivecocoa/README.md)
    * [Event and Signal](reactivecocoa/event.md)
