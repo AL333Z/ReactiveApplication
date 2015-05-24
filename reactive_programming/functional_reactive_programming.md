@@ -23,4 +23,5 @@ Another name that Elliott suggests for continuous is *resolution-independent*, a
 
 >We only access a finite amount of data *in the end*. However, allowing infinite data structures *in the middle* makes for a much more composable programming style. Each event has a stream (finite or infinite) of occurrences. Each occurrence has an associated time and value.
 
+Fran integrates general ideas from synchronous data-flow languages into the non-strict, pure functional language Haskell. It takes a monadic approach and encapsulates operations over time-varying values and discrete events into data structures that are evaluated by an interpreter loop.
 The main idea of FRP is to model user inputs as functions that changes over time.
