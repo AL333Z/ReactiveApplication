@@ -1,6 +1,6 @@
 # Functional Reactive Programming
 
-Functional reactive programming has its origin with *Fran* (Functional reactive animation), a Haskell library by Conal Elliott for interactive animations.
+Functional reactive programming has its origin with *Fran* (Functional reactive animation), a Haskell library for interactive animations by Conal Elliott.
 Elliott found it difficult to express the *what* of an interactive animation abstracting from the *how*, and built a set of expressive and recursive data types, combined with a declarative programming language.
 
 Informally, **functional reactive programming** is a programming paradigm which brings a notion of **time** in the functional programming paradigm, providing a conceptual framework for implementing reactive systems. Infact, FRP let the application achieve reactivity by providing constructs for specifying *how behaviors change in response to events*.

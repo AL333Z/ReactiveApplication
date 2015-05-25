@@ -28,7 +28,7 @@ $$
 f(b1)  \rightarrow f_{lifted}(b1) .
 $$
 
-2. **Explicit lifting**, usually used by statically typed langueges. In this case the language provides a set of combinators to lift ordinary operators to operate on behaviors. Formally:
+2. **Explicit lifting**, usually used by statically typed languages. In this case the language provides a set of combinators to lift ordinary operators to operate on behaviors. Formally:
 $$
 lift(f)(b1)  \rightarrow f_{lifted}(b1) .
 $$

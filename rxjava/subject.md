@@ -5,11 +5,9 @@ A `Subject` is a sort of bridge or proxy that acts both as an observer and as an
 - because **it is an observer**, it can **subscribe** to one or more observables
 - because **it is an Observable**, it can pass through the items it observes by **reemitting** them, and it can also **emit** new **items**
 
-Subject has the "power" of **turning a cold observable hot**. Infact, when a `Subject` subscribes to an `Observable`, it will trigger that `Observable` to begin emitting items (and if that `Observable` is "cold" — that is, if it waits for a subscription before it begins to emit items). This can have the effect of making the resulting `Subject` a "hot" `Observable` variant of the original "cold" `Observable`.
+`Subject` has the "power" of **turning a cold observable hot**. Infact, when a `Subject` subscribes to an `Observable`, it will trigger that `Observable` to begin emitting items (and if that `Observable` is "cold" — that is, if it waits for a subscription before it begins to emit items). This can have the effect of making the resulting `Subject` a "hot" `Observable` variant of the original "cold" `Observable`.
 
-The framework provides a wide range of subject, each with its semantics. What follows is an overview of the main popular and used.
-
-NB: the images have been taken from the documentation.
+The framework provides a wide range of subjects, each one with its own semantics. What follows is an overview of the main popular and used.
 
 ## PublishSubject
 

@@ -11,9 +11,9 @@ In this definition emerges some key concepts:
 - expressing computations in terms of **data flows**
 - **change is propagated** in a composable way
 - the language or framework has to support **declarativeness**
-- all the "dirty work" is done by the execution model, ensuring that the actual computation respects the semantics
+- all the "plumbing work" is done by the execution model, ensuring that the actual computation respects the semantics
 
-One of the best examples to describe reactive programming is to think of a spreadsheet, in which there're three cells, A, B and C and A is defined as the sum of B and C. Whenever B or C changes, A updates itself. The example is really simple and it's also something that we're used to know and use.
-Reactive programming is all about propagating changes throughout a system automatically.
+One of the best examples to describe reactive programming is to think of a spreadsheet, in which there're three cells, A, B and C and A is defined as the sum of B and C. Whenever B or C changes, A updates itself. The example is really simple and it's also something that we're used to know.
+Reactive programming is all about propagating changes throughout a system, automatically.
 
 This chapter will focus on **Functional Reactive Programming** and **Reactive Programming**, in an attempt to provide formal definitions.

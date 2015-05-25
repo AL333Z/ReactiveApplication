@@ -1,6 +1,6 @@
 # Operator
 
-In RxJava, operators are what enable the devolper to **model** the actual computation. An operator allows to perform **almost each type of manipulation** on the source observer in a declarative way.
+In RxJava, operators are what enable the devolper to **model** the actual computation. An operator allows to perform **almost every type of manipulation** on the source observer in a declarative way.
 
 Expressing a computation in terms of a stream of values is translated in building a **chain of proper operators**. Usually, looking at the signatures and at the types of the operators  is really helpful when choosing which operator is the right one for the goal to achieve.
 
@@ -8,7 +8,7 @@ An operator, to be applicable to an Observable, has to implement the `Operator` 
 
 Operators are methods of the `Observable` class, so creating a chain of operators starting from a source observable is a pretty straightforward process.
 
-RxJava provides a huge sets of operators, and a lot of them is defined in terms of others. What follows is only a small introductive subset.
+RxJava provides a huge sets of operators, and a lot of them is defined in terms of other ones. What follows is only a small introductive subset.
 
 ## Map
 

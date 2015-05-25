@@ -44,5 +44,5 @@ Signals are primarily used to create variable dependencies as seen above. In oth
 The framework and the Scala language provide a convenient and simple syntax to get and update the current value of a Signal, and also to create a variable dependencies between signals. For example:
 - the code `Signal{ a()+b() }` creates a dependencies that is binds the changes from `a` and `b` to be propagated and evaluated in the `sum` signal
 - the code `a()= 7` is evaluated as `a.update(7)`
-- the framework also provide an implicit converter that enables to create easily create `Val` signals
+- the framework also provide an implicit converter that enables to create easily `Val` signals
 

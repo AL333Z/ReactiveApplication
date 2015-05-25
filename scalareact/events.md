@@ -2,15 +2,13 @@
 
 The first type to take in consideration is the `Event` type.
 
-To simplify the event handling logic in an application, the framework provides a general and uniform event interface, with the type `EventSource`. An `EventSource` is an entity that can *raise* or *emit* events at any time. For example:
+To simplify the event handling logic in an application, the framework provides a general and uniform event interface, with `EventSource`. An `EventSource` is an entity that can *raise* or *emit* events at any time. For example:
 
 ```scala
 val es = new EventSource[Int]
 es raise 1
 es raise 2
 ```
-
-NB: the example provided here has been taken directly from the paper itself.
 
 To attach a side-effect in response to an event, an observer has to *observe* the event source, providing a closure. Continuing the with previous example, the following code prints all events from the event source to the console.
 
@@ -23,6 +21,7 @@ ob.dispose()
 ```
 
 `observe( )` returns an handle of the observer,that can be use to uninstall and dispose the observer prematurely, via its `dispose()` method.
+This is a common pattern in all of the other frameworks/libraries presentend in this thesis.
 
 The basic types for events handling are pretty neat and simple to reason about, since they are first-class values. The usage of these types starts to be helpful only if combined with a set of operators, that enables developers to build better and declarative abstration.
 

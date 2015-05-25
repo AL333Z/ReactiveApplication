@@ -11,7 +11,7 @@ trait Reactive[+Msg, +Now] {
 }
 ```
 
-Trait `Reactive` is defined based on two type parameters: one for **the message type an instance emits** and one for **the values it holds**.
+The trait `Reactive` is defined based on two type parameters: one for **the message type an instance emits** and one for **the values it holds**.
 
 Starting from the previous base abstraction, two further types can be defined:
 
@@ -22,8 +22,10 @@ trait Events[+A] extends Reactive[A,Unit]
 
 The difference between the two types can be seen directly in the types:
 - In `Signal`, `Msg` and `Now` types are identical.
-- In `Events`, `Msg` and `Now` types differ. In particular, the type for the type parameter `Now` is Unit. This means that for an instance of Events the notion of "current value" has no sense at all.
+- In `Events`, `Msg` and `Now` types differ. In particular, the type for the type parameter `Now` is `Unit`. This means that for an instance of `Events` the notion of "current value" has no sense at all.
 
 The two subclasses need to implement two methods which obtain the reactive’s current message or value and create dependencies in a single turn.
 
-The next two sections will better examine the notions introduced here.
+The next two sections will better examine the two abstraction introduced here.
+
+NB: the examples and code provided in this chapter have been taken directly from the paper itself.

@@ -1,6 +1,6 @@
 # Scheduler
 
-In the previous sections a lot of concepts have been introduced. This section will cover one of the most important aspects of the framework: schedulers.
+In the previous sections a lot of concepts have been introduced. This section will cover one of the most important aspects of the framework: **schedulers**.
 
 A scheduler is an *object that schedules unit of work*, and it's implemented throgh the the `Scheduler` type. This type allows to specify **in which execution context** the chain or part of the chain has to run. In particular, the developer can choose in which thread:
 
