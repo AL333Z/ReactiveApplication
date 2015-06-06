@@ -32,7 +32,7 @@ An example of the latter case is given by a Flow that is prepend to a Sink to ge
 val sum: Flow[(Long, Tweet), (Long, Tweet)] = Flow[(Long, Tweet)].scan[(Long, Tweet)](0L, EmptyTweet)(
       (state, newValue) => (state._1 + 1L, newValue._2))
 val out: Sink[(Long, Tweet)] = Sink.foreach[(Long, Tweet)]({
-      case (count, tweet) => println(count + " white&gold(s). Current tweet: " + tweet.body + " -  " + tweet.author.handle)
+      case (count, tweet) => println(count + " Current tweet: " + tweet.body + " -  " + tweet.author.handle)
     })
 
 val compositeOut: Sink[(Long, Tweet)] = sum.to(out)

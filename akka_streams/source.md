@@ -27,7 +27,7 @@ Source.empty
 An example of the latter case is when a `Flow` is attached  to a `Source`, resulting in a composite source, as in the following example.
 
 ```scala
-val source: Source[Tweet] = Source(...)
+val tweets: Source[Tweet] = Source(...)
 val filter: Flow[Tweet, Tweet] = Flow[Tweet].filter(t => t.hashtags.contains(hashtag))
 val compositeSource: Source[Tweet] = tweets.via(filter)
 ```
