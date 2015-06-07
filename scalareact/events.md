@@ -10,7 +10,7 @@ es raise 1
 es raise 2
 ```
 
-To attach a side-effect in response to an event, an observer has to *observe* the event source, providing a closure. Continuing the with previous example, the following code prints all events from the event source to the console.
+To attach a side-effect in response to an event, an observer has to *observe* the event source, providing a closure. Continuing with the previous example, the following code prints all events from the event source to the console.
 
 ```scala
 val ob = observe(es) { x =>
@@ -20,7 +20,7 @@ val ob = observe(es) { x =>
 ob.dispose()
 ```
 
-`observe( )` returns an handle of the observer,that can be use to uninstall and dispose the observer prematurely, via its `dispose()` method.
+`observe( )` returns an handle of the observer,that can be used to uninstall and dispose the observer prematurely, via its `dispose()` method.
 This is a common pattern in all of the other frameworks/libraries presentend in this thesis.
 
 The basic types for events handling are pretty neat and simple to reason about, since they are first-class values. The usage of these types starts to be helpful only if combined with a set of operators, that enables developers to build better and declarative abstration.
@@ -33,4 +33,4 @@ def map[B](f: A => B): Events[B]
 def collect[B](p: PartialFunction[A, B]): Events[B]
 ```
 
-When building abstractions, the developers don't need to take care of the events propagation, since this's provided by the framework itself.
+When building abstractions, the developer doesn't need to take care of the events propagation, since this's provided by the framework itself.
