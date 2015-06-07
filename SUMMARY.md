@@ -32,6 +32,7 @@
    * [Sink](akka_streams/sink.md)
    * [Flow and RunnableFlow](akka_streams/flow.md)
    * [Graph](akka_streams/graph.md)
+* [A conclusive comparison](a_conclusive_comparison/README.md)
 * [Appendix](implementations/README.md)
    * [Functional Programming](implementations/functional_programming.md)
        * [Algebraic data types](implementations/algebraic_data_types.md)
@@ -50,4 +51,5 @@
        * [Subscription](implementations/subscription.md)
        * [Publisher](implementations/publisher.md)
        * [Processor](implementations/processor.md)
+* [Bibliography](bibliography/README.md)
 
