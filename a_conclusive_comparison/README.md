@@ -22,7 +22,7 @@ All the library previously introduced presented an high level of declarativness,
 
 ## Hot and Cold, Push and Pull, Back-pressure
 
-Another aspect that distinguish the libraries is the way they abstract the notion of who actually starts the computation, and thus, the propagation of changes.
+Another aspect that distinguish the libraries is the way they abstract the notion of **who actually starts the computation**, and thus, the propagation of changes.
 
 In this regards, RAC offer a pretty straight forward abstraction putting this distinction directly at type level: the `Signal` type is producer-driven, so the changes are pushed to the subscribers as they happens/are produced, while the `SignalProducer` type is demand driven, so the changes are pulled.
 
@@ -32,5 +32,6 @@ Being conform to Reactive Streams means that for both libraries is valid the pri
 In practice, the usage of this feature really depends from the use case to satisfy. For example, for Akka Streams and RxJava the conformation to Reactive Streams was a pretty straight forward process (engineers from Netflix, Typesafe, etc.. all find it problematic having a consumer overwhelmed by a production of items they can handle), since those frameworks are used to process an high number of items and also to build infrastructures and services.
 In the context of mobile applications, currently RAC doesn't directly solve this issue, since RAC mantainers believe that figuring out the behavior of side effects is far more important, since effects dominate GUI applications.
 
+## Solving problems the reactive way
 
-```````
+

@@ -1,4 +1,4 @@
-# Events
+## Events
 
 The first type to take in consideration is the `Event` type.
 
