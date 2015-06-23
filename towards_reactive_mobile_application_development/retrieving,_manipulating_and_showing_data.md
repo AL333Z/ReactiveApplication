@@ -2,7 +2,7 @@
 
 The first use case proposed is about a quite common set of actions, such as the **retrieval, manipulation and presentation of some sort of data**.
 
-Every simple or complex application has at least a part in the app lifecycle in which it queries some provider (a cache, a local database, a Rest API) to fetch some resource.
+Every simple or complex application has at least a part in the app lifecycle in which it queries some provider (a cache, a local database, a Rest API) to fetch some resource, so this initial use case can be considered as a foundational building block for every application.
 
 The abstraction of event streams can be used to model this use case in a pretty straigh-forward way.
 

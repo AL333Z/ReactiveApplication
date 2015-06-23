@@ -1,1 +1,1 @@
-# Some common use cases
+# A use case

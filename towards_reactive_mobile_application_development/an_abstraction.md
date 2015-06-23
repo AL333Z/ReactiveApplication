@@ -1,1 +1,1 @@
-# An abstraction
+# A common architecture
