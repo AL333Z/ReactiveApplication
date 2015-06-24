@@ -31,7 +31,7 @@
    * [Abstracting the retrieval, manipulation and presentation of data](towards_reactive_mobile_application_development/retrieving,_manipulating_and_showing_data.md)
        * [On Android](towards_reactive_mobile_application_development/on_android.md)
        * [On iOS](towards_reactive_mobile_application_development/on_ios.md)
-   * [Architecting an application with MVVM](towards_reactive_mobile_application_development/interacting_with_the_ui.md)
+   * [Choosing an architectural pattern](towards_reactive_mobile_application_development/interacting_with_the_ui.md)
        * [A use case](towards_reactive_mobile_application_development/some_common_use_cases.md)
        * [A common architecure](towards_reactive_mobile_application_development/an_abstraction.md)
        * [Implementation on Android](towards_reactive_mobile_application_development/android)

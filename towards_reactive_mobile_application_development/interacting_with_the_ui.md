@@ -1,4 +1,4 @@
-# Architecting an application with MVVM
+# Choosing an architectural pattern
 
 This section will explore a foundamental aspect of mobile application development: the architectural pattern.
 
@@ -50,7 +50,7 @@ Many developers suggest that what Android is offering is a broken abstraction.
 Knowing the limitations of the abstractions that the platform offers, the most popular architectural pattern for Android is a variant of MVC (similar to Apple's variant), in which the `Activity` (and related fragments) is both a the view and the controller.
 Google encourages developers to split each view in a fragment, and then each fragment should interact with its parent activity, also to coordinate his action of commands with other fragments.
 
-## Toward a common architecture
+## Toward a common architecture: MVVM
 
 On both the platforms, the MVC architectural pattern and its variations doesn't seem to be a perfect fit.
 
@@ -59,17 +59,17 @@ In this section and in the following ones a new architectural pattern will be pr
 The reason of the introduction of MVVM in this thesis is that this pattern is an application pattern that isolates the user interface from the underlying business logic, and, as introduced in the previous section, one of the biggest issue of the usage of the MVC pattern is the fact that in both Android and iOS there's not a clear distinction between the view and the controller entities.
 
 The MVVM pattern consists of the following parts:
-- the **Model**, which provides a view-independent representation of your business entities.
-- the **View**, which is the user interface. It displays information to the user and fires events in response to user interactions.
-- the **ViewModel**, which is the bridge between the view and the model. Each View class has at least a corresponding ViewModel class. The ViewModel retrieves data from the Model and manipulates it into the format required by the View. It notifies the View if the underlying data in the model is changed, and it updates the data in the Model in response to UI events from the View.
+- the **Model**, which provides a view-independent representation of business entities;
+- the **View**, which is the user interface, displaying information to the user and firing events in response to user interactions;
+- the **ViewModel**, which is the bridge between the view and the model. Each View has at least a corresponding ViewModel. The ViewModel retrieves data from the Model and manipulates it into the format required by the View, wrapping the presentation logic. It notifies the View if the underlying data in the model is changed, and it updates the data in the Model in response to UI events from the View.
 
 ![The MVVM architecural pattern](https://i-msdn.sec.s-msft.com/dynimg/IC416621.png)
 
 Looking at the diagram, it's clear that the view-model:
-- sits between the model and the view, wrapping all the presentation logic
+- sits between the model and the view, **wrapping all the presentation logic**
 - receives the events and commands from the view
-- updates the view once the model has been update
+- **updates the view** once the model has been updated
 
-The main reason to use MVVM is the it reduces the complexity of one’s view controllers or activity and makes one’s presentation logic easier to test.
+The main reason to use MVVM is the it **reduces the complexity** of one’s viewcontrollers or activities and makes one’s presentation logic easier to test.
 
-RP frameworks are a perfect fit in MVVM, since they allows to bind views and their associated view-models, allowing the proper synchronization to reflect the changes in both directions.
+RP frameworks are a good fit in MVVM, since they allow to **bind the views with their associated view-models**, allowing the proper **synchronization** to reflect the changes in both directions.
