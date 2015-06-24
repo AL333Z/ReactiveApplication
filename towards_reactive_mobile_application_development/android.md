@@ -44,7 +44,6 @@ Finally, the `WordService` class only expose a public method that returns an `Ob
 
 ```java
 public class WordService {
-
     public WordService() { ... }
     public Observable<WordResponse> getWords(int month, int year) {
         ...
