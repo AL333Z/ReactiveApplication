@@ -1,10 +1,10 @@
 # A common architecture
 
-Starting from the requirements and with MVVM in mind, what follows is the proposed overall system architecure.
+Starting from the requirements and with **MVVM** in mind, what follows is the proposed overall system architecure.
 
 ![The overall architecture of the system](http://i62.tinypic.com/24gta28.png)
 
-NB: the diagram is incomplete, and shows only the relevant building block of the system. The convention used here to express the abstraction of stream of items is the RxJava's Observable type.
+NB: the diagram is incomplete, and shows only the relevant building block of the system. The convention used here to express the abstraction of stream of items is the RxJava's `Observable` type.
 
 What immediately emerges looking at the digram is how the MVVM pattern is applied to model the requirements.
 
@@ -25,3 +25,16 @@ The **ViewModel** is the bridge between the view and the model, wrapping all the
 `MutableProperty` and `ConstantProperty` are two abstractions that help in binding the viewmodel to the view, and allows to build the automatic update of the view layer once the model gets updated.
 
 Note that this architecture is platform-agnostic and there're no reference to a specific platform or native abstractions, except for the `Observable` type (which can be easily traduced in `SignalProducer`, in this specific context).
+
+## Is this RP?
+
+Looking at the whole architecture, a question may arise. Is this RP?
+
+The answer to this question is not trivial, at first glance.
+In the introduced architecture RP abstraction are used as building block to compose the overall architecture.
+
+For example, the `WordService` class returns an `Observable`. This immediately suggests a whole set of considerations about the underlying computation.
+
+Another example are the `MutableProperty` and `ConstantProperty` classes, that under the hood are implemented as `Subject` (or `Signal/SignalProducer`).
+
+In conclusion, RP abstractions can be used as means to properly build the overall architecture.
