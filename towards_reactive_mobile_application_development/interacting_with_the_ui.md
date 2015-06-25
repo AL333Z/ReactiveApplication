@@ -38,17 +38,17 @@ The iOS community, during the years, has adopted (also unconsciously) this archi
 
 Android's documentation is less explicit about the architectural pattern that developers should use.
 
-At first sight, the overall architecture looks similar at iOS's architecture, with the notion of `Activity` that is similar to `UIViewController` and the notion of `UIView` that is similar to `UIView`.
+At first sight, the overall architecture looks similar at iOS's architecture, with the notion of `Activity` that is similar to `UIViewController` and the notion of `View` that is similar to `UIView`.
 
-But more in depth, things are far more complicated. Infact, the main flaw comes from the assumption that there should only be one running `Activity` at a time, and that this `Activity` should be tied down to a single view.
-To overcome the limitation of having only a single view tied to an activity, Android introduced the `Fragment` class. This new  abstraction allows an activity to show and manage a certain number of fragments, but still has some limitations like, for example, the possibility of manage stack of fragments.
+But, more in depth, things are far more complicated. Thus, the main flaw comes from the assumption that there should be only one running `Activity` at a time, and that this `Activity` should be tied down to a single main view.
+To overcome this limitation, Android introduced the `Fragment` class. This new  abstraction allows an activity to show and manage a certain number of fragments, but still has some limitations like, for example, the possibility of manage stack of fragments.
 
-From this point of view, the iOS platform offers a clearer abstractions, with the notion of viewcontrollers, views and viewcontroller container that allows the developer to express multi-level view hierarchy.
+From this point of view, the iOS platform offers a clearer abstractions, with the notion of viewcontrollers, views and viewcontroller containers, that allow the developer to express multi-level view hierarchy in a cleaner way.
 
 Many developers suggest that what Android is offering is a broken abstraction.
 
 Knowing the limitations of the abstractions that the platform offers, the most popular architectural pattern for Android is a variant of MVC (similar to Apple's variant), in which the `Activity` (and related fragments) is both a the view and the controller.
-Google encourages developers to split each view in a fragment, and then each fragment should interact with its parent activity, also to coordinate his action of commands with other fragments.
+Google encourages developers to split each view in a fragment, and then each fragment should interact with its parent activity, also to coordinate his actions and commands with other fragments.
 
 ## Toward a common architecture: MVVM
 

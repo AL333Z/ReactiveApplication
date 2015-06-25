@@ -224,7 +224,7 @@ The view layer is represented by three main components:
 - a `Fragment`, named `MainActivityFragment`, that is contained in the `MainActivity`
 - a RecyclerView.Adapter, named `WordListAdapter`, that is necessary to implement a list view in Android
 
-The `MainActivity` only job is to instatiate a `MainActivityFragment`, so its code is omitted.
+The `MainActivity`'s only job is to instatiate a `MainActivityFragment`, so its code is omitted.
 
 ```java
 public class MainActivityFragment extends Fragment {
@@ -365,4 +365,4 @@ The class `WordListAdapter` contains a lot of boilerplate code that directly dep
 The relevant code is in the `ViewHolder` class, in which:
 - a `WordViewModel` is used to retrieve the properties that describe a `Word` model class;
 - the `onClick` events are pushed through a `PublishSubject<WordViewModel>`. This subject is then exposed as an `Observable<WordViewModel>`, and will inform each subscriber when the user selects an item of the list;
-- given the url of the image, the image is downloaded and showed without blocking the main thread;
+- given the url of the image, the image is downloaded and showed without blocking the main thread.

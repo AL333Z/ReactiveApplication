@@ -120,7 +120,7 @@ The view layer is represented by three main components:
 - a `UITableViewCell`, named `WordCellView`;
 - an helper class, named `TableViewBindingHelper`, that make it easier to bind a table view with a viewmodel;
 
-The entry point of the application is the WordsViewController class, that is shown at app launch. The implementation is pretty similar to the implementation of the `MainActivityFragment` of the previous section.
+The entry point of the application is the `WordsViewController` class, that is shown at app launch. The implementation is pretty similar to the implementation of the `MainActivityFragment` of the previous section.
 
 The view controller creates a `WordService`, that then is passed to a `WordListViewModel`.
 
