@@ -7,7 +7,7 @@ The following table represents a possible classification of the **effects** in p
 | Synchronous | T/Try[T] | Iterable[T] |
 | Asynchronous | Future[T] | **Observable[T]** |
 
-All the theory and the development of the reactive extensions libraries started with an intuition of Erik Meijer, that theorized that **enumerable/enumerator** are **dual** to **observer/observable**.
+All the theory and the development of the reactive extensions libraries started with an intuition of Erik Meijer, that theorized that **iterable/iterator** are **dual** to **observable/observer**.
 And this hypothesis is what let us to relate all the principal effects in programming, where in one axis there's is the nature of the computation (sync or async) and in the other one there's the cardinality of the result (one or many).
 
 The appendix on **futures and promises** covers the case of a computation that returns a **single value**. This chapter will focus on the abstraction of **Observables**, analyzing RxJava as a case of study.
