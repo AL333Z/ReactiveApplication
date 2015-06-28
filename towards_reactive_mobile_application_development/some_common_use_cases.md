@@ -1,4 +1,4 @@
-# A use case
+# A case study
 
 To illustrate the application of the MVVM pattern in conjuction with RP frameworks, let's introduce a simple-but-effective use case.
 
