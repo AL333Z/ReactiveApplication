@@ -1,4 +1,4 @@
-# Akka streams
+# Implementation on Akka streams
 
 Using Akka Streams abstractions, building a processing pipeline that solves the problem introduced by the requirements is a pretty straight-forward process.
 

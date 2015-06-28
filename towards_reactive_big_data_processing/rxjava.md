@@ -1,4 +1,4 @@
-# Implementation in RxScala
+# Implementation on RxScala
 
 Also using RxScala (RxJava ported to Scala) abstractions, building a processing pipeline that solves the problem introduced by the requirements is a pretty simple process.
 
