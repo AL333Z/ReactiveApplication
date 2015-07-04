@@ -9,12 +9,13 @@ The pattern introduced in this section are *abstract*, meaning that they don't o
 ## Monoid
 
 **Monoid** is an ubiquitous pattern that come up frequently in programming, even if we are not aware of it. To introduce monoids, let's consider an example about the concatenation operation for List and String types:
+
 - the concatenation operation is a binary operation and is associative
 - both List and String have an identity element and the operation applied with the identity yields the same value as the other argument
 
 The points depicted above are a valid algebra for the abstraction of a monoid. In Scala a monoid can be expressed as follows.
 
-```scala
+```
 trait Monoid[A] {
   def op(a1: A, a2: A): A
   def zero: A
@@ -22,13 +23,14 @@ trait Monoid[A] {
 ```
 
 More formally, a monoid needs to satysfy the following laws:
+
 - *Left identity*: `op(zero, a) == a`
 - *Right identity*: `op(a, zero) == a`
 - *Associativity*: `op(a1, op(a2, a3)) == op(op(a1, a2), a3)`
 
 Back to the initial example, with the given definition List and String concatenation can be expressed as monoids as folllows.
 
-```scala
+```
 val stringMonoid = new Monoid[String] {
   def op(a1: String, a2: String) = a1 + a2
   def zero = ""
@@ -44,13 +46,13 @@ The benefits of having operations that operate on different data types modelled 
 
 A brilliant example that illustrates the power of monoids is given when they are used in conjuction with lists and list folding functions. Looking at `foldLeft` function definition:
 
-```scala
+```
 def foldLeft[B](z: B)(f: (B, A) => B): B
 ```
 
 and in the particular case of `A = B`:
 
-```scala
+```
 def foldLeft(z: A)(f: (A, A) => A): A
 ```
 
@@ -58,7 +60,7 @@ it can be observed that the function signature perfectly matches the signature o
 
 This brings to a really nice proof of concept about the pratical usage of monoids, like in the following example.
 
-```scala
+```
 val words = List("Hello", "world")
 val t = words.foldLeft(stringMonoid.zero)(stringMonoid.op)
 ```
@@ -69,19 +71,20 @@ The previous section introduced an ubiquitous pattern that recurs frequently in 
 
 In the Scala standard library there are some classes that provide a `map` function. For example:
 
-```scala
+```
 def map[B](f: (A) => B): List[B]
 
 def map[B](f: (A) => B): Option[B]
 ```
 
 In the classes of the example, the effect of `map` is:
+
 - for List, `map` applies the function `f` on each element of the list
 - for Option, `map` aplies the function `f` only if the element is instance of `Some` and return `Some` of the result, otherwise it returns `None`
 
 All this function signatures are pretty the same, with the only difference of the concrete type involved. As always in programming, when there are things that are pretty the same, it's possible that factorize the behavior and create a new abstraction. In this case, the abstraction it's all about a *data type that implements map* and it's called **functor**. In Scala, if a data type `F` implements `map`, `F` is a functor. An implementation of this abstraction can be represented by the following trait.
 
-```scala
+```
 trait Functor[F[_]] {
     def map[A, B](fa: F[A])(f: A => B): F[B]
 }
@@ -91,7 +94,7 @@ trait Functor[F[_]] {
 
 With this new abstraction defined, it's possible to define functors explicitely for List and Option in the following way, reusing the object oriented implementation provided by the Scala standard library:
 
-```scala
+```
 def listFunctor: Functor[List] = new Functor[List] {
     def map[A, B](a: List[A])(f: A => B): List[B] = a map f
 }
@@ -125,7 +128,7 @@ An other definition can be:
 All this quotes and definitions help to give us the idea of what a monad is.
 Formally, a monad is just a type, and can be defined as follows:
 
-```scala
+```
 trait Monad[M[_]] extends Functor[M] {
   def unit[A](a: => A): M[A]
   def flatMap[A,B](ma: M[A])(f: A => M[B]): M[B]
@@ -141,7 +144,7 @@ Monad extends functor, implementing `map`. The trait introduced above is generic
 
 Two example of monads are represented by `Option` and `List`. Starting from the definition of Monad, they can be defined as follows (reusing the implementation provided by the Scala standard library):
 
-```scala
+```
 val optionMonad = new Monad[Option] {
     def unit[A](a: => A) = Some(a)
     def flatMap[A,B](ma: Option[A])(f: A => Option[B]) = ma flatMap f
@@ -157,7 +160,7 @@ From the example, it's easy to note that `unit` is different for each monad. For
 
 A more object oriented definition for monad is the following.
 
-```scala
+```
 trait M[T] {
     def flatMap[U](f: T => M[U]): M[U]
     def unit[T](x: T): M[T]
@@ -169,32 +172,35 @@ with `map` defined as `m flatMap (x => unit(f(x)))`.
 As introduced previously, monads need to satisfy three laws: associativity, left unit and right unit.
 
 ###Associativity
+
 The associativity law is about the order of **composition**,  and demands that for any monad `m`and any two functions `f` and `g`, it must not make a difference whether you apply f to m first and then apply g to the result, or if you first apply g to the result of f and then in turn flatMap this over m. Formally:
 
-```scala
+```
 m flatMap f flatMap g == m flatMap (x => f(x) flatMap g)
 ```
 
 ###Left unit
+
 The left unit law demands that flatMap must behave in such a way that for any function f passed to it, the result is the same as calling f in *isolation*. Formally:
 
-```scala
+```
 unit(x) flatMap f  ==  f(x)
 ```
 
 The left unit law can be considered the most important law, since it guarantes that flatMap let's you apply a transformation to the value contained in a monad, without leaving the monad. In other words, monads promote and allows *containment*  and *chainability* of transformations.
 
 ###Right unit
+
 The right unit law demands that applying unit to a monad has no effects at all (or, better, has the same outcame as not calling it at all). Formally:
 
-```scala
+```
 m flatMap unit  ==  m
 ```
 
 Usually the term monad is also used *informally*, to describe a type that has `flatMap` and `unit`, without any attention about the monad laws.
 An example of this is given by the `Try` type, that has a `Success` case that contains a value and a `Failure` case that contains an exceptions.
 
-```scala
+```
 abstract class Try[+T]
 case class Success[T](x: T)       extends Try[T]
 case class Failure(ex: Exception) extends Try[Nothing]
@@ -202,7 +208,7 @@ case class Failure(ex: Exception) extends Try[Nothing]
 
 **Try** is often used to wrap the result of a computation inside a container type. The important thing about Try is that is handles exception, through *materialization*.
 
-```scala
+```
 def map[S](f: T => 􏰀S): Try[S] = this match {
   case Success(value)       => Try(f(value))
   case failure: Failure(t)  => failure

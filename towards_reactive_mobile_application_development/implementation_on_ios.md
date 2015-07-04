@@ -6,7 +6,7 @@ This final section will depicts an implementation on the iOS platform for the in
 
 The `Word` type only contains some read-only properties and a constructor, just like the Android conterpart.
 
-```swift
+```
 struct Word {
     let id: Int
     let word: String
@@ -15,7 +15,9 @@ struct Word {
     let year: Int
     let imageUrl: String
 
-    init(id: Int, word: String, day: Int, month: Int, year: Int, imageUrl: String){
+    init(id: Int, word: String, day: Int, month: Int,
+        year: Int, imageUrl: String){
+
         self.id = id
         self.word = word
         self.day = day
@@ -28,7 +30,7 @@ struct Word {
 
 The `WordResponse` struct only wraps an array of `Word`, and also the logic for failed requests (that is omitted for the sake of concisness).
 
-```swift
+```
 struct WordResponse {
     let words: [Word]
 
@@ -40,11 +42,12 @@ struct WordResponse {
 
 The `WordService` class only expose a public method that returns an `SignalProducer<WordResponse>`. Also in this case, the real implementation of this method is not important for the purpose of this thesis, and it's omitted.
 
-```swift
+```
 class WordService {
     init() {}
 
-    func getWords(month: Int, year: Int) -> SignalProducer<WordResponse, NSError> {
+    func getWords(month: Int, year: Int)
+        -> SignalProducer<WordResponse, NSError> {
     ...
     }
 }
@@ -60,7 +63,7 @@ Also the viewmodel layer is pretty the same as its Android counterpart. All the 
 
 The only things that are relevant in this implementation are the types used and the chain of operators.
 
-```swift
+```
 class WordListViewModel {
 
     let isLoading = MutableProperty<Bool>(false)
@@ -76,7 +79,8 @@ class WordListViewModel {
         // the overall view model
         self.wordService.getWords(1, year: 2015)
             |> on(started: { self.isLoading.put(true) })
-            |> flatMap(FlattenStrategy.Latest, { SignalProducer(values: $0.words) })
+            |> flatMap(FlattenStrategy.Latest,
+                { SignalProducer(values: $0.words) })
             |> map({ WordViewModel(word: $0)})
             |> collect
             |> observeOn(QueueScheduler.mainQueueScheduler)
@@ -94,7 +98,7 @@ class WordListViewModel {
 
 The same arguments are valid for the `WordViewModel` class.
 
-```swift
+```
 class WordViewModel {
 
     let wordTitle: ConstantProperty<String>
@@ -130,7 +134,7 @@ After these operation, it binds the viewmodel's properties:
 
 The last things that the view controller performs is to register its interest in the item selection events from the table view. In this simple use case, the view controller just shows a message in an alert view, but in more real use case scenario this can be the entry point for a presentation of another view controller or other actions.
 
-```swift
+```
 class WordsViewController: UIViewController {
 
     @IBOutlet weak var loadActivityIndicator: UIActivityIndicatorView!
@@ -145,8 +149,11 @@ class WordsViewController: UIViewController {
         let viewModel = WordListViewModel(wordService: wordService)
 
         // bind ui to current loading status
-        loadActivityIndicator.rac_hidden <~ viewModel.isLoading.producer |> map { !$0 }
-        wordsTable.rac_alpha <~ viewModel.isLoading.producer |> map { $0 ? CGFloat(0.5) : CGFloat(1.0) }
+        loadActivityIndicator.rac_hidden
+            <~ viewModel.isLoading.producer |> map { !$0 }
+
+        wordsTable.rac_alpha
+            <~ viewModel.isLoading.producer |> map { $0 ? CGFloat(0.5) : CGFloat(1.0) }
 
         // bind the table view with the view model
         bindingHelper = TableViewBindingHelper(tableView: wordsTable,
@@ -160,7 +167,10 @@ class WordsViewController: UIViewController {
 
     func showWordDetail(wordViewModel: WordViewModel) {
         // simply showing an alert..
-        let alert = UIAlertView(title: "Selection", message: "You selected: \(wordViewModel.wordTitle.value)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok")
+        let alert = UIAlertView(title: "Selection",
+            message: "You selected: \(wordViewModel.wordTitle.value)",
+            delegate: nil,
+            cancelButtonTitle: nil, otherButtonTitles: "Ok")
         alert.show()
     }
 }
@@ -168,7 +178,7 @@ class WordsViewController: UIViewController {
 
 The `WordCellView` class represents a single cell in the table view, and use the property of the viewmodel to which is bind to show the values of the current word.
 
-```swift
+```
 class WordCellView: UITableViewCell, ReactiveView {
 
     @IBOutlet weak var yearLabel: UILabel!
@@ -197,7 +207,9 @@ class WordCellView: UITableViewCell, ReactiveView {
         }
     }
 
-    private func picImageSignalProducer(imageUrl: String) -> SignalProducer<UIImage, NoError> {
+    private func picImageSignalProducer(imageUrl: String)
+        -> SignalProducer<UIImage, NoError> {
+        ...
         // download and returns the image
     }
 }
@@ -205,7 +217,7 @@ class WordCellView: UITableViewCell, ReactiveView {
 
 The `TableViewBindingHelper` is an helper class, that save the developer a lot of boilerplate code. The relevant part of the code is the following, which illustrates an initializer that takes a `SignalProducer` of items (viewmodels for the cells of the table view) and a public method that returns a Signal of items, representing the items selected by the user.
 
-```swift
+```
 // a helper that makes it easier to bind to UITableView instances
 // initial implementation: http://www.scottlogic.com/blog/2014/05/11/reactivecocoa-tableview-binding.html
 class TableViewBindingHelper<T: AnyObject> : NSObject, UITableViewDelegate {
@@ -214,7 +226,8 @@ class TableViewBindingHelper<T: AnyObject> : NSObject, UITableViewDelegate {
     ...
 
     //MARK: Public API
-    init(tableView: UITableView, sourceSignal: SignalProducer<[T], NoError>, nibName: String) {
+    init(tableView: UITableView,
+        sourceSignal: SignalProducer<[T], NoError>, nibName: String) {
         ...
         sourceSignal.start(next: {
             data in

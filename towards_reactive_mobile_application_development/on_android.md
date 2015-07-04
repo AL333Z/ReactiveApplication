@@ -2,13 +2,13 @@
 
 After introducing the use case, the first thing to do is to write down the types involved in the computation and to provide a class that handles the network requests, returning an observable with the response. This class will be part of the network layer of the application, and will expose methods like the following:
 
-```java
+```
 public Observable<List<Word>> getWords(int month, int year);
 ```
 
 As a reference, the `Word` type is the following:
 
-```java
+```
 public class Word {
     public long id;
     public String word;
@@ -19,6 +19,7 @@ public class Word {
 ```
 
 The semantics for this observable is pretty simple:
+
 - it *yields* a single results (the response body) or an error (a network error, or a server error, etc..)
 - it *starts* the computation each times a consumer *subscribes* itself to the observable
 
@@ -26,7 +27,7 @@ NB: for this kind of request, the behavior would also have been implemented with
 
 Once the network layer is in place, all the transformation needed can be expressed in term of operators.
 
-```java
+```
 myServiceProvider.getWords(month, year)
 
     // network operations in io scheduler

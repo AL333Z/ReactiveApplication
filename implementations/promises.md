@@ -4,7 +4,7 @@
 
 In Scala, a Promise can be represented by the following trait:
 
-```scala
+```
 trait Promise[T] {
   def future: Future[T]
   def complete(result: Try[T]): Unit

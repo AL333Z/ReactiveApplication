@@ -14,6 +14,7 @@ In this pattern, models *keep track* of your app’s data, views *display* your 
 ![Traditional MVC](https://developer.apple.com/library/mac/documentation/General/Conceptual/CocoaEncyclopedia/Art/traditional_mvc.gif)
 
 In its original abstraction, in MVC:
+
 - the user manipulates a view and, as a result, an event is generated
 - a controller receives the event and manage apply an appliction-specific strategy
 - this strategy can consist in requesting a model object to update its state or in requesting a view object to change its appearance.
@@ -24,6 +25,7 @@ In its original abstraction, in MVC:
 However, in an attempt to enhance code reusability, Apple suggests developers to adopt a modified version of MVC, in which there's a strong isolation from models and views, and in which controllers act an intermediary between one or more of an application’s view objects and one or more of its model objects.
 
 Even if views and view controllers are technically distinct components and Apple suggests to keep these decoupled, they are almost always paired. There are a lot reason that cause this trend of strictly coupling a view and its controller:
+
 - the framework provides a big set of components in which a controller already has and manages a view (`UIViewController`, `UITableViewController`, `UICollectionViewController`, `UISplitViewController`, `TabBarController`, ...)
 - the UIViewController class usually contains a lot of UI-related code
 - storyboards, that enable developers or designers to define GUIs, reason in term of view controllers and "segue" between view controllers
@@ -59,6 +61,7 @@ In this section and in the following ones a new architectural pattern will be pr
 The reason of the introduction of MVVM in this thesis is that this pattern is an application pattern that isolates the user interface from the underlying business logic, and, as introduced in the previous section, one of the biggest issue of the usage of the MVC pattern is the fact that in both Android and iOS there's not a clear distinction between the view and the controller entities.
 
 The MVVM pattern consists of the following parts:
+
 - the **Model**, which provides a view-independent representation of business entities;
 - the **View**, which is the user interface, displaying information to the user and firing events in response to user interactions;
 - the **ViewModel**, which is the bridge between the view and the model. Each View has at least a corresponding ViewModel. The ViewModel retrieves data from the Model and manipulates it into the format required by the View, wrapping the presentation logic. It notifies the View if the underlying data in the model is changed, and it updates the data in the Model in response to UI events from the View.
@@ -66,6 +69,7 @@ The MVVM pattern consists of the following parts:
 ![The MVVM architecural pattern](https://i-msdn.sec.s-msft.com/dynimg/IC416621.png)
 
 Looking at the diagram, it's clear that the view-model:
+
 - sits between the model and the view, **wrapping all the presentation logic**
 - receives the events and commands from the view
 - **updates the view** once the model has been updated

@@ -4,7 +4,7 @@ As introduced previously, functional programming doesn't allow side effects and 
 
 A simple example that shows how fast the things become *incidentally complex* is given by the following simple example from a Justin Spahr-Summers's talk from Github:
 
-```scala
+```
 var visible     // → 2 states
 var enabled     // → 4 states
 var selected    // → 8 states
@@ -24,6 +24,7 @@ A value object is immutable by definition and can be freely shared across entiti
 To clear this concept, let's consider the following example, with an entity person within a system, which is univocally identified by an unique id and that has an "address" attribute. Now the difference between the two concepts is immediate: when we talk of a person we usually refer to a *specific instance* of person, while when we talk of an address we just refer to the *value part*.
 
 Functional programming aims to model **as much immutability as possible**, so a possible approach to model entities and attributes is the following:
+
 - remember that an **entity** has an identity that cannot change, so it's **semantically mutable**
 - remember that a **value object** has a value that cannot change, so it's **semantically immutable**
 

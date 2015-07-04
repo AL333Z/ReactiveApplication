@@ -3,7 +3,7 @@
 The **Subscriber** interface abstracts the notion of an entity that consumes items.
 Its definition is as follows.
 
-```java
+```
 public interface Subscriber<T> {
     public void onSubscribe(Subscription s);
     public void onNext(T t);

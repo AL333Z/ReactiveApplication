@@ -4,13 +4,13 @@ On iOS, the problem can be solved using the same conceptual abstractions.
 
 Starting with a network provider that expose the call to the APIs with the following method signature:
 
-```swift
+```
 func getWords(month: Int, year: Int) -> SignalProducer<[Word], NSError>
 ```
 
 As a reference, the type `Word` is defined as follows:
 
-```swift
+```
 public struct Word {
 
     public let id: Int
@@ -34,7 +34,7 @@ Also on iOS, the semantics for this signal producer is pretty simple and similar
 - it *yields* a single results (the response body) or an error (a network error, or a server error, etc..)
 - it *starts* the computation each times a consumer *subscribes* itself on the signal producer
 
-```swift
+```
 getWords(month, year)
     // sort
     |> map { words in words.sorted(...) }

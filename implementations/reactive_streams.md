@@ -20,6 +20,7 @@ With this in mind, engineers behind Reactive Streams proposed a solution that, i
 Engineers called this technique **dynamic push/pull**. The dynamic terms indicates that the system should **adapt** to the current conditions of its components and that's not safe to only use a *just push* or just *pull approach*.
 
 A **just push** approach is not safe when the **subscriber is slow**, since it'll quickly start to be overwhelmed by the offers and will start to:
+
 - drop items, in the case of it use a bounded buffer to store received messages (just like TCP)
 - trigger an out of memory error
 
@@ -37,6 +38,7 @@ Two important notes about the fact that data and demand *flows* in different cha
 As the main document says, the scope of Reactive Streams is to find a minimal set of interfaces, methods and protocols that will describe the necessary operations and entities to achieve the goal—asynchronous streams of data with non-blocking back pressure. This set of interfaces are a low level specification to which each library should be conform to.
 
 The API offers the following interfaces that are required to be implemented by each implementations:
+
 - Subscriber
 - Subscription
 - Publisher

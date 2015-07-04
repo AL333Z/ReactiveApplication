@@ -2,7 +2,7 @@
 
 A Future is an immutable handle to a value or a failure that will become availlable in the future time. Another possible definition is that Futures are monads that handles **exceptions** and **latency**. A fist simple possible definition in Scala is:
 
-```scala
+```
 trait Future[T] {
     def onComplete(callback: Try[T] => Unit)
         (implicit executor: ExecutionContext): Unit
@@ -15,6 +15,7 @@ object Future {
 ```
 
 This first definition put some important concepts directly in the type definitions:
+
 - a Future is parametrized on a type `T`
 - a Future may **fail**, returning a `Try.Failure`
 - a Future may **succeed** (successfully completed), returning a `Try.Success[T]`
@@ -23,7 +24,7 @@ Futures are really useful in defining operations that will be executed at some p
 
 A more complete and precise definition for Future is the following:
 
-```scala
+```
 trait Awaitable[T] extends AnyRef {
     abstract def ready(atMost: Duration): Unit
     abstract def result(atMost: Duration): T
@@ -44,7 +45,7 @@ object Future {
 In the scala library, Futures are already implemented in the `scala.concurrent` package.
 In this package, `Future[T]` is a type which denotes future objects, whereas `future` is a method which creates and schedules an asynchronous computation, and then returns a future object which will be completed with the result of that computation. An example of the usage of Future coming from the Scala documentation is the following:
 
-```scala
+```
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 
@@ -55,12 +56,14 @@ val f: Future[List[Friend]] = future {
 ```
 
 The the previous example shows some key points:
+
 -  To obtain the list of friends of a user, a request has to be sent over a network, which can take a long time. Wrapping the request inside the `future` method **doesn't block** the rest of the program execution while **waiting** for a response.
 - All the computation is performed **asynchronously**.
 - The list of friends becomes available in the future once the server responds.
 - If the request fails, the future itself will fail.
 
 To obtain the value of a Future, the library offers two main solution:
+
 - the client **blocks** its computation and wait until the future is completed
 - the client **register a callback** by using the `onComplete` method, that was alredy depicted at the beginning of this chapter.
 
@@ -76,7 +79,7 @@ The `filter` method creates a new future which contains the value of the origina
 
 The presence of these methods enable the Future type to also supports for-comprehension. An example, taken from the documentation, of for-comprehension in practice is the following:
 
-```scala
+```
 val usdQuote = future { connection.getCurrentValue(USD) }
 val chfQuote = future { connection.getCurrentValue(CHF) }
 
@@ -93,7 +96,7 @@ purchase onSuccess {
 
 that is translated to:
 
-```scala
+```
 val purchase: Future[Int] = usdQuote flatMap {
   usd =>
   chfQuote

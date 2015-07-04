@@ -3,7 +3,7 @@
 A **Subscription** abstracts the notion of a subscriber's communication channel back to the publisher. This channel is what enables the subscriber to either cancel the subscription or signal demand.
 Its definition is as follows.
 
-```java
+```
 public interface Subscription {
     public void request(long n);
     public void cancel();

@@ -10,11 +10,13 @@ In regards to **expressing a computation in terms of a flow of intermediate step
 Scala.React's Signal type has no operator at all, and lets the developer to build a "reactive" computation with an imperative-style code, at least in appearance. Infact, signal expressions and the magic behind `Var` and `Val` implicit conversion looks natural to a developer with an object oriented background.
 
 All the other libraries introduce an approach based on operators, indeed:
+
 - RxJava offers a wide range of **methods** in the `Observable` type;
 - ReactiveCocoa offers a wide range of **free functions**, used in combination with the pipe-forward operator `|>` on the `Signal` and `SignalProducer` type to give the user an elegant way to build a chain of operators without loosing the purity of the approach based on free functions;
 - Akka Strams offers a (still) minimal but effective set of **components**, with the foundamental abstraction defined in terms of the `Flow`, `Sink` and `Source` type, and the ability to build linear or graph computations simply using the to `~>` operator.
 
 All the library previously introduced presented an high level of declarativness, with a good level of intregation in the ecosystem they belong to:
+
 - Scala.React does an amazing job in solving the issues of the "standard" observer pattern leveraging on the construct offered by the Scala language;
 - RxJava offer a pretty straigh-forward implementation of Rx to the Java ecosystem. Both the implementation and the interfaces really benefitted by the advent of Java 8 and lambda expression (or, in Android, Retrolambda) in the language ecosystem;
 - RAC has come a long way from its Objective-C years, and now, with Swift and the current 3.0 version, offers a nice and clean set of interfaces and abstractions;
@@ -37,6 +39,7 @@ In the context of mobile applications, currently RAC doesn't directly solve this
 Coming from an OO background, applying RP seems quite unnatural at first, since the way that most developers learnt programming is tipycally with an imperative approach.
 
 What RP propose is a more declarative approach to solving problems, that leverages to some well defined principles:
+
 - a set of minimal abstractions, that allow to wrap computations in which latency plays a main role, in an elegant way;
 - a set of operators with a clear semantics, that allows to build typesafe and statically-typed computation chains, without worrying about classic concurrency issues but focusing mainly on better expressing what each computation should do.
 

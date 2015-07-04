@@ -4,7 +4,7 @@ Using Akka Streams abstractions, building a processing pipeline that solves the 
 
 In Akka Streams, to build a processing pipeline the first thing to get is a `Source`. In this case, let's start with an utility class that takes care of interacting to Twitter' APIs, exposing a method `listenAndStream` that returns a `Source[Tweet, Unit]`.
 
-```scala
+```
 class TwitterStreamListener(filter: Array[String], config: Configuration) {
 
   // ...
@@ -17,23 +17,29 @@ This method will introduce tweets regarding our two brands as they are pubblishe
 
 Once we get the source of our items, two further steps to performs are the ones that assign to each tweet a "static score", and then a valutation.
 
-```scala
+```
   val g = FlowGraph.closed() { implicit builder: FlowGraph.Builder[Unit] =>
     import akka.stream.scaladsl.FlowGraph.Implicits._
 
-    val filters: scala.collection.immutable.List[String] = "google" :: "apple" :: List() // our targets brands
-    val twitterStreamListener = new TwitterStreamListener(filters.toArray, twConfigBuilder.build())
+    // our targets brands
+    val filters: scala.collection.immutable.List[String]
+        = "google" :: "apple" :: List()
+    val twitterStreamListener =
+        new TwitterStreamListener(filters.toArray, twConfigBuilder.build())
 
     val in: Source[Tweet, Unit] = twitterStreamListener.listenAndStream
 
     // assign a "static" score
-    val mapToScore: Flow[Tweet, (Tweet, Double), Unit] = Flow[Tweet].map(tweet => (tweet,
+    val mapToScore: Flow[Tweet, (Tweet, Double), Unit]
+        = Flow[Tweet].map(tweet => (tweet,
       (1.0 + 1.01 * tweet.author.followerCount + 1.02 * tweet.retweetCount)))
 
     // extract the "sentiment" from the tweet (not implemented for real..)
-    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit] = Flow[(Tweet, Double)].map(tweetScoreTuple =>
-      if ( /*... positive or negative content? ...*/) (tweetScoreTuple._1, tweetScoreTuple._2)
-      else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit]
+        = Flow[(Tweet, Double)].map(tweetScoreTuple =>
+            if ( /*... positive or negative content? ...*/)
+                (tweetScoreTuple._1, tweetScoreTuple._2)
+            else (tweetScoreTuple._1, -tweetScoreTuple._2)
     )
 
     // build the pipeline
@@ -47,10 +53,12 @@ At this point, the last node of the linear graph has type `Flow[(Tweet, Double),
 
 The next step allows to determine in which category (brand) each tweet in the stream belongs to. This step is needed, since the informations that come from the APIs refer to both the brands.
 
-```scala
-// for each tweet, detect in which category the tweet has been returned, and return a tuple with this
-// additional information (so we can now group the tweet for category)
-val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit] = Flow[(Tweet, Double)].mapConcat(tuple =>
+```
+// for each tweet, detect in which category the tweet has been returned,
+// and return a tuple with this additional information (so we can now group
+// the tweet for category)
+val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit]
+    = Flow[(Tweet, Double)].mapConcat(tuple =>
   filters
     .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
     .map(matchedFilter => (matchedFilter, tuple._2)))
@@ -63,14 +71,16 @@ Note that now the stream puts out a tuple of `String` and `Double`, that corresp
 
 At this point, the stream of tuples needs to grouped for brand, and then reduced by applying a function that aggregates all the partial result to compose a result. In this simplified case, this function is a sum.
 
-```scala
+```
 // ...
 
 // groups the tweets for brand and sum the valutations
-def sumReducedByKey: Flow[(String, Double), (String, Double), Unit] = reduceByKey(
+def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
+    = reduceByKey(
   filters.length,
     groupKey = (elem: (String, Double)) => elem._1,
-    foldZero = (key: String) => (0.0))(fold = (count: Double, elem: (String, Double)) => elem._2 + count)
+    foldZero = (key: String) => (0.0))(fold
+        = (count: Double, elem: (String, Double)) => elem._2 + count)
 
   // generic reduce by key function
   def reduceByKey[In, K, Out](maximumGroupSize: Int,
@@ -88,7 +98,9 @@ def sumReducedByKey: Flow[(String, Double), (String, Double), Unit] = reduceByKe
         }
     }
 
-    reducedValues.buffer(maximumGroupSize, OverflowStrategy.fail).mapAsyncUnordered(4)(identity)
+    reducedValues
+        .buffer(maximumGroupSize, OverflowStrategy.fail)
+        .mapAsyncUnordered(4)(identity)
 }
 
 // build the pipeline
@@ -108,7 +120,7 @@ From the documentation, where the reduceByKey approach has been taken:
 
 Putting all the pieces together, and adding a limit to 1000 tweets for the sake of brevity, the overall code looks like the following.
 
-```scala
+```
 object MainStreamingExample extends App {
 
   // ... config twitter APIs and client ...
@@ -119,42 +131,52 @@ object MainStreamingExample extends App {
   implicit val ec: ExecutionContext = ExecutionContext.fromExecutorService(execService)
   implicit val materializer = ActorMaterializer()
 
-  val g = FlowGraph.closed() { implicit builder: FlowGraph.Builder[Unit] =>
+  val g = FlowGraph.closed() {
+    implicit builder: FlowGraph.Builder[Unit] =>
+
     import akka.stream.scaladsl.FlowGraph.Implicits._
 
-    val filters: scala.collection.immutable.List[String] = "google" :: "apple" :: List() // our targets brands
+    // our targets brands
+    val filters: scala.collection.immutable.List[String] = "google" :: "apple" :: List()
     val twitterStreamListener = new TwitterStreamListener(filters.toArray, twConfigBuilder.build())
 
     val in: Source[Tweet, Unit] = twitterStreamListener.listenAndStream
-    val out: Sink[(String, Double), Future[Unit]] = Sink.foreach[(String, Double)](t =>
+    val out: Sink[(String, Double), Future[Unit]]
+        = Sink.foreach[(String, Double)](t =>
       println("[Out] key: " + t._1 + " partial score: " + t._2))
 
     // limit the elaboration to 1000 tweets
     val take: Flow[Tweet, Tweet, Unit] = Flow[Tweet].take(1000)
 
     // assign a "static" score
-    val mapToScore: Flow[Tweet, (Tweet, Double), Unit] = Flow[Tweet].map(tweet => (tweet,
-      (1.0 + 1.01 * tweet.author.followerCount + 1.02 * tweet.retweetCount)))
+    val mapToScore: Flow[Tweet, (Tweet, Double), Unit]
+        = Flow[Tweet].map(tweet => (tweet,
+            (1.0 + 1.01 * tweet.author.followerCount)))
 
     // extract the "sentiment" from the tweet (not implemented for real..)
-    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit] = Flow[(Tweet, Double)].map(tweetScoreTuple =>
-      if (/*... positive or negative content? ...*/) (tweetScoreTuple._1, tweetScoreTuple._2)
-      else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit]
+        = Flow[(Tweet, Double)].map(tweetScoreTuple =>
+            if (/*... positive or negative content? ...*/)
+                (tweetScoreTuple._1, tweetScoreTuple._2)
+            else (tweetScoreTuple._1, -tweetScoreTuple._2)
     )
 
     // for each tweet, detect in which category the tweet has been returned, and return a tuple with this
     // additional information (so we can now group the tweet for category)
-    val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit] = Flow[(Tweet, Double)].mapConcat(tuple =>
+    val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit]
+        = Flow[(Tweet, Double)].mapConcat(tuple =>
       filters
         .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
         .map(matchedFilter => (matchedFilter, tuple._2))
     )
 
     // groups the tweets for category and sum the valutations
-    def sumReducedByKey: Flow[(String, Double), (String, Double), Unit] = reduceByKey(
-      filters.length,
-      groupKey = (elem: (String, Double)) => elem._1,
-      foldZero = (key: String) => (0.0))(fold = (count: Double, elem: (String, Double)) => elem._2 + count)
+    def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
+        = reduceByKey(
+            filters.length,
+            groupKey = (elem: (String, Double)) => elem._1,
+            foldZero = (key: String) => (0.0))(
+            fold = (count: Double, elem: (String, Double)) => elem._2 + count)
 
     // generic reduce by key function
     def reduceByKey[In, K, Out](maximumGroupSize: Int,
@@ -172,7 +194,9 @@ object MainStreamingExample extends App {
           }
       }
 
-      reducedValues.buffer(maximumGroupSize, OverflowStrategy.fail).mapAsyncUnordered(4)(identity)
+      reducedValues
+        .buffer(maximumGroupSize, OverflowStrategy.fail)
+        .mapAsyncUnordered(4)(identity)
     }
 
     // build the pipeline

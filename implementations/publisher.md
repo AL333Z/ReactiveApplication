@@ -2,7 +2,7 @@
 
 The **Publisher** interface has only one method to impelement, and is as follows.
 
-```java
+```
 public interface Publisher<T> {
     public void subscribe(Subscriber<? super T> s);
 }

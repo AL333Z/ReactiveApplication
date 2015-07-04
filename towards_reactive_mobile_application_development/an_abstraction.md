@@ -13,10 +13,12 @@ The **Model** provides a view-independent representation of the business entitie
 The **View** doesn't show something relevant at this stage, since it heavily depends on platform-specific abstractions, and for this reason it will be better depicted in the next two sections.
 
 The **ViewModel** is the bridge between the view and the model, wrapping all the presentation logic. In particular, there're two concrete type of viewmodels:
+
 - `WordListViewModel`, that represent the viewmodel for the list view, as a whole;
 - `WordViewModel`, that represent the viewmodel for a single item of the list.
 
 `WordListViewModel` use a `WordService`, that is a class that wraps all the network and parsing operations, returning a `WordResponse`, that contains an array of `Word`. `WordListViewModel` has two `MutableProperty`:
+
 - `isLoading`, that indicates if there's a fetch request running
 - `words`, that contains the updated list of words
 
