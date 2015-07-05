@@ -1,0 +1,1938 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.2.18)  5 JUL 2015 18:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**TESI.TEX
+(./TESI.TEX
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 21 languages loaded.
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/05/16 v3.9f The Babel package
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/05/16 v3.9f Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen104
+))
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks17
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks26
+)
+(./deistesi.sty
+Package: deistesi 2002/10/10 Redefines maketitle for D.E.I.S. University of Bol
+ogna Thesis and changes title size; modified by Cesare Monti from modified by F
+ranco Callegati see line commented above
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count101
+\mult@box=\box28
+\multicol@leftmargin=\dimen113
+\c@unbalance=\count102
+\c@collectmore=\count103
+\doublecol@number=\count104
+\multicoltolerance=\count105
+\multicolpretolerance=\count106
+\full@width=\dimen114
+\page@free=\dimen115
+\premulticols=\dimen116
+\postmulticols=\dimen117
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box29
+\last@line=\box30
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count107
+\c@finalcolumnbadness=\count108
+\last@try=\dimen118
+\multicolovershoot=\dimen119
+\multicolundershoot=\dimen120
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\multicol@sort@counter=\count109
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks27
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count110
+))
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
+))
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip51
+\f@ncyO@elh=\skip52
+\f@ncyO@erh=\skip53
+\f@ncyO@olh=\skip54
+\f@ncyO@orh=\skip55
+\f@ncyO@elf=\skip56
+\f@ncyO@erf=\skip57
+\f@ncyO@olf=\skip58
+\f@ncyO@orf=\skip59
+)
+(./TESI.aux
+
+LaTeX Warning: Label `evaluation-model' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `signal' multiply defined.
+
+
+LaTeX Warning: Label `model' multiply defined.
+
+
+LaTeX Warning: Label `data-binding' multiply defined.
+
+
+LaTeX Warning: Label `viewmodel' multiply defined.
+
+
+LaTeX Warning: Label `view' multiply defined.
+
+
+LaTeX Warning: Label `considerations' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `subscription' multiply defined.
+
+)
+\openout1 = `TESI.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+ (/usr/local/texlive/2013basic/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen123
+\scratchbox=\box54
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen124
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks29
+) (/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+
+
+! Package ifpdf Error: Name clash, \ifpdf is already defined.
+
+See the ifpdf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173     }
+           %
+? 
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+)) (/usr/local/texlive/2013basic/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.jpg,.tif,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 61.
+ (/usr/local/texlive/2013basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+
+! LaTeX Error: Environment medium undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \frontmatter \maketitle
+                             \pagestyle{plain} \tableofcontents
+? 
+
+! LaTeX Error: \begin{center} on input line 61 ended by \end{medium}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \frontmatter \maketitle
+                             \pagestyle{plain} \tableofcontents
+? 
+[1
+
+
+
+{/usr/local/texlive/2013basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2
+
+] [3] [4
+
+] [5] [6
+
+] (./TESI.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [7
+
+]
+[8])
+\tf@toc=\write3
+\openout3 = `TESI.toc'.
+
+ (./introduzione.tex [9] [10
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+ [11])
+[12] (./capitolo1.tex
+Chapter 1.
+[1
+
+
+]
+Overfull \hbox (23.04112pt too wide) in paragraph at lines 59--65
+[]\OT1/cmr/m/n/12 Informally, \OT1/cmr/bx/n/12 func-tional re-ac-tive pro-gram-
+ming \OT1/cmr/m/n/12 is a pro-gram-ming paradigm
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+Overfull \hbox (15.37762pt too wide) in paragraph at lines 104--109
+[]\OT1/cmr/m/n/12 Another name that El-liott sug-gests for con-tin-u-ous is \OT
+1/cmr/m/it/12 resolution-independent\OT1/cmr/m/n/12 ,
+ []
+
+[3] [4] <imgs/eval.png, id=61, 436.63126pt x 204.765pt>
+File: imgs/eval.png Graphic file (type png)
+ <use imgs/eval.png>
+Package pdftex.def Info: imgs/eval.png used on input line 224.
+(pdftex.def)             Requested size: 327.47264pt x 153.57335pt.
+
+[5 <./imgs/eval.png>] <imgs/glitches.png, id=67, 456.70625pt x 408.52625pt>
+File: imgs/glitches.png Graphic file (type png)
+
+<use imgs/glitches.png>
+Package pdftex.def Info: imgs/glitches.png used on input line 281.
+(pdftex.def)             Requested size: 342.52884pt x 306.39394pt.
+ [6] [7 <./imgs/glitches.png>] [8]
+Overfull \hbox (6.30597pt too wide) in paragraph at lines 379--386
+[]\OT1/cmr/m/n/12 In 2013 Type-safe launched http://www.reactivemanifesto.org, 
+which tried
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 393.
+
+) (./capitolo2.tex [9] [10]
+Chapter 2.
+
+Overfull \hbox (1.21852pt too wide) in paragraph at lines 33--36
+[]\OT1/cmr/m/n/12 The au-thors aims to pro-vide and de-pict an ef-fi-cient use 
+of object-oriented,
+ []
+
+[11
+
+] [12] [13] [14]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 213
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 213.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 213.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 262.
+
+[15]
+Overfull \hbox (11.15971pt too wide) in paragraph at lines 274--281
+\OT1/cmr/m/n/12 started with an in-tu-ition of Erik Mei-jer, that the-o-rized t
+hat \OT1/cmr/bx/n/12 it-er-able/iterator
+ []
+
+[16] <imgs/marble.png, id=107, 554.07pt x 268.00125pt>
+File: imgs/marble.png Graphic file (type png)
+ <use imgs/marble.png>
+Package pdftex.def Info: imgs/marble.png used on input line 323.
+(pdftex.def)             Requested size: 415.55148pt x 201.00043pt.
+
+Overfull \hbox (31.43929pt too wide) in paragraph at lines 323--324
+ [][] 
+ []
+
+
+Overfull \hbox (17.40097pt too wide) in paragraph at lines 354--359
+[]\OT1/cmr/m/n/12 An en-tity can sub-scribe its in-ter-est in the val-ues com-i
+ng from an \OT1/cmtt/m/n/12 Observalbe
+ []
+
+[17 <./imgs/marble.png>]
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 365--365
+[]\OT1/cmtt/m/n/12 Observable.just("Hello, world!").subscribe(s -> System.out.p
+rintln(s));[] 
+ []
+
+[18]
+! Undefined control sequence.
+l.426 \subsubsubsection
+                       {Map}\label{map}
+? 
+<imgs/map.png, id=115, 642.4pt x 306.14375pt>
+File: imgs/map.png Graphic file (type png)
+ <use imgs/map.png>
+Package pdftex.def Info: imgs/map.png used on input line 435.
+(pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
+
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 477--477
+[]\OT1/cmtt/m/n/12 public final <R> Observable<R> map(Func1<? super T, ? extend
+s R> func) {[] 
+ []
+
+[19 <./imgs/map.png>]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 477--477
+[]\OT1/cmtt/m/n/12 public final class OperatorMap<T, R> implements Operator<R, 
+T> {[] 
+ []
+
+
+Overfull \hbox (29.613pt too wide) in paragraph at lines 477--477
+[]    \OT1/cmtt/m/n/12 public OperatorMap(Func1<? super T, ? extends R> transfo
+rmer) {[] 
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 477--477
+[]    \OT1/cmtt/m/n/12 public Subscriber<? super T> call(final Subscriber<? sup
+er R> o) {[] 
+ []
+
+
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 477--477
+[]                    \OT1/cmtt/m/n/12 onError(OnErrorThrowable.addValueAsLastC
+ause(e, t));[] 
+ []
+
+! Undefined control sequence.
+l.479 \subsubsubsection
+                       {FlatMap}\label{flatmap}
+? 
+<imgs/flatMap.png, id=121, 642.4pt x 311.1625pt>
+File: imgs/flatMap.png Graphic file (type png)
+ <use imgs/flatMap.png>
+Package pdftex.def Info: imgs/flatMap.png used on input line 488.
+(pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
+
+! Undefined control sequence.
+l.492 \subsubsubsection
+                       {Filter}\label{filter}
+? 
+<imgs/filter.png, id=122, 642.4pt x 311.1625pt>
+File: imgs/filter.png Graphic file (type png)
+ <use imgs/filter.png>
+Package pdftex.def Info: imgs/filter.png used on input line 498.
+(pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
+
+! Undefined control sequence.
+l.502 \subsubsubsection
+                       {Scan}\label{scan}
+? 
+[20] [21 <./imgs/flatMap.png> <./imgs/filter.png>]
+<imgs/scan.png, id=131, 642.4pt x 321.2pt>
+File: imgs/scan.png Graphic file (type png)
+ <use imgs/scan.png>
+Package pdftex.def Info: imgs/scan.png used on input line 513.
+(pdftex.def)             Requested size: 321.19922pt x 160.59961pt.
+
+! Undefined control sequence.
+l.517 \subsubsubsection
+                       {Take}\label{take}
+? 
+<imgs/take.png, id=132, 642.4pt x 306.14375pt>
+File: imgs/take.png Graphic file (type png)
+ <use imgs/take.png>
+Package pdftex.def Info: imgs/take.png used on input line 524.
+(pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
+
+! Undefined control sequence.
+l.528 \subsubsubsection
+                       {A complex example}\label{a-complex-example}
+? 
+
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 550--550
+[]\OT1/cmtt/m/n/12 query("Hello, world!")                    // -> Observable<L
+ist<String>>[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 550--550
+[]  \OT1/cmtt/m/n/12 .flatMap(urls -> Observable.from(urls)) // -> Observable<S
+tring>[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 550--550
+[]  \OT1/cmtt/m/n/12 .flatMap(url -> getTitle(url))          // -> Observable<S
+tring>[] 
+ []
+
+[22 <./imgs/scan.png>]
+Overfull \hbox (79.01303pt too wide) in paragraph at lines 550--550
+[]  \OT1/cmtt/m/n/12 .scan((sum, item) -> new Pair<Integer, Word>(sum.first + 1
+, item.second))[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 550--550
+[]      \OT1/cmtt/m/n/12 System.out.println("Pos: " + indexItemPair.first + ": 
+title:" +[] 
+ []
+
+[23 <./imgs/take.png>]
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 590--590
+[]      \OT1/cmtt/m/n/12 public void onCompleted() { System.out.println("Comple
+ted!"); }[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 590--590
+[]      \OT1/cmtt/m/n/12 public void onError(Throwable e) { System.out.println(
+"Ouch!"); }[] 
+ []
+
+[24]
+Overfull \hbox (4.53392pt too wide) in paragraph at lines 664--667
+[]\OT1/cmtt/m/n/12 immediate( )\OT1/cmr/m/n/12 , that ex-e-cutes work \OT1/cmr/
+bx/n/12 im-me-di-ately \OT1/cmr/m/n/12 on the cur-rent thread 
+ []
+
+[25] <imgs/pubsubj.png, id=148, 642.4pt x 396.48125pt>
+File: imgs/pubsubj.png Graphic file (type png)
+ <use imgs/pubsubj.png>
+Package pdftex.def Info: imgs/pubsubj.png used on input line 728.
+(pdftex.def)             Requested size: 321.19922pt x 198.24013pt.
+
+<imgs/replaysub.png, id=149, 642.4pt x 406.51875pt>
+File: imgs/replaysub.png Graphic file (type png)
+ <use imgs/replaysub.png>
+Package pdftex.def Info: imgs/replaysub.png used on input line 741.
+(pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
+
+[26] [27 <./imgs/pubsubj.png> <./imgs/replaysub.png>]
+<imgs/asyncsubj.png, id=158, 642.4pt x 406.51875pt>
+File: imgs/asyncsubj.png Graphic file (type png)
+ <use imgs/asyncsubj.png>
+Package pdftex.def Info: imgs/asyncsubj.png used on input line 755.
+(pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
+
+<imgs/behasubj.png, id=159, 642.4pt x 416.55624pt>
+File: imgs/behasubj.png Graphic file (type png)
+ <use imgs/behasubj.png>
+Package pdftex.def Info: imgs/behasubj.png used on input line 767.
+(pdftex.def)             Requested size: 321.19922pt x 208.2776pt.
+
+[28 <./imgs/asyncsubj.png>] [29 <./imgs/behasubj.png>] [30] [31]
+Overfull \hbox (23.56418pt too wide) in paragraph at lines 961--964
+\OT1/cmr/m/n/12 cold Sig-nal at the type level, so RAC of-fers both the \OT1/cm
+tt/m/n/12 Signal \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 SignalProducer
+ []
+
+[32]
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 978
+.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 978.
+
+
+LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textless' on input line 978.
+
+[33] [34]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1121--1121
+[]\OT1/cmtt/m/n/12 func createSignalProducer() -> SignalProducer<String, NoErro
+r> {[] 
+ []
+
+[35]
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 1153--1153
+[]      \OT1/cmtt/m/n/12 transform: Signal<T, E> -> Signal<U, F>) -> SignalProd
+ucer<U, F> {[] 
+ []
+
+[36]
+Overfull \hbox (47.35472pt too wide) in paragraph at lines 1227--1230
+\OT1/cmr/m/n/12 a Sig-nal-Pro-ducer for each in-put, with the type \OT1/cmtt/m/
+n/12 Input -\OML/cmtt/m/n/12 > \OT1/cmtt/m/n/12 SignalProducer\OML/cmtt/m/n/12 
+<\OT1/cmtt/m/n/12 Output,
+ []
+
+[37] [38]
+Overfull \hbox (3.72128pt too wide) in paragraph at lines 1310--1312
+[]\OT1/cmr/m/n/12 The APIs also of-fer an-other core ab-strac-tion to build com
+-pu-ta-tion graphs: 
+ []
+
+[39] [40]
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1419--1419
+[]      \OT1/cmtt/m/n/12 case (count, tweet) => println(count + " Current tweet
+: "[] 
+ []
+
+[41] [42] [43] <imgs/graph.png, id=214, 400.49625pt x 112.42pt>
+File: imgs/graph.png Graphic file (type png)
+
+<use imgs/graph.png>
+Package pdftex.def Info: imgs/graph.png used on input line 1553.
+(pdftex.def)             Requested size: 300.37144pt x 84.31479pt.
+ [44 <./imgs/graph.png (PNG copy)>]
+
+! Package inputenc Error: Unicode char \u8:￼ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1628 \end{verbatim}
+                     
+? 
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1628--1628
+[]      \OT1/cmtt/m/n/12 merge <~ Flow[Int].buffer(10, OverflowStrategy.dropHea
+d) <~ bcast[] 
+ []
+
+[45]) (./capitolo3.tex [46]
+Chapter 3.
+[47
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
+ Make it at least 27.05003pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 142--142
+[]    \OT1/cmtt/m/n/12 .scan((sum, item) -> new Pair<>(sum.first + 1, item.seco
+nd))[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 142--142
+[]    \OT1/cmtt/m/n/12 // Observable<Pair<Integer, Word>> -> Observable<WordLis
+tItem>[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 142--142
+[]         \OT1/cmtt/m/n/12 = new WordListAdapter.WordListItem(indexItemPair.se
+cond);[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 142--142
+[]        \OT1/cmtt/m/n/12 item.setHighlighted(...); // highlight current day i
+tem[] 
+ []
+
+[49]
+Overfull \hbox (23.438pt too wide) in paragraph at lines 142--142
+[]    \OT1/cmtt/m/n/12 .toList() // converting to list, since the adapter need 
+a list[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 142--142
+[]             \OT1/cmtt/m/n/12 new WordListAdapter(wordListActivity, wordItemL
+ist));[] 
+ []
+
+
+Overfull \hbox (45.59752pt too wide) in paragraph at lines 147--153
+[]\OT1/cmr/m/n/12 In the code snip-pet, \OT1/cmtt/m/n/12 flatMap \OT1/cmr/m/n/1
+2 is used to trans-form an \OT1/cmtt/m/n/12 Observable\OML/cmtt/m/n/12 <\OT1/cm
+tt/m/n/12 List\OML/cmtt/m/n/12 <\OT1/cmtt/m/n/12 Word\OML/cmtt/m/n/12 >>
+ []
+
+
+Underfull \vbox (badness 3826) has occurred while \output is active []
+
+ [50]
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 176--176
+[]\OT1/cmtt/m/n/12 func getWords(month: Int, year: Int) -> SignalProducer<[Word
+], NSError>[] 
+ []
+
+
+Overfull \hbox (17.263pt too wide) in paragraph at lines 197--197
+[]    \OT1/cmtt/m/n/12 init(id: Int, word: String, day: Int, month: Int, year: 
+Int){[] 
+ []
+
+[51]
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 231--231
+[]    \OT1/cmtt/m/n/12 |> scan( (0, nil), { (last, current) in (last.0 + 1, cur
+rent.1) })[] 
+ []
+
+[52] <imgs/ios_traditional_mvc.png, id=243, 514.92375pt x 196.735pt>
+File: imgs/ios_traditional_mvc.png Graphic file (type png)
+
+<use imgs/ios_traditional_mvc.png>
+Package pdftex.def Info: imgs/ios_traditional_mvc.png used on input line 267.
+(pdftex.def)             Requested size: 386.19186pt x 147.55087pt.
+
+Overfull \hbox (2.07967pt too wide) in paragraph at lines 267--268
+ [][] 
+ []
+
+<imgs/cocoa_mvc.png, id=244, 515.9275pt x 186.6975pt>
+File: imgs/cocoa_mvc.png Graphic file (type png)
+ <use imgs/cocoa_mvc.png>
+Package pdftex.def Info: imgs/cocoa_mvc.png used on input line 291.
+(pdftex.def)             Requested size: 386.94467pt x 140.02277pt.
+
+Overfull \hbox (2.83247pt too wide) in paragraph at lines 291--292
+ [][] 
+ []
+
+
+Overfull \hbox (49.72467pt too wide) in paragraph at lines 309--314
+\OT1/cmr/m/n/12 al-ready has and man-ages a view (\OT1/cmtt/m/n/12 UIViewContro
+ller\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 UITableViewController\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (49.82364pt too wide) in paragraph at lines 309--314
+\OT1/cmtt/m/n/12 UICollectionViewController\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 U
+ISplitViewController\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 TabBarController\OT1/cmr
+/m/n/12 ,
+ []
+
+[53 <./imgs/ios_traditional_mvc.png>]
+<imgs/real_mvc.png, id=248, 374.39874pt x 74.2775pt>
+File: imgs/real_mvc.png Graphic file (type png)
+ <use imgs/real_mvc.png>
+Package pdftex.def Info: imgs/real_mvc.png used on input line 326.
+(pdftex.def)             Requested size: 280.79837pt x 55.70798pt.
+
+[54 <./imgs/cocoa_mvc.png> <./imgs/real_mvc.png>] [55]
+<imgs/mvvm.png, id=257, 456.20438pt x 175.40532pt>
+File: imgs/mvvm.png Graphic file (type png)
+ <use imgs/mvvm.png>
+Package pdftex.def Info: imgs/mvvm.png used on input line 412.
+(pdftex.def)             Requested size: 342.15244pt x 131.55365pt.
+ [56 <./imgs/mvvm.png>] <imgs/common_arch.png, id=261, 744.7825pt x 541.02126pt
+>
+File: imgs/common_arch.png Graphic file (type png)
+
+<use imgs/common_arch.png>
+Package pdftex.def Info: imgs/common_arch.png used on input line 482.
+(pdftex.def)             Requested size: 372.39034pt x 270.50996pt.
+ [57] [58 <./imgs/common_arch.png>]
+Overfull \hbox (50.00052pt too wide) in paragraph at lines 528--532
+[]\OT1/cmtt/m/n/12 WordViewModel \OT1/cmr/m/n/12 is a pretty sim-ple en-tity, o
+nly con-tain-ing some \OT1/cmtt/m/n/12 ConstantProperty\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (1.31644pt too wide) in paragraph at lines 533--537
+[]\OT1/cmtt/m/n/12 MutableProperty \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 Constan
+tProperty \OT1/cmr/m/n/12 are two ab-strac-tions that help
+ []
+
+[59]
+Overfull \hbox (15.08574pt too wide) in paragraph at lines 555--558
+[]\OT1/cmr/m/n/12 Another ex-am-ple are the \OT1/cmtt/m/n/12 MutableProperty \O
+T1/cmr/m/n/12 and \OT1/cmtt/m/n/12 ConstantProperty \OT1/cmr/m/n/12 classes,
+ []
+
+
+Overfull \hbox (19.60771pt too wide) in paragraph at lines 555--558
+\OT1/cmr/m/n/12 that un-der the hood are im-ple-mented as \OT1/cmtt/m/n/12 Subj
+ect \OT1/cmr/m/n/12 (or \OT1/cmtt/m/n/12 Signal/SignalProducer\OT1/cmr/m/n/12 )
+. 
+ []
+
+[60] [61]
+Overfull \hbox (17.263pt too wide) in paragraph at lines 705--705
+[]    \OT1/cmtt/m/n/12 public static <T> MutableProperty<T> create(T defaultVal
+ue) {[] 
+ []
+
+[62] [63] [64]
+Overfull \hbox (4.913pt too wide) in paragraph at lines 779--779
+[]                            \OT1/cmtt/m/n/12 Log.e(TAG, throwable.getMessage(
+));[] 
+ []
+
+
+Overfull \hbox (28.70549pt too wide) in paragraph at lines 781--785
+[]\OT1/cmr/m/n/12 As pre-vi-ously in-tro-duced in the ar-chi-tec-ture di-a-gram
+, the \OT1/cmtt/m/n/12 WordListViewModel
+ []
+
+[65]
+Overfull \hbox (4.913pt too wide) in paragraph at lines 820--820
+[]        \OT1/cmtt/m/n/12 this.imageUrl = ConstantProperty.create(word.imageUr
+l);[] 
+ []
+
+
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 880--880
+[]                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setVisibility(mProgre
+ssBar));[] 
+ []
+
+[66]
+Overfull \hbox (72.83803pt too wide) in paragraph at lines 880--880
+[]        \OT1/cmtt/m/n/12 mAdapter = new WordListAdapter(wordListViewModel.wor
+ds.observe());[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 880--880
+[]                        \OT1/cmtt/m/n/12 selectedWordViewModel.wordTitle.valu
+e(),[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1010--1010
+[]    \OT1/cmtt/m/n/12 extends RecyclerView.Adapter<WordListAdapter.WordViewHol
+der> {[] 
+ []
+
+
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1010--1010
+[]    \OT1/cmtt/m/n/12 private List<WordViewModel> mViewModels = new LinkedList
+<>();[] 
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1010--1010
+[]    \OT1/cmtt/m/n/12 private PublishSubject<WordViewModel> mAdapterSelectedIt
+emSubject;[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1010--1010
+[]     \OT1/cmtt/m/n/12 * Constructor that returns a WordListAdapter, with an o
+bservable[] 
+ []
+
+[67]
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1010--1010
+[]        \OT1/cmtt/m/n/12 viewModelsObservable.subscribe(next -> updateItems(n
+ext));[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+[]            \OT1/cmtt/m/n/12 .inflate(R.layout.word_list_item, viewGroup, fal
+se);[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [68]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+[]    \OT1/cmtt/m/n/12 public void onBindViewHolder(WordViewHolder holder, int 
+i) {[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+[]        \OT1/cmtt/m/n/12 holder.viewRecycledBehavior = BehaviorSubject.create
+();[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1010--1010
+[]        \OT1/cmtt/m/n/12 private TextView mDayTextView; private TextView mMon
+thTextView;[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1010--1010
+[]        \OT1/cmtt/m/n/12 private TextView mYearTextView; private TextView mWo
+rdTextView;[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [69]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+[]                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mMonthTextVie
+w));[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+[]                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mYearTextView
+));[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+[]                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mWordTextView
+));[] 
+ []
+
+
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1010--1010
+[]                    \OT1/cmtt/m/n/12 .takeUntil(viewRecycledBehavior.asObserv
+able())[] 
+ []
+
+
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 1010--1010
+[]                    \OT1/cmtt/m/n/12 .subscribe(d -> mImageView.setImageDrawa
+ble(d));[] 
+ []
+
+
+Overfull \hbox (41.0565pt too wide) in paragraph at lines 1022--1028
+[]\OT1/cmr/m/n/12 the \OT1/cmtt/m/n/12 onClick \OT1/cmr/m/n/12 events are pushe
+d through a \OT1/cmtt/m/n/12 PublishSubject\OML/cmtt/m/n/12 <\OT1/cmtt/m/n/12 W
+ordViewModel\OML/cmtt/m/n/12 >\OT1/cmr/m/n/12 .
+ []
+
+[70] [71]
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1142--1142
+[]    \OT1/cmtt/m/n/12 let words = MutableProperty<[WordViewModel]>([WordViewMo
+del]())[] 
+ []
+
+[72]
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1142--1142
+[]        \OT1/cmtt/m/n/12 // retrieve the words, create a view model for each 
+words,[] 
+ []
+
+[73]
+Overfull \hbox (20.7069pt too wide) in paragraph at lines 1167--1173
+\OT1/cmr/m/n/12 The view layer is rep-re-sented by three main com-po-nents: - a
+ \OT1/cmtt/m/n/12 UIViewController\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (38.46051pt too wide) in paragraph at lines 1167--1173
+\OT1/cmr/m/n/12 named \OT1/cmtt/m/n/12 WordsViewController\OT1/cmr/m/n/12 , tha
+t con-tains a \OT1/cmtt/m/n/12 UITableView\OT1/cmr/m/n/12 ; - a \OT1/cmtt/m/n/1
+2 UITableViewCell\OT1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1234--1234
+[]    \OT1/cmtt/m/n/12 @IBOutlet weak var loadActivityIndicator: UIActivityIndi
+catorView![] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1234--1234
+[]    \OT1/cmtt/m/n/12 private var bindingHelper: TableViewBindingHelper<WordVi
+ewModel>![] 
+ []
+
+[74]
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1234--1234
+[]        \OT1/cmtt/m/n/12 let viewModel = WordListViewModel(wordService: wordS
+ervice)[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1234--1234
+[]        \OT1/cmtt/m/n/12 bindingHelper = TableViewBindingHelper(tableView: wo
+rdsTable,[] 
+ []
+
+
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 1234--1234
+[]            \OT1/cmtt/m/n/12 sourceSignal: viewModel.words.producer, nibName:
+ "WordCell")[] 
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1234--1234
+[]            \OT1/cmtt/m/n/12 message: "You selected: \(wordViewModel.wordTitl
+e.value)",[] 
+ []
+
+[75]
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 1283--1283
+[]         \OT1/cmtt/m/n/12 = self.rac_prepareForReuseSignal.asSignal() |> toVo
+idSignal[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1283--1283
+[]            \OT1/cmtt/m/n/12 monthLabel.rac_text <~ wordViewModel.month.produ
+cer[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1283--1283
+[]            \OT1/cmtt/m/n/12 wordLabel.rac_text <~ wordViewModel.wordTitle.pr
+oducer[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1283--1283
+[]            \OT1/cmtt/m/n/12 picImageSignalProducer(wordViewModel.imageUrl.va
+lue)[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1283--1283
+[]                \OT1/cmtt/m/n/12 |> observeOn(QueueScheduler.mainQueueSchedul
+er)[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1283--1283
+[]                \OT1/cmtt/m/n/12 |> on(started: { self.wordImageView.image = 
+nil })[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1320--1320
+[]\OT1/cmtt/m/n/12 // a helper that makes it easier to bind to UITableView inst
+ances[] 
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1320--1320
+[]        \OT1/cmtt/m/n/12 sourceSignal: SignalProducer<[T], NoError>, nibName:
+ String) {[] 
+ []
+
+
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1320--1320
+[]            \OT1/cmtt/m/n/12 self.dataSource.data = data.map { $0 as AnyObjec
+t }[] 
+ []
+
+
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1320--1320
+[]    \OT1/cmtt/m/n/12 // returns a Signal which emits the items selected by th
+e user[] 
+ []
+
+
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1320--1320
+[]    \OT1/cmtt/m/n/12 func getTableViewSelectedItemSignal() -> Signal<T, NoErr
+or> {[] 
+ []
+
+[77]) (./capitolo4.tex [78]
+Chapter 4.
+[79
+
+] [80]
+Overfull \hbox (79.01303pt too wide) in paragraph at lines 121--121
+[]        \OT1/cmtt/m/n/12 new TwitterStreamListener(filters.toArray, twConfigB
+uilder.build())[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 121--121
+[]    \OT1/cmtt/m/n/12 val in: Source[Tweet, Unit] = twitterStreamListener.list
+enAndStream[] 
+ []
+
+
+Overfull \hbox (72.83803pt too wide) in paragraph at lines 121--121
+[]    \OT1/cmtt/m/n/12 // extract the "sentiment" from the tweet (not implement
+ed for real..)[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 121--121
+[]    \OT1/cmtt/m/n/12 val mapToValutation: Flow[(Tweet, Double), (Tweet, Doubl
+e), Unit][] 
+ []
+
+[81]
+Overfull \hbox (23.438pt too wide) in paragraph at lines 146--146
+[]\OT1/cmtt/m/n/12 val mapWithCategory: Flow[(Tweet, Double), (String, Double),
+ Unit][] 
+ []
+
+
+Overfull \hbox (29.613pt too wide) in paragraph at lines 146--146
+[]    \OT1/cmtt/m/n/12 .filter(f => tuple._1.body.toLowerCase.contains(f.toLowe
+rCase))[] 
+ []
+
+
+Overfull \hbox (29.613pt too wide) in paragraph at lines 194--194
+[]\OT1/cmtt/m/n/12 def sumReducedByKey: Flow[(String, Double), (String, Double)
+, Unit][] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 194--194
+[]        \OT1/cmtt/m/n/12 = (count: Double, elem: (String, Double)) => elem._2
+ + count)[] 
+ []
+
+[82]
+Overfull \hbox (2.22824pt too wide) in paragraph at lines 213--221
+[]\OT1/cmr/m/n/12 The rea-son for this is that the sub-streams pro-duced by gro
+upBy()
+ []
+
+[83]
+Overfull \hbox (91.36304pt too wide) in paragraph at lines 321--321
+[]        \OT1/cmtt/m/n/12 = new TwitterStreamListener(filters.toArray, twConfi
+gBuilder.build())[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 val in: Source[Tweet, Unit] = twitterStreamListener.list
+enAndStream[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 321--321
+[]      \OT1/cmtt/m/n/12 println("[Out] key: " + t._1 + " partial score: " + t.
+_2))[] 
+ []
+
+[84]
+Overfull \hbox (4.913pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 val take: Flow[Tweet, Tweet, Unit] = Flow[Tweet].take(10
+00)[] 
+ []
+
+
+Overfull \hbox (72.83803pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 // extract the "sentiment" from the tweet (not implement
+ed for real..)[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 val mapToValutation: Flow[(Tweet, Double), (Tweet, Doubl
+e), Unit][] 
+ []
+
+
+Overfull \hbox (72.83803pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 // additional information (so we can now group the tweet
+ for category)[] 
+ []
+
+
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 val mapWithCategory: Flow[(Tweet, Double), (String, Doub
+le), Unit][] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 321--321
+[]        \OT1/cmtt/m/n/12 .filter(f => tuple._1.body.toLowerCase.contains(f.to
+LowerCase))[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 321--321
+[]    \OT1/cmtt/m/n/12 def sumReducedByKey: Flow[(String, Double), (String, Dou
+ble), Unit][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+[87]
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 397--397
+[]        \OT1/cmtt/m/n/12 .filter(f => tuple._1.body.toLowerCase.contains(f.to
+LowerCase))[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 424--424
+[]  \OT1/cmtt/m/n/12 val groupKey: ((String, Double)) => String = tuple => tupl
+e._1[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 424--424
+[]    \OT1/cmtt/m/n/12 = (count: Double, elem: (String, Double)) => elem._2 + c
+ount[] 
+ []
+
+[88]
+Overfull \hbox (11.088pt too wide) in paragraph at lines 480--480
+[]  \OT1/cmtt/m/n/12 val groupKey: ((String, Double)) => String = tuple => tupl
+e._1[] 
+ []
+
+
+Overfull \hbox (11.088pt too wide) in paragraph at lines 480--480
+[]    \OT1/cmtt/m/n/12 = (count: Double, elem: (String, Double)) => elem._2 + c
+ount[] 
+ []
+
+
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 480--480
+[]    \OT1/cmtt/m/n/12 .map(tweet => (tweet, (1.0 + 1.01 * tweet.author.followe
+rCount)))[] 
+ []
+
+
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 480--480
+[]        \OT1/cmtt/m/n/12 .filter(f => tuple._1.body.toLowerCase.contains(f.to
+LowerCase))[] 
+ []
+
+[89]) (./capitolo5.tex [90]
+Chapter 5.
+
+Overfull \hbox (35.16261pt too wide) in paragraph at lines 36--43
+\OT1/cmr/m/n/12 na-tion with the pipe-forward op-er-a-tor \OMS/cmtt/m/n/12 j\OM
+L/cmtt/m/n/12 > \OT1/cmr/m/n/12 on the \OT1/cmtt/m/n/12 Signal \OT1/cmr/m/n/12 
+and \OT1/cmtt/m/n/12 SignalProducer
+ []
+
+[91
+
+]
+Overfull \hbox (28.38568pt too wide) in paragraph at lines 80--80
+[]\OT1/cmr/bx/n/17.28 Hot and Cold, Push and Pull, Back-pressure 
+ []
+
+[92]) (./appendix1.tex [93] [94
+
+]
+Appendix A.
+
+! Package inputenc Error: Unicode char \u8:→ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \end{verbatim}
+                   
+? 
+
+! Package inputenc Error: Unicode char \u8:→ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \end{verbatim}
+                   
+? 
+
+! Package inputenc Error: Unicode char \u8:→ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \end{verbatim}
+                   
+? 
+
+! Package inputenc Error: Unicode char \u8:→ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18 \end{verbatim}
+                   
+? 
+[95] [96]
+Overfull \hbox (4.913pt too wide) in paragraph at lines 114--114
+[]\OT1/cmtt/m/n/12 final case class Right[+A, +B](b: B) extends Either[A, B] {.
+..}[] 
+ []
+
+[97] [98] [99]
+
+! LaTeX Error: Environment Shaded undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 \begin{Shaded}
+                    
+? 
+
+! LaTeX Error: Environment Highlighting undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 \begin{Highlighting}
+                          []
+? 
+! Undefined control sequence.
+l.248 \KeywordTok
+                 {case} \KeywordTok{class} \FunctionTok{Address}\NormalTok{(...
+
+? 
+! Undefined control sequence.
+l.248 \KeywordTok{case} \KeywordTok
+                                   {class} \FunctionTok{Address}\NormalTok{(...
+
+? 
+! Undefined control sequence.
+l.248 ...Tok{case} \KeywordTok{class} \FunctionTok
+                                                  {Address}\NormalTok{(no: S...
+
+? 
+! Undefined control sequence.
+l.248 ...ok{class} \FunctionTok{Address}\NormalTok
+                                                  {(no: String, street: Stri...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Highlighting}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 \end{Highlighting}
+                        
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Shaded}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 \end{Shaded}
+                  
+? 
+
+Overfull \hbox (66.66302pt too wide) in paragraph at lines 261--261
+[]\OT1/cmtt/m/n/12 val initialAddress = Address("10", "Via Sacchi", "Cesena", "
+IT", "47522")[] 
+ []
+
+
+Overfull \hbox (116.06305pt too wide) in paragraph at lines 283--283
+[]\OT1/cmtt/m/n/12 val newPerson = initPerson.copy(address = initPerson.address
+.copy(zip = "47523"))[] 
+ []
+
+[100]
+Overfull \hbox (79.01303pt too wide) in paragraph at lines 333--333
+[]    \OT1/cmtt/m/n/12 set = (obj, value) => outer.set(obj, inner.set(outer.get
+(obj), value)))[] 
+ []
+
+[101]
+Overfull \hbox (1.14908pt too wide) in paragraph at lines 352--355
+\OT1/cmr/m/n/12 An im-por-tant con-cept in func-tional pro-gram-ming is ref-er-
+en-tial transparancy.
+ []
+
+[102] [103] [104] [105] [106]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 605.
+
+
+(/usr/local/texlive/2013basic/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 605.
+ [107]
+Overfull \hbox (17.263pt too wide) in paragraph at lines 646--646
+[]    \OT1/cmtt/m/n/12 def flatMap[A,B](ma: List[A])(f: A => List[B]) = ma flat
+Map f[] 
+ []
+
+[108]
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 \end{verbatim}
+                    
+? 
+) (./appendix2.tex [109] [110
+
+]
+Appendix B.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 11.
+
+[111]
+Overfull \hbox (36.28831pt too wide) in paragraph at lines 80--82
+[]\OT1/cmr/m/n/12 a Fu-ture may \OT1/cmr/bx/n/12 suc-ceed \OT1/cmr/m/n/12 (suc-
+cess-fully com-pleted), re-turn-ing a \OT1/cmtt/m/n/12 Try.Success[T] 
+ []
+
+[112]
+
+! Package inputenc Error: Unicode char \u8:￼ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 \end{verbatim}
+                    
+? 
+
+! Package inputenc Error: Unicode char \u8:￼ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108 \end{verbatim}
+                    
+? 
+
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 108--108
+[]    \OT1/cmtt/m/n/12 def recoverWith(f: PartialFunction[Throwable, Future[T]]
+): Future[T][] 
+ []
+
+
+Overfull \hbox (30.85124pt too wide) in paragraph at lines 110--117
+[]\OT1/cmr/m/n/12 In the scala li-brary, Fu-tures are al-ready im-ple-mented in
+ the \OT1/cmtt/m/n/12 scala.concurrent
+ []
+
+
+Overfull \hbox (17.263pt too wide) in paragraph at lines 126--126
+[]\OT1/cmtt/m/n/12 val session = socialNetwork.createSessionFor("user", credent
+ials)[] 
+ []
+
+[113]
+Overfull \hbox (17.6515pt too wide) in paragraph at lines 159--164
+[]\OT1/cmr/m/n/12 The li-brary also pro-vide the com-pan-ion meth-ods \OT1/cmtt
+/m/n/12 onSuccess \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 onFailure\OT1/cmr/m/n/12
+ ,
+ []
+
+[114]
+Overfull \hbox (45.67331pt too wide) in paragraph at lines 243--245
+[]\OT1/cmr/m/n/12 The Scala stan-dard li-brary al-ready im-ple-ments Promise in
+ the \OT1/cmtt/m/n/12 scala.concurrent
+ []
+
+[115]) (./appendix3.tex [116]
+Appendix C.
+<imgs/stream.png, id=454, 816.04875pt x 236.885pt>
+File: imgs/stream.png Graphic file (type png)
+ <use imgs/stream.png>
+Package pdftex.def Info: imgs/stream.png used on input line 20.
+(pdftex.def)             Requested size: 204.01169pt x 59.2211pt.
+
+[117
+
+ <./imgs/stream.png>] <imgs/merge.png, id=458, 718.685pt x 419.5675pt>
+File: imgs/merge.png Graphic file (type png)
+
+<use imgs/merge.png>
+Package pdftex.def Info: imgs/merge.png used on input line 82.
+(pdftex.def)             Requested size: 179.6708pt x 104.89162pt.
+ <imgs/split.png, id=459, 736.7525pt x 446.66875pt>
+File: imgs/split.png Graphic file (type png)
+
+<use imgs/split.png>
+Package pdftex.def Info: imgs/split.png used on input line 83.
+(pdftex.def)             Requested size: 184.18767pt x 111.6669pt.
+ [118 <./imgs/merge.png> <./imgs/split.png>]
+Overfull \hbox (23.37253pt too wide) in paragraph at lines 122--129
+[]\OT1/cmr/m/n/12 A \OT1/cmtt/m/n/12 Subscriber \OT1/cmr/m/n/12 has the canon-i
+-cal \OT1/cmtt/m/n/12 onNext( )\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 onError( )\OT
+1/cmr/m/n/12 , and \OT1/cmtt/m/n/12 onComplete()
+ []
+
+[119] [120]) [121] [122
+
+] (./TESI.bbl [123
+
+]
+Underfull \hbox (badness 3323) in paragraph at lines 61--63
+[] \OT1/cmr/m/n/12 2015, Salazar, http://nomothetis.svbtle.com/an-introduction-
+to-
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 69--71
+[] \OT1/cmr/m/n/12 2015, Eber-hardt, http://blog.scottlogic.com/2015/04/28/reac
+tive-
+ []
+
+[124]) [125] (./TESI.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3701 strings out of 494537
+ 49006 string characters out of 6167472
+ 112881 words of memory out of 5000000
+ 6803 multiletter control sequences out of 15000+600000
+ 16737 words of font info for 50 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 37i,11n,43p,401b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
+cal/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr17.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsl12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on TESI.pdf (137 pages, 1843427 bytes).
+PDF statistics:
+ 527 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+

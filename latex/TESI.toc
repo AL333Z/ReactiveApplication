@@ -1,0 +1,91 @@
+\select@language {english}
+\contentsline {chapter}{Introduction}{xi}
+\contentsline {chapter}{\numberline {1}Reactive programming}{1}
+\contentsline {section}{\numberline {1.1}Functional Reactive Programming}{2}
+\contentsline {subsection}{\numberline {1.1.1}Behaviors and Event Streams}{3}
+\contentsline {section}{\numberline {1.2}Evaluation model}{4}
+\contentsline {section}{\numberline {1.3}Glitches}{6}
+\contentsline {section}{\numberline {1.4}Lifting}{8}
+\contentsline {section}{\numberline {1.5}Reactive confusion}{9}
+\contentsline {chapter}{\numberline {2}State of the union}{11}
+\contentsline {section}{\numberline {2.1}Scala.React}{11}
+\contentsline {subsection}{\numberline {2.1.1}Reactive}{12}
+\contentsline {subsubsection}{Events}{13}
+\contentsline {subsubsection}{Signal}{14}
+\contentsline {subsection}{\numberline {2.1.2}Evaluation model}{15}
+\contentsline {section}{\numberline {2.2}RxJava}{16}
+\contentsline {subsection}{\numberline {2.2.1}Observable}{16}
+\contentsline {subsubsection}{Operator}{18}
+\contentsline {subsubsection}{Error handling}{23}
+\contentsline {subsection}{\numberline {2.2.2}Subscription}{24}
+\contentsline {subsection}{\numberline {2.2.3}Scheduler}{25}
+\contentsline {subsection}{\numberline {2.2.4}Subject}{26}
+\contentsline {subsubsection}{PublishSubject}{26}
+\contentsline {subsubsection}{ReplaySubject}{28}
+\contentsline {subsubsection}{AsyncSubject}{28}
+\contentsline {subsubsection}{BehaviorSubject}{28}
+\contentsline {subsection}{\numberline {2.2.5}RxAndroid}{29}
+\contentsline {section}{\numberline {2.3}ReactiveCocoa}{30}
+\contentsline {subsection}{\numberline {2.3.1}Event and Signal}{31}
+\contentsline {subsubsection}{Signal}{32}
+\contentsline {subsubsection}{SignalProducer}{35}
+\contentsline {subsection}{\numberline {2.3.2}ProperyType}{36}
+\contentsline {subsection}{\numberline {2.3.3}Action}{37}
+\contentsline {section}{\numberline {2.4}Akka Streams}{38}
+\contentsline {subsection}{\numberline {2.4.1}Source}{39}
+\contentsline {subsection}{\numberline {2.4.2}Sink}{40}
+\contentsline {subsection}{\numberline {2.4.3}Flow and RunnableFlow}{41}
+\contentsline {subsection}{\numberline {2.4.4}Graph}{43}
+\contentsline {chapter}{\numberline {3}Towards reactive mobile application development}{47}
+\contentsline {section}{\numberline {3.1}Abstracting the retrieval, manipulation and presentation of data}{47}
+\contentsline {subsection}{\numberline {3.1.1}On Android}{48}
+\contentsline {subsection}{\numberline {3.1.2}On iOS}{51}
+\contentsline {section}{\numberline {3.2}Choosing an architectural pattern}{52}
+\contentsline {subsection}{\numberline {3.2.1}State of the art in iOS}{52}
+\contentsline {subsection}{\numberline {3.2.2}State of the art in Android}{55}
+\contentsline {subsection}{\numberline {3.2.3}Toward a common architecture: MVVM}{55}
+\contentsline {section}{\numberline {3.3}A case study}{57}
+\contentsline {subsection}{\numberline {3.3.1}A common architecture}{57}
+\contentsline {subsubsection}{Is this RP?}{59}
+\contentsline {subsection}{\numberline {3.3.2}Implementation on Android}{60}
+\contentsline {subsubsection}{Model}{60}
+\contentsline {subsubsection}{Data binding}{61}
+\contentsline {subsubsection}{ViewModel}{64}
+\contentsline {subsubsection}{View}{66}
+\contentsline {subsection}{\numberline {3.3.3}Implementation on iOS}{71}
+\contentsline {subsubsection}{Model}{71}
+\contentsline {subsubsection}{Data binding}{72}
+\contentsline {subsubsection}{ViewModel}{72}
+\contentsline {subsubsection}{View}{74}
+\contentsline {subsection}{\numberline {3.3.4}Considerations}{78}
+\contentsline {chapter}{\numberline {4}Towards reactive event processing}{79}
+\contentsline {section}{\numberline {4.1}Building a processing pipeline: a case study}{79}
+\contentsline {subsection}{\numberline {4.1.1}Implementation on Akka streams}{80}
+\contentsline {section}{\numberline {4.2}Implementation on RxScala}{87}
+\contentsline {subsection}{\numberline {4.2.1}Considerations}{90}
+\contentsline {chapter}{\numberline {5}A conclusive comparison}{91}
+\contentsline {section}{\numberline {5.1}Operators, Expressions, Declarativness}{91}
+\contentsline {section}{\numberline {5.2}Hot and Cold, Push and Pull, Back-pressure}{92}
+\contentsline {section}{\numberline {5.3}Solving problems the reactive way}{93}
+\contentsline {chapter}{\numberline {A}Functional Programming}{95}
+\contentsline {subsection}{\numberline {A.0.1}Entities and value objects}{95}
+\contentsline {subsection}{\numberline {A.0.2}Services}{96}
+\contentsline {section}{\numberline {A.1}Algebraic data types}{96}
+\contentsline {section}{\numberline {A.2}ADTs and Immutability}{99}
+\contentsline {section}{\numberline {A.3}Referential trasparency}{102}
+\contentsline {subsection}{\numberline {A.3.1}Equational reasoning}{103}
+\contentsline {section}{\numberline {A.4}Patterns}{103}
+\contentsline {subsection}{\numberline {A.4.1}Monoid}{103}
+\contentsline {subsection}{\numberline {A.4.2}Functor}{105}
+\contentsline {subsection}{\numberline {A.4.3}Monad}{106}
+\contentsline {subsubsection}{Associativity}{108}
+\contentsline {subsubsection}{Left unit}{108}
+\contentsline {subsubsection}{Right unit}{109}
+\contentsline {chapter}{\numberline {B}Future and Promises}{111}
+\contentsline {section}{\numberline {B.1}Futures}{112}
+\contentsline {section}{\numberline {B.2}Promises}{115}
+\contentsline {chapter}{\numberline {C}Reactive Streams}{117}
+\contentsline {section}{\numberline {C.1}Subscriber}{119}
+\contentsline {section}{\numberline {C.2}Subscription}{120}
+\contentsline {section}{\numberline {C.3}Publisher}{120}
+\contentsline {section}{\numberline {C.4}Processor}{121}

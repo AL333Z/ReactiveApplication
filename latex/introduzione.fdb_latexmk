@@ -1,0 +1,13 @@
+# Fdb version 3
+["latex"] 1332172506 "introduzione.tex" "introduzione.dvi" "introduzione" 
+  "introduzione.aux" 1332172452 8 a94a2480d3289e625eea47cd1b285758 ""
+  "introduzione.tex" 1332172493 265 5e2f87f8034b87f164a46ab72b571cc8 ""
+  (generated)
+  "introduzione.dvi"
+  "introduzione.log"
+["pdflatex"] 1332172625 "introduzione.tex" "introduzione.pdf" "introduzione" 
+  "introduzione.aux" 1332172452 8 a94a2480d3289e625eea47cd1b285758 ""
+  "introduzione.tex" 1332172623 2730 079e3b168deb9e3dcb7581d4da76b039 ""
+  (generated)
+  "introduzione.log"
+  "introduzione.pdf"

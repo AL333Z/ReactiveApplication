@@ -1,0 +1,38 @@
+\chapter{Introduction}
+\label{ch:intro}
+
+After almost 10 years from ``The Free Lunch Is Over'' article, where the
+need to parallelize programs started to be a real and mainstream issue,
+a lot of stuffs did happened:
+
+\begin{itemize}
+\item
+  Processor manufacturers are reaching the physical limits with most of
+  their approaches to boosting CPU performance, and are instead turning
+  to hyperthreading and multicore architectures;
+\item
+  Applications are increasingly need to support concurrency;
+\item
+  Programming languages and systems are increasingly forced to deal well
+  with concurrency.
+\end{itemize}
+
+The article concluded by saying that we desperately need an higher-level
+programming model for concurrency than languages offer today.
+
+This thesis is an attempt to propose an overview of a paradigm that aims
+to properly abstract the problem of propagating data changes:
+\textbf{Reactive Programming} (RP). This paradigm propose an
+\textbf{asynchronous non-blocking} approach to concurrency and
+computations, abstracting from the low-level concurrency mechanisms.
+
+
+The first chapter of this thesis will introduce the basics of RP, starting from simple abstractions and then exploring their main advantages and drawbacks.
+
+The second chapter will present a detailed overview of some of the most popular and used frameworks that enable the developer to put RP principles in practice. This chapter will present the main abstractions and APIs for each framework, with a particular attention for the style and approach that the framework itself suggests in respect to the host language used.
+
+The third chapter will propose an approach to solve a particular kind of modern applications: mobile applications. This chapter will consider iOS and Android as the reference platforms, and will then explore a common architectural approach to better express and implement mobile applications. It won't be a surprise that RP will have a central role in this chapter.
+
+The fourth chapter will propose an approach to implement event processing application. This kind of applications will have an increasing role in our days, and RP expressiveness can be usefull to model and express applications that interact and compute a lot of real-time data.
+
+Finally, the fifth chapter will conclude the thesis, with some final note and comparison.

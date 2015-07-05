@@ -1,0 +1,248 @@
+\chapter{Future and Promises}\label{future-and-promises}
+
+The appendix about Functional Programming introduced the main patterns
+and principles that help when dealing with computations that imply some
+effects. Moving a step forward, we can consider also the latency as an
+effect.
+
+The following table represents a possible classification of the effects
+in programming.
+
+\begin{table}[]
+\centering
+\caption{The essential effects in programming}
+\label{my-label}
+\begin{tabular}{|l|l|l|}
+\hline
+             & {\bf One}     & {\bf Many}        \\ \hline
+Synchronous  & T/Try{[}T{]}  & Iterable{[}T{]}   \\ \hline
+Asynchronous &  \textbf{Future{[}T{]}} &Observable{[}T{]} \\ \hline
+\end{tabular}
+\end{table}
+
+This section will introduce a first abstraction to achieve sequential
+composition of actions that can take time to complete and that can also
+fail: \texttt{Future{[}T{]}}.
+
+\textbf{Future} and \textbf{Promise} are two really powerful
+abstractions that can be classified in the \emph{asynchronous
+programming} category.
+
+Wikipedia defines Futures and Promises as follows:
+
+\begin{quote}
+In computer science, \textbf{future}, \textbf{promise}, and
+\textbf{delay} refer to constructs used for synchronization in some
+concurrent programming languages. They describe an object that acts as a
+proxy for a result that is initially unknown, usually because the
+computation of its value is yet incomplete. {[}\ldots{}{]}
+\end{quote}
+
+\begin{quote}
+A future is a read-only placeholder view of a variable, while a promise
+is a writable, single assignment container which sets the value of the
+future.
+\end{quote}
+
+Futures and Promises promotes an asynchronous and non-blocking approach
+to programming. The scale up to use multiple cores on a machine, but
+with the currently implementations they don't scale out across nodes.
+
+\section{Futures}\label{futures}
+
+A Future is an immutable handle to a value or a failure that will become
+availlable in the future time. Another possible definition is that
+Futures are monads that handles \textbf{exceptions} and
+\textbf{latency}. A fist simple possible definition in Scala is:
+
+\begin{verbatim}
+trait Future[T] {
+    def onComplete(callback: Try[T] => Unit)
+        (implicit executor: ExecutionContext): Unit
+}
+
+object Future {
+    def apply(body: => T)
+        (implicit context: ExecutionContext): Future[T]
+}
+\end{verbatim}
+
+This first definition put some important concepts directly in the type
+definitions:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  a Future is parametrized on a type \texttt{T}
+\item
+  a Future may \textbf{fail}, returning a \texttt{Try.Failure}
+\item
+  a Future may \textbf{succeed} (successfully completed), returning a
+  \texttt{Try.Success{[}T{]}}
+\end{itemize}
+
+Futures are really useful in defining operations that will be executed
+at some point in time by some thread (execution context). Futures are
+immutable from the developer point of view: once an API returns a
+Future, there's is no way to set a value insede a Future. In other
+words, a Future may only be assigned once.
+
+A more complete and precise definition for Future is the following:
+
+\begin{verbatim}
+trait Awaitable[T] extends AnyRef {
+    abstract def ready(atMost: Duration): Unit
+    abstract def result(atMost: Duration): T
+}
+
+￼￼trait Future[T] extends Awaitable[T] {
+    def filter(p: T => Boolean): Future[T]
+    def flatMap[S](f: T => Future[S]): Future[U]
+    def map[S](f: T => S): Future[S]
+    def recoverWith(f: PartialFunction[Throwable, Future[T]]): Future[T]
+}
+
+object Future {
+    def apply[T](body : => T): Future[T]
+}
+\end{verbatim}
+
+In the scala library, Futures are already implemented in the
+\texttt{scala.concurrent} package. In this package,
+\texttt{Future{[}T{]}} is a type which denotes future objects, whereas
+\texttt{future} is a method which creates and schedules an asynchronous
+computation, and then returns a future object which will be completed
+with the result of that computation. An example of the usage of Future
+coming from the Scala documentation is the following:
+
+\begin{verbatim}
+import scala.concurrent._
+import ExecutionContext.Implicits.global
+
+val session = socialNetwork.createSessionFor("user", credentials)
+val f: Future[List[Friend]] = future {
+  session.getFriends()
+}
+\end{verbatim}
+
+The the previous example shows some key points:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  To obtain the list of friends of a user, a request has to be sent over
+  a network, which can take a long time. Wrapping the request inside the
+  \texttt{future} method \textbf{doesn't block} the rest of the program
+  execution while \textbf{waiting} for a response.
+\item
+  All the computation is performed \textbf{asynchronously}.
+\item
+  The list of friends becomes available in the future once the server
+  responds.
+\item
+  If the request fails, the future itself will fail.
+\end{itemize}
+
+To obtain the value of a Future, the library offers two main solution:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  the client \textbf{blocks} its computation and wait until the future
+  is completed
+\item
+  the client \textbf{register a callback} by using the
+  \texttt{onComplete} method, that was alredy depicted at the beginning
+  of this chapter.
+\end{itemize}
+
+The library also provide the companion methods \texttt{onSuccess} and
+\texttt{onFailure}, that usually are used alternatively to
+\texttt{onComplete}. All these three methods have \texttt{Unit} as the
+result type. This is intentional, since the invocations of these methods
+cannot be chained.
+
+The presence of these callbacks may lead to what is known as
+``asynchronous spaghetti'', where the overall computation is fragmented
+into asynchronous handlers. To prevent this possibility, futures provide
+combinators which allow a more straightforward composition, such as
+\texttt{map}, \texttt{flatMap}, \texttt{filter}, \ldots{}
+
+The \texttt{map} methods takes a future and a mapping function for the
+value of the future and produces a new future that is completed with the
+mapped value once the original future is successfully completed.
+
+The \texttt{flatMap} method takes a function that maps the value to a
+\textbf{new future} g, and then returns a future which is completed once
+g is completed.
+
+The \texttt{filter} method creates a new future which contains the value
+of the original future only if it satisfies some predicate. Otherwise,
+the new future is failed with a \texttt{NoSuchElementException}.
+
+The presence of these methods enable the Future type to also supports
+for-comprehension. An example, taken from the documentation, of
+for-comprehension in practice is the following:
+
+\begin{verbatim}
+val usdQuote = future { connection.getCurrentValue(USD) }
+val chfQuote = future { connection.getCurrentValue(CHF) }
+
+val purchase: Future[Int] = for {
+  usd <- usdQuote
+  chf <- chfQuote
+  if isProfitable(usd, chf)
+} yield connection.buy(amount, chf)
+
+purchase onSuccess {
+  case _ => println("Purchased " + amount + " CHF")
+}
+\end{verbatim}
+
+that is translated to:
+
+\begin{verbatim}
+val purchase: Future[Int] = usdQuote flatMap {
+  usd =>
+  chfQuote
+    .withFilter(chf => isProfitable(usd, chf))
+    .map(chf => connection.buy(amount, chf))
+}
+\end{verbatim}
+
+For-comprehension is a really elegant and concise way to express
+\textbf{chain of computations}, leveraging the monadic nature of Futures
+to describe the ``\textbf{happy path}'' of the chain and to propagate
+(\textbf{materialize}) the exceptions.
+
+
+\section{Promises}\label{promises}
+
+\textbf{Promises} are an interesting and alternative way to create
+futures. A Promise can be seen as a \emph{writable, single-assignment}
+container, which completes a Future.
+
+In Scala, a Promise can be represented by the following trait:
+
+\begin{verbatim}
+trait Promise[T] {
+  def future: Future[T]
+  def complete(result: Try[T]): Unit
+  def tryComplete(result: Try[T]): Boolean
+}
+
+trait Future[T] {
+  def onCompleted(f: Try[T] => Unit): Unit
+}
+\end{verbatim}
+
+A promise \texttt{p} can alternatively complete or fail the future
+returned by \texttt{p.future}. In other words, it acts as a
+\textbf{mailbox} for the future that it wraps.
+
+The Scala standard library already implements Promise in the
+\texttt{scala.concurrent} package.
+
+Promises have a \emph{single-assignment} semantics, so they can be
+completed only once and usually are used to implement other operator on
+futures.

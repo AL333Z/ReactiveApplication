@@ -1,0 +1,738 @@
+\chapter{Functional Programming}\label{functional-programming}
+
+As introduced previously, functional programming doesn't allow side
+effects and mutable state. Mutable \textbf{state} may be easily
+represented by any variable that is not stable or final, and can be
+changed or updated inside of an application. A \textbf{mutation} is the
+act of updating some state in place.
+
+A simple example that shows how fast the things become
+\emph{incidentally complex} is given by the following simple example
+from a Justin Spahr-Summers's talk from Github:
+
+\begin{verbatim}
+var visible     // → 2 states
+var enabled     // → 4 states
+var selected    // → 8 states
+var highlighted // → 16 states
+\end{verbatim}
+
+In other words, state management quickly become hard to mantain and
+unpredictable. By avoiding mutable state a programmer has the assurance
+that no one else can possibly have changed his application's state, and
+can reason about \emph{what a value will be at a given time}.
+
+This chapter will cover just a small introduction of functional domain
+modelling and immutable data structures using Scala as the reference
+language.
+
+\subsection{Entities and value
+objects}\label{entities-and-value-objects}
+
+In functional domain modelling, a system may be represented through the
+following main domain elements: entities, value objects and services.
+
+Each \emph{entitiy} has a unique identity. An entity may have many
+attributes, and each attribute may changes in course of the lifetime of
+the system. When an attribute within an entity changes, the identity
+itself is still the same. In this meta-model, attributes are abstracted
+by \emph{value objects}.
+
+A value object is immutable by definition and can be freely shared
+across entities. This doesn't mean that an entities's attributes can't
+change. To clear this concept, let's consider the following example,
+with an entity person within a system, which is univocally identified by
+an unique id and that has an ``address'' attribute. Now the difference
+between the two concepts is immediate: when we talk of a person we
+usually refer to a \emph{specific instance} of person, while when we
+talk of an address we just refer to the \emph{value part}.
+
+Functional programming aims to model \textbf{as much immutability as
+possible}, so a possible approach to model entities and attributes is
+the following:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  remember that an \textbf{entity} has an identity that cannot change,
+  so it's \textbf{semantically mutable}
+\item
+  remember that a \textbf{value object} has a value that cannot change,
+  so it's \textbf{semantically immutable}
+\end{itemize}
+
+The fact that an entity is semantically mutable doesn't prevent us from
+using immutable constructs for its implementation.
+
+\subsection{Services}\label{services}
+
+The last element of this meta-model is the \textbf{service}, that is a
+more macro level abstraction than entity and value object. In short, a
+service models a use case, encapsulating a complete operation that has a
+certaing value to user of the system.
+
+A service usually involves multiple entities and value objects, that
+interact according to specific business rules to deliver specific
+functionalities.
+
+
+\section{Algebraic data types}\label{algebraic-data-types}
+
+From Wikipedia:
+
+\begin{quote}
+In computer programming, particularly functional programming and type
+theory, an algebraic data type is a kind of composite type, i.e.~a type
+formed by combining other types. Two common classes of algebraic type
+are product types, i.e.~tuples and records, and sum types, also called
+tagged or disjoint unions or variant types.
+\end{quote}
+
+The definition introduces some new terminologies: \emph{Sum Type} and
+\emph{Product Type}.
+
+Wikipedia defines \textbf{Sum Type} as:
+
+\begin{quote}
+a data structure used to hold a value that could take on several
+different, but fixed types. Only one of the types can be in use at any
+one time, and a tag field explicitly indicates which one is in use.
+\end{quote}
+
+An example of a Sum Type in the scala library is Either, that represents
+a value of one of two possible types. Instances of Either are either an
+instance of Left or Right. A common use of Either is as an alternative
+to Option for dealing with possible missing values and convention
+dictates that Left is used for failure and Right is used for success.
+
+The implementation of Either is something like:
+
+\begin{verbatim}
+sealed abstract class Either[+A, +B]{...}
+final case class Left[+A, +B](a: A) extends Either[A, B] {...}
+final case class Right[+A, +B](b: B) extends Either[A, B] {...}
+\end{verbatim}
+
+Basically, Sum Types express an \emph{OR} of types. Remebering that in
+logic OR is presented by a plus, we can say that algebraically:
+\emph{type Either = Left + Right}.
+
+Wikipedia defines \textbf{Product Type} as:
+
+\begin{quote}
+another, compounded, type in a structure. The ``operands'' of the
+product are types, and the structure of a product type is determined by
+the fixed order of the operands in the product.
+\end{quote}
+
+A Product Type is nothing more than a cartesian product of data types. A
+trivial example may be the following:
+
+\begin{verbatim}
+sealed trait Animal {
+    def uniqueId: Long
+    def name: String
+    def owner: Option[Person]
+}
+
+case class Dog(uniqueId: Long, name: String,
+    owner: Option[Person], microchipId: String) extends Animal
+
+case class Hamster(uniqueId: Long, name: String,
+    owner: Option[Person]) extends Animal
+
+//...
+\end{verbatim}
+
+In this example, a Dog data type is the collection of all valid
+combinations of the tuple (Long, String, Option, String). So,
+algebraically, we can say: \emph{type Dog = Long x String x Option x
+String}.
+
+Always in this example, we also have that Animal is a Sum Type, since an
+Animal is a Dog, OR an Hamster, and so on..
+
+Sum Type and Product Type are really important in functional domain
+modelling, since they provide the abstaction needed for structuring the
+various data of the domain model.
+
+The values of a Sum Type are typically grouped into several classes,
+called \emph{variants}. As the name suggests, variants let us model the
+variations within a specific data type. Each variant has its own
+constructor, which takes a specified number of arguments with specified
+types.
+
+Product Types represent a larger abstraction instead, that allows to
+\emph{clubbing} together some types and \emph{tagging} it with a new
+data type. This extra tag could also be avoided, simply expressing every
+Product Type in terms of a tuple of types, but in funcional domain
+modelling it's always convenient to express an entity with a tagged data
+type.
+
+Values of algebraic data types are analyzed with \textbf{pattern
+matching}, which helps keep functionality local to the respective
+variant of algebraic data type. Pattern matching identifies a value by
+its constructor or field names and extracts the data it contains.
+Starting from the previous example, a trivial example of pattern
+matching:
+
+\begin{verbatim}
+  var myAnimal: Animal = ???
+
+  val noise = myAnimal match {
+    case Dog(uniqueId, name, owner, microchipId) => "bau!"
+    case Hamster(uniqueId, name, owner) => "squit!"
+  }
+\end{verbatim}
+
+Algebraic data structures, pattern matching and the power of a strongly
+typed language like Scala really help in the domain modelling phase.
+
+\section{ADTs and Immutability}\label{adts-and-immutability}
+
+The previous section introduced ADTs as composed types and depicted Sum
+Type and Product Type. This section will explain how to achieve
+referentially trasparency through \textbf{immutability},
+\textbf{avoiding in-place mutations}.
+
+The importance of having immutable data structures is to research in the
+fact that they simplify the management of parallel and concurrent
+systems. If data structures are immutables, they can be freely shared
+between different execution contexts, without any fears.
+
+To better undestand what does it mean to have an immutable data
+structure, let's consider the following example from the book
+``Functional Programming in Scala'':
+
+\begin{verbatim}
+// List data type
+sealed trait List[+A]
+
+// data constructors
+case object Nil extends List[Nothing]
+case class Cons[+A](head: A, tail: List[A]) extends List[A]
+\end{verbatim}
+
+The operation of addition of an element to the front of the list can be
+performed \textbf{without modify or copy} the object itself, just
+\textbf{reusing} the actual list with a new element at the beginning.
+
+\begin{verbatim}
+  val initialList:List[Int] = Cons(1, Cons(2, Nil))
+  val myList = Cons(0, initialList)
+\end{verbatim}
+
+This approach can be obviously used also to remove an element from the
+list (in the following example, the 1 to the front).
+
+\begin{verbatim}
+  val initialList:List[Int] = Cons(1, Cons(2, Nil))
+
+  val myList1 = initialList match {
+    case Cons(1, xs) => xs
+    case l: List[Int] => l
+  }
+\end{verbatim}
+
+This property of reuse object instead of modify or copy the object
+itself is called \emph{sharing}.
+
+The indroduction of this chapter depicteds three elements as the
+foundamental domain elements: entities, value objects and services. So,
+how do ADTs relate to these elements? As previously written, a value
+object is \emph{semantically immutable}, so abstracting this with an ADT
+is a good choice. For example, let's consider the following example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{case} \KeywordTok{class} \FunctionTok{Address}\NormalTok{(no: String, street: String, city: String, state: String, zip: String)}
+\end{Highlighting}
+\end{Shaded}
+
+If an application, at a given time, has an instance of an address and
+needs to modify an attribute (e.g.~the zip code), all it has to do is to
+\textbf{generate a new instance} of the object with the updated
+attribute, \textbf{avoiding in place mutation} (no vars, no setters).
+Scala also offer a \texttt{copy} method to further simplify the job.
+
+\begin{verbatim}
+val initialAddress = Address("10", "Via Sacchi", "Cesena", "IT", "47522")
+val newAddress = initialAddress.copy(zip = "47523")
+\end{verbatim}
+
+This approach may looks nice at a first sight, but doesn't scale well,
+unfortunately. To see the problem, just consider a new entity that uses
+the address as a value object.
+
+\begin{verbatim}
+case class Person(id: Long, name: String, address: Address)
+\end{verbatim}
+
+The entity Person is \emph{semantically mutable}, but it's implemented
+with an ADT. The first part of this chapter already stated the fact that
+an entity is semantically mutable doesn't prevent us from using
+immutable constructs for its implementation, and this is a brilliant
+proof of concept.
+
+Back to the issues with when using \texttt{copy} for creating a new ADTs
+with modified fields, let's consider the following simple example.
+
+\begin{verbatim}
+val initPerson = Person(0, "Alessandro", initialAddress)
+val newPerson = initPerson.copy(address = initPerson.address.copy(zip = "47523"))
+\end{verbatim}
+
+It immediately appears that the code is getting bad. And things only get
+worse when there are multiple level of nesting of the objects. A better
+abstraction to solve this problem is given by \emph{Lenses}. Lenses are
+ADTs, and in Scala can be implemented as follows:
+
+\begin{verbatim}
+case class Lens[O, V](
+    get: O => V,
+    set: (O, V) => O
+)
+\end{verbatim}
+
+From the implementation it emerges that \textbf{Lenses}:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  are \textbf{parametrized} (on O and V types)
+\item
+  have a \textbf{getter} method, that takes an object with type O and
+  return a value of type V
+\item
+  have a \textbf{setter} method, that takes an object of type O and
+  returns a new instance of the object set to the value
+\end{itemize}
+
+To demostrate that lenses just work as the copy method introduced below,
+let's consider the following example:
+
+\begin{verbatim}
+val newAddress2 = addressZipLens.set(initialAddress, "47523")
+newAddress == newAddress2 //> res0: Boolean = true
+\end{verbatim}
+
+The compare on the final line asserts that the addresses created with
+the two different techniques are equals.
+
+To solve the problem related to the multiple level of nesting attribute
+update it is necessary to introduce a generic \texttt{compose} function,
+implemented as follows:
+
+\begin{verbatim}
+def compose[Outer, Inner, Value](
+    outer: Lens[Outer, Inner],
+    inner: Lens[Inner, Value]
+) = Lens[Outer, Value](
+    get = outer.get andThen inner.get,
+    set = (obj, value) => outer.set(obj, inner.set(outer.get(obj), value)))
+\end{verbatim}
+
+Compose, as the name suggests, takes care of composing two lenses. Lens
+composition is really helpful to mantain the code clean and safe, as the
+following sample will demostrate.
+
+\begin{verbatim}
+val personAddressZipLens: Lens[Person,String] 
+	= compose(personAddressLens, addressZipLens)
+newPerson2 = personAddressZipLens.set(initPerson, "47523")
+newPerson == newPerson2 //> res1: Boolean = true
+\end{verbatim}
+
+As the previous example, also in this case the result is the same as the
+case when \texttt{copy} was used instead. Lenses offer a \emph{view on
+data}, allowing to get and modify the data \emph{the functional way}.
+
+\section{Referential trasparency}\label{referential-trasparency}
+
+An important concept in functional programming is referential
+transparancy. Referential transparency is a property of programs, that
+makes it easier to verify, optimize, and parallelize programs.
+
+From Wikipedia's definition:
+
+\begin{quote}
+\textbf{Referential transparency} and \textbf{referential opacity} are
+properties of parts of computer programs. An expression is said to be
+referentially transparent if it can be replaced with its value without
+changing the behavior of a program (in other words, yielding a program
+that has the same effects and output on the same input). The opposite
+term is referential opaqueness.
+\end{quote}
+
+A necessary, but not sufficient, condition for referential transparency
+is the absence of side effects. In simple words, it's all about the fact
+that an expression can can be replaced with its value. This obviously
+requires that the expression (that could be a function call, for
+example) has no side effects and always return the same output on the
+same input.
+
+In other words, referential transparency means that the value of
+expression can depend only on the values of its parts, and not on any
+other facts about them or about the execution context.
+
+The opposite of referential transparency is referential opacity, where
+the value does change when evaluated, and the expression cannot be
+replaced by a single value without altering the way a program executes.
+
+A trivial but effective example of referential transparency has been
+introduced in the previous section, with the code snippet about lists.
+Using immutable lists, the act of adding, removing or updating a value
+in those data structures results in new lists being created with the
+changed values, and any part of the program still observing the original
+lists sees no change.
+
+\subsection{Equational reasoning}\label{equational-reasoning}
+
+The previous section introduced and depicted referential transparency.
+The importance of referential transparency expressions is that they make
+substitution model work and the substitution model helps
+\textbf{equational reasoning} work.
+
+A possible definition of equational reasoning is \emph{the process of
+interpreting code by substituting equals-for-equals}.
+
+Equational reasoning is an important property, since it keeps the models
+easy to reason about and easy to validate. The correctenss of the
+properties of a model that respect equational reasoning can be verified
+just as the properties of a math theorem.
+
+
+\section{Patterns}\label{patterns}
+
+The previous sections of this chapter introduced the basics of
+functional domain modelling, by using \textbf{algebraic data types}, and
+the importance of \textbf{referential transparency}.
+
+This final section will go deeper, and cover three functional design
+pattern: \textbf{monoids}, \textbf{functors} and \textbf{monads}. These
+patterns are really important to fully understand the usage of algebraic
+data type to model the domain.
+
+The pattern introduced in this section are \emph{abstract}, meaning that
+they don't operate on just one specific data type bar on all data types
+that share a common algebra.
+
+\subsection{Monoid}\label{monoid}
+
+\textbf{Monoid} is an ubiquitous pattern that come up frequently in
+programming, even if we are not aware of it. To introduce monoids, let's
+consider an example about the concatenation operation for List and
+String types:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  the concatenation operation is a binary operation and is associative
+\item
+  both List and String have an identity element and the operation
+  applied with the identity yields the same value as the other argument
+\end{itemize}
+
+The points depicted above are a valid algebra for the abstraction of a
+monoid. In Scala a monoid can be expressed as follows.
+
+\begin{verbatim}
+trait Monoid[A] {
+  def op(a1: A, a2: A): A
+  def zero: A
+}
+\end{verbatim}
+
+More formally, a monoid needs to satysfy the following laws:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  \emph{Left identity}: \texttt{op(zero,\ a)\ ==\ a}
+\item
+  \emph{Right identity}: \texttt{op(a,\ zero)\ ==\ a}
+\item
+  \emph{Associativity}:
+  \texttt{op(a1,\ op(a2,\ a3))\ ==\ op(op(a1,\ a2),\ a3)}
+\end{itemize}
+
+Back to the initial example, with the given definition List and String
+concatenation can be expressed as monoids as folllows.
+
+\begin{verbatim}
+val stringMonoid = new Monoid[String] {
+  def op(a1: String, a2: String) = a1 + a2
+  def zero = ""
+}
+
+def listMonoid[A] = new Monoid[List[A]] {
+  def op(a1: List[A], a2: List[A]) = a1 ++ a2
+  def zero = Nil
+}
+\end{verbatim}
+
+The benefits of having operations that operate on different data types
+modelled as monoids is given by the fact that monoids offer
+\emph{parametricity} and the ability to \emph{abstract over behaviors}.
+
+A brilliant example that illustrates the power of monoids is given when
+they are used in conjuction with lists and list folding functions.
+Looking at \texttt{foldLeft} function definition:
+
+\begin{verbatim}
+def foldLeft[B](z: B)(f: (B, A) => B): B
+\end{verbatim}
+
+and in the particular case of \texttt{A\ =\ B}:
+
+\begin{verbatim}
+def foldLeft(z: A)(f: (A, A) => A): A
+\end{verbatim}
+
+it can be observed that the function signature perfectly matches the
+signature of \texttt{op} operation on the monoid type.
+
+This brings to a really nice proof of concept about the pratical usage
+of monoids, like in the following example.
+
+\begin{verbatim}
+val words = List("Hello", "world")
+val t = words.foldLeft(stringMonoid.zero)(stringMonoid.op)
+\end{verbatim}
+
+\subsection{Functor}\label{functor}
+
+The previous section introduced an ubiquitous pattern that recurs
+frequently in programming, monoid. This section will make a futher step
+towards the king abstraction of functional programming, that will be
+introduced in the next one.
+
+In the Scala standard library there are some classes that provide a
+\texttt{map} function. For example:
+
+\begin{verbatim}
+def map[B](f: (A) => B): List[B]
+
+def map[B](f: (A) => B): Option[B]
+\end{verbatim}
+
+In the classes of the example, the effect of \texttt{map} is:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  for List, \texttt{map} applies the function \texttt{f} on each element
+  of the list
+\item
+  for Option, \texttt{map} aplies the function \texttt{f} only if the
+  element is instance of \texttt{Some} and return \texttt{Some} of the
+  result, otherwise it returns \texttt{None}
+\end{itemize}
+
+All this function signatures are pretty the same, with the only
+difference of the concrete type involved. As always in programming, when
+there are things that are pretty the same, it's possible that factorize
+the behavior and create a new abstraction. In this case, the abstraction
+it's all about a \emph{data type that implements map} and it's called
+\textbf{functor}. In Scala, if a data type \texttt{F} implements
+\texttt{map}, \texttt{F} is a functor. An implementation of this
+abstraction can be represented by the following trait.
+
+\begin{verbatim}
+trait Functor[F[_]] {
+    def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+\end{verbatim}
+
+\textbf{NB}: in the example provided above (from the Scala library), the
+signatures of the map function are different from the signature of map
+in the trait introduced below. The reason of this difference is due to
+the object oriented nature of the classes in the Scala library. The new
+signature has a more ``functional'' approach, with an additional
+parameter (the first one) that takes the object to map on.
+
+With this new abstraction defined, it's possible to define functors
+explicitely for List and Option in the following way, reusing the object
+oriented implementation provided by the Scala standard library:
+
+\begin{verbatim}
+def listFunctor: Functor[List] = new Functor[List] {
+    def map[A, B](a: List[A])(f: A => B): List[B] = a map f
+}
+
+def optionFunctor: Functor[Option] = new Functor[Option] {
+    def map[A, B](a: Option[A])(f: A => B): Option[B] 
+    	= a.map(f).orElse(None)
+}
+\end{verbatim}
+
+Functors are nothing more that an abstraction that has the capability of
+mapping over some data structure, with functions.
+
+\subsection{Monad}\label{monad}
+
+The concept of monad comes from category theory, and is one of the most
+important topic in functional programming development.
+
+From Wikipedia:
+
+\begin{quote}
+In functional programming, a \textbf{monad} is a structure that
+represents computations defined as sequences of steps: a type with a
+monad structure defines what it means to chain operations, or nest
+functions of that type together. This allows the programmer to build
+pipelines that process data in steps, in which each action is decorated
+with additional processing rules provided by the monad. As such, monads
+have been described as ``programmable semicolons''; a semicolon is the
+operator used to chain together individual statements in many imperative
+programming languages, thus the expression implies that extra code will
+be executed between the statements in the pipeline.
+\end{quote}
+
+From a Erik Meijer's quote:
+
+\begin{quote}
+Monads are return types that guide you through the happy path.
+\end{quote}
+
+From a Martin Odersky's quote:
+
+\begin{quote}
+Monads are parametric types with two operations flatMap and unit that
+obey some algebraic laws.
+\end{quote}
+
+An other definition can be: \textgreater{}Monads are abstract
+computations that help us mimic the effects of typically impure actions
+like exceptions, IO, continuations etc. while providing a functional
+interface to the users.
+
+All this quotes and definitions help to give us the idea of what a monad
+is. Formally, a monad is just a type, and can be defined as follows:
+
+\begin{verbatim}
+trait Monad[M[_]] extends Functor[M] {
+  def unit[A](a: => A): M[A]
+  def flatMap[A,B](ma: M[A])(f: A => M[B]): M[B]
+
+  def map[A,B](ma: M[A])(f: A => B): M[B] =
+    flatMap(ma)(a => unit(f(a)))
+}
+\end{verbatim}
+
+Monad extends functor, implementing \texttt{map}. The trait introduced
+above is generic, so each type that implements a \texttt{unit} and a
+\texttt{flatMap} and respects some laws (depicted below) is a monad.
+
+\textbf{NB}: in the literature, \texttt{flatMap} is often called
+\texttt{bind} and \texttt{unit} is often called \texttt{return}.
+
+Two example of monads are represented by \texttt{Option} and
+\texttt{List}. Starting from the definition of Monad, they can be
+defined as follows (reusing the implementation provided by the Scala
+standard library):
+
+\begin{verbatim}
+val optionMonad = new Monad[Option] {
+    def unit[A](a: => A) = Some(a)
+    def flatMap[A,B](ma: Option[A])(
+    	f: A => Option[B]) = ma flatMap f
+}
+
+val listMonad = new Monad[List] {
+    def unit[A](a: => A) = List(a)
+    def flatMap[A,B](ma: List[A])(f: A => List[B]) = ma flatMap f
+}
+\end{verbatim}
+
+From the example, it's easy to note that \texttt{unit} is different for
+each monad. For example, for the \texttt{List} type unit is
+\texttt{List(a)} and for the \texttt{Option} type unit is
+\texttt{Some(a)}.
+
+A more object oriented definition for monad is the following.
+
+\begin{verbatim}
+trait M[T] {
+    def flatMap[U](f: T => M[U]): M[U]
+    def unit[T](x: T): M[T]
+}
+\end{verbatim}
+
+with \texttt{map} defined as
+\texttt{m\ flatMap\ (x\ =\textgreater{}\ unit(f(x)))}.
+
+As introduced previously, monads need to satisfy three laws:
+associativity, left unit and right unit.
+
+\subsubsection{Associativity}\label{associativity}
+
+The associativity law is about the order of \textbf{composition}, and
+demands that for any monad \texttt{m}and any two functions \texttt{f}
+and \texttt{g}, it must not make a difference whether you apply f to m
+first and then apply g to the result, or if you first apply g to the
+result of f and then in turn flatMap this over m. Formally:
+
+\begin{verbatim}
+m flatMap f flatMap g == m flatMap (x => f(x) flatMap g)
+\end{verbatim}
+
+\subsubsection{Left unit}\label{left-unit}
+
+The left unit law demands that flatMap must behave in such a way that
+for any function f passed to it, the result is the same as calling f in
+\emph{isolation}. Formally:
+
+\begin{verbatim}
+unit(x) flatMap f  ==  f(x)
+\end{verbatim}
+
+The left unit law can be considered the most important law, since it
+guarantes that flatMap let's you apply a transformation to the value
+contained in a monad, without leaving the monad. In other words, monads
+promote and allows \emph{containment} and \emph{chainability} of
+transformations.
+
+\subsubsection{Right unit}\label{right-unit}
+
+The right unit law demands that applying unit to a monad has no effects
+at all (or, better, has the same outcame as not calling it at all).
+Formally:
+
+\begin{verbatim}
+m flatMap unit  ==  m
+\end{verbatim}
+
+Usually the term monad is also used \emph{informally}, to describe a
+type that has \texttt{flatMap} and \texttt{unit}, without any attention
+about the monad laws. An example of this is given by the \texttt{Try}
+type, that has a \texttt{Success} case that contains a value and a
+\texttt{Failure} case that contains an exceptions.
+
+\begin{verbatim}
+abstract class Try[+T]
+case class Success[T](x: T)       extends Try[T]
+case class Failure(ex: Exception) extends Try[Nothing]
+\end{verbatim}
+
+\textbf{Try} is often used to wrap the result of a computation inside a
+container type. The important thing about Try is that is handles
+exception, through \emph{materialization}.
+
+\begin{verbatim}
+def map[S](f: T => 􏰀S): Try[S] = this match {
+  case Success(value)       => Try(f(value))
+  case failure: Failure(t)  => failure
+}
+
+
+def flatMap[S](f: T => 􏰀Try[S]): Try[S] = this match {
+  case Success(value)       =>
+    try { f(value) } catch { case NonFatal(t) => Failure(t) }
+  case failure: Failure(t)  => failure
+}
+\end{verbatim}
+
+At first sight Try looks like a monad, implementing \texttt{flatMap}
+(and \texttt{unit}), but formally it doesn't respect the left unit law.
+

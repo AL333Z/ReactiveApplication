@@ -1,0 +1,498 @@
+\chapter{Towards reactive event
+processing}\label{towards-reactive-event-processing}
+
+The previous chapter depicted a possbile approach to apply RP techniques
+to the context of mobile applications development.
+
+This chapter will instead introduce a possible application of RP
+principles and abstractions to a different context: \textbf{events
+processing}.
+
+Event processing is a method of \emph{tracking and analyzing} streams of
+information about things that happen, and \emph{deriving} a conclusion
+from them.
+
+Also in this chapter, to better understand and see how RP plays a
+foundamental role in the game, a use case will be introduced, discussed
+and solved.
+
+\section{Building a processing pipeline: a case
+study}\label{building-a-processing-pipeline-a-case-study}
+
+The use case proposed to demostrate the application of RP to the event
+processing context is an example of sentiment analysis.
+
+From the Wikipedia definition:
+
+\begin{quote}
+Sentiment analysis (also known as opinion mining) refers to the use of
+natural language processing, text analysis and computational linguistics
+to identify and extract subjective information in source materials.
+\end{quote}
+
+The requirements the the application needs to satisfy are the following:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  the application should monitor and elaborate the sentiment toward two
+  popular brands: Apple and Google;
+\item
+  the analisys should be performed starting from the information taken
+  from Twitter, by reading and elaborating what people tweets;
+\item
+  the computation should assign to each tweet a ``static score'',
+  determined by the relevance of the tweet's author (determined by its
+  number of followers);
+\item
+  after that, the application should infer if the tweet express a
+  positive or negative comment;
+\item
+  every tweet should be computed and grouped to the respective brand,
+  and the result should be accumulated, so the users can have an idea of
+  which brand has a better sentiment.
+\end{itemize}
+
+\textbf{NB}: This approach to sentiment analysis is for sure
+oversimplified and not correct at all, but in this thesis author's
+hopinion what really matters about this case study is not the
+correctness of the analysis method, but the application of the
+abstractions introduced in this thesis to solve problems.
+
+\subsection{Implementation on Akka
+streams}\label{implementation-on-akka-streams}
+
+Using Akka Streams abstractions, building a processing pipeline that
+solves the problem introduced by the requirements is a pretty
+straight-forward process.
+
+In Akka Streams, to build a processing pipeline the first thing to get
+is a \texttt{Source}. In this case, let's start with an utility class
+that takes care of interacting to Twitter' APIs, exposing a method
+\texttt{listenAndStream} that returns a
+\texttt{Source{[}Tweet,\ Unit{]}}.
+
+\begin{verbatim}
+class TwitterStreamListener(filter: Array[String],
+    config: Configuration) {
+
+  // ...
+
+  def listenAndStream: Source[Tweet, Unit] = { ... }
+}
+\end{verbatim}
+
+This method will introduce tweets regarding our two brands as they are
+pubblished.
+
+Once we get the source of our items, two further steps to performs are
+the ones that assign to each tweet a ``static score'', and then a
+valutation.
+
+\begin{verbatim}
+  val g = FlowGraph.closed() {
+    implicit builder: FlowGraph.Builder[Unit] =>
+    import akka.stream.scaladsl.FlowGraph.Implicits._
+
+    // our targets brands
+    val filters: scala.collection.immutable.List[String]
+        = "google" :: "apple" :: List()
+    val twitterStreamListener =
+        new TwitterStreamListener(filters.toArray, twConfigBuilder.build())
+
+    val in: Source[Tweet, Unit] = twitterStreamListener.listenAndStream
+
+    // assign a "static" score
+    val mapToScore: Flow[Tweet, (Tweet, Double), Unit]
+        = Flow[Tweet].map(tweet => (tweet,
+      (1.0 + 1.01 * tweet.author.followerCount)))
+
+    // extract the "sentiment" from the tweet (not implemented for real..)
+    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit]
+        = Flow[(Tweet, Double)].map(tweetScoreTuple =>
+            if ( /*... positive or negative content? ...*/)
+                (tweetScoreTuple._1, tweetScoreTuple._2)
+            else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    )
+
+    // build the pipeline
+    in ~> mapToScore ~> mapToValutation
+  }
+\end{verbatim}
+
+At this point, the last node of the linear graph has type
+\texttt{Flow{[}(Tweet,\ Double),\ (Tweet,\ Double),\ Unit{]}}, meaning
+that: - it accepts a tuple containing a Tweet and a Double, and it puts
+out the same type; - looking at the code itself, if returns a stream of
+pairs of tweets and valutations.
+
+The next step allows to determine in which category (brand) each tweet
+in the stream belongs to. This step is needed, since the informations
+that come from the APIs refer to both the brands.
+
+\begin{verbatim}
+// for each tweet, detect in which category the tweet
+// has been returned, and return a tuple with this 
+// additional information  (so we can now group the 
+// tweet for category)
+val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit]
+    = Flow[(Tweet, Double)].mapConcat(tuple =>
+  filters
+    .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
+    .map(matchedFilter => (matchedFilter, tuple._2)))
+
+// build the pipeline
+in ~> mapToScore ~> mapToValutation ~> mapWithCategory
+\end{verbatim}
+
+Note that now the stream puts out a tuple of \texttt{String} and
+\texttt{Double}, that correspond to the current category and valutation
+for the \texttt{Tweet} arrived from the input. At this stage, the other
+further information about the tweet are no more necesary.
+
+At this point, the stream of tuples needs to grouped for brand, and then
+reduced by applying a function that aggregates all the partial result to
+compose a result. In this simplified case, this function is a sum.
+
+\begin{verbatim}
+// ...
+
+// groups the tweets for brand and sum the valutations
+def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
+    = reduceByKey(
+  filters.length,
+    groupKey = (elem: (String, Double)) => elem._1,
+    foldZero = (key: String) => (0.0))(fold
+        = (count: Double, elem: (String, Double)) => elem._2 + count)
+
+  // generic reduce by key function
+  def reduceByKey[In, K, Out](maximumGroupSize: Int,
+    groupKey: (In) => K,
+    foldZero: (K) => Out)(fold: (Out, In) => Out):
+        Flow[In, (K, Out), Unit] = {
+
+    val groupStreams = Flow[In].groupBy(groupKey)
+    val reducedValues = groupStreams.map {
+      case (key, groupStream) =>
+        groupStream.runFold((key, foldZero(key))) {
+          case ((key, aggregated), elem) =>
+            val newAggregated = fold(aggregated, elem)
+            // println("Folding: key: " + key +
+                " aggregate: " + newAggregated)
+            (key, newAggregated)
+        }
+    }
+
+    reducedValues
+        .buffer(maximumGroupSize, OverflowStrategy.fail)
+        .mapAsyncUnordered(4)(identity)
+}
+
+// build the pipeline
+in ~> mapToScore ~> mapToValutation
+    ~> mapWithCategory ~> sumReducedByKey ~> out
+\end{verbatim}
+
+This step of the pipeline is the most difficult to understand at first
+sight.
+
+By mapping over the groups that contains only the data for a single
+brand, and using \texttt{runFold} (that automatically materializes and
+runs each sub-stream it is used on) what is returned is a stream with
+elements of \texttt{Future{[}(String,\ Double){]}}. Finally, this stream
+is flattened by calling \texttt{mapAsyncUnordered(4)(identity)}, that
+gets the values out of the futures and then injects these values in the
+returned stream.
+
+One last thing to note is the presence of a buffer between the
+mapAsyncUnordered and the actual stream of futures.
+
+From the documentation, where the reduceByKey approach has been taken:
+
+\begin{quote}
+The reason for this is that the substreams produced by groupBy() can
+only complete when the original upstream source completes. This means
+that mapAsync() cannot pull for more substreams because it still waits
+on folding futures to finish, but these futures never finish if the
+additional group streams are not consumed. This typical deadlock
+situation is resolved by this buffer which either able to contain all
+the group streams (which ensures that they are already running and
+folding) or fails with an explicit failure instead of a silent deadlock.
+\end{quote}
+
+Putting all the pieces together, and adding a limit to 1000 tweets for
+the sake of brevity, the overall code looks like the following.
+
+\begin{verbatim}
+object MainStreamingExample extends App {
+
+  // ... config twitter APIs and client ...
+
+  // ActorSystem & thread pools
+  val execService: ExecutorService
+    = Executors.newCachedThreadPool()
+  implicit val system: ActorSystem
+    = ActorSystem("ciaky")
+  implicit val ec: ExecutionContext
+    = ExecutionContext.fromExecutorService(execService)
+  implicit val materializer = ActorMaterializer()
+
+  val g = FlowGraph.closed() {
+    implicit builder: FlowGraph.Builder[Unit] =>
+
+    import akka.stream.scaladsl.FlowGraph.Implicits._
+
+    // our targets brands
+    val filters: scala.collection.immutable.List[String]
+        = "google" :: "apple" :: List()
+    val twitterStreamListener
+        = new TwitterStreamListener(filters.toArray, twConfigBuilder.build())
+
+    val in: Source[Tweet, Unit] = twitterStreamListener.listenAndStream
+    val out: Sink[(String, Double), Future[Unit]]
+        = Sink.foreach[(String, Double)](t =>
+      println("[Out] key: " + t._1 + " partial score: " + t._2))
+
+    // limit the elaboration to 1000 tweets
+    val take: Flow[Tweet, Tweet, Unit] = Flow[Tweet].take(1000)
+
+    // assign a "static" score
+    val mapToScore: Flow[Tweet, (Tweet, Double), Unit]
+        = Flow[Tweet].map(tweet => (tweet,
+            (1.0 + 1.01 * tweet.author.followerCount)))
+
+    // extract the "sentiment" from the tweet (not implemented for real..)
+    val mapToValutation: Flow[(Tweet, Double), (Tweet, Double), Unit]
+        = Flow[(Tweet, Double)].map(tweetScoreTuple =>
+            if (/*... positive or negative content? ...*/)
+                (tweetScoreTuple._1, tweetScoreTuple._2)
+            else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    )
+
+    // for each tweet, detect in which category the tweet
+    // has been returned, and return a tuple with this
+    // additional information (so we can now group the tweet for category)
+    val mapWithCategory: Flow[(Tweet, Double), (String, Double), Unit]
+        = Flow[(Tweet, Double)].mapConcat(tuple =>
+      filters
+        .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
+        .map(matchedFilter => (matchedFilter, tuple._2))
+    )
+
+    // groups the tweets for category and sum the valutations
+    def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
+        = reduceByKey(
+            filters.length,
+            groupKey = (elem: (String, Double)) => elem._1,
+            foldZero = (key: String) => (0.0))(
+            fold = (count: Double, elem: (String, Double)) 
+            	=> elem._2 + count)
+
+    // generic reduce by key function
+    def reduceByKey[In, K, Out](maximumGroupSize: Int,
+      groupKey: (In) => K,
+      foldZero: (K) => Out)(fold: (Out, In) => Out)
+        : Flow[In, (K, Out), Unit] = {
+
+      val groupStreams = Flow[In].groupBy(groupKey)
+      val reducedValues = groupStreams.map {
+        case (key, groupStream) =>
+          groupStream.runFold((key, foldZero(key))) {
+            case ((key, aggregated), elem) =>
+              val newAggregated = fold(aggregated, elem)
+              println("Folding: key: " + key
+                + " aggregate: " + newAggregated)
+              (key, newAggregated)
+          }
+      }
+
+      reducedValues
+        .buffer(maximumGroupSize, OverflowStrategy.fail)
+        .mapAsyncUnordered(4)(identity)
+    }
+
+    // build the pipeline
+    in ~> take ~> mapToScore ~> mapToValutation
+        ~> mapWithCategory ~> sumReducedByKey ~> out
+  }
+
+  g.run()
+}
+\end{verbatim}
+
+Even if Akka Streams processing stages are executed concurrently by
+default, the approach adopted for the \texttt{reduceByKey} function
+leads to a sequential processing stage for the reduction phase, with no
+parallelization at all.
+
+\section{Implementation on RxScala}\label{implementation-on-rxscala}
+
+Also using RxScala (RxJava ported to Scala) abstractions, building a
+processing pipeline that solves the problem introduced by the
+requirements is a pretty simple process.
+
+To build a processing pipeline the first thing to get is a
+\texttt{Observable}. Following what it was done for the previous
+implementation, let's start with an utility class that takes care of
+interacting to Twitter' APIs, exposing a method listenAndStream that
+returns an \texttt{Observable{[}Tweet{]}}.
+
+\begin{verbatim}
+class TwitterStreamListener(filter: Array[String],
+    config: Configuration) {
+
+  // ...
+  def listenAndStream: Observable[Tweet] = { ... }
+}
+\end{verbatim}
+
+Once we get the source of tweets, two further steps to performs are the
+ones that assign to each tweet a ``static score'', and then a
+valutation.
+
+\begin{verbatim}
+val filters: scala.collection.immutable.List[String]
+    = "google" :: "apple" :: List() // our targets brands
+val twitterStreamListener
+    = new TwitterStreamListener(filters.toArray,
+        twConfigBuilder.build())
+
+twitterStreamListener.getTweetObservable
+    .map(tweet =>
+        (tweet, (1.0 + 1.01 * tweet.author.followerCount)))
+    .map(tweetScoreTuple =>
+      if (/*... positive or negative content? ...*/)
+        (tweetScoreTuple._1, tweetScoreTuple._2)
+      else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    )
+\end{verbatim}
+
+At this point, the resulting observable has type
+\texttt{Observable{[}(Tweet,\ Double){]}}, meaning that:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  it accepts a tuple containing a \texttt{Tweet} and a \texttt{Double},
+  and it puts out the same type;
+\item
+  looking at the code itself, if returns a stream of pairs of tweets and
+  valutations.
+\end{itemize}
+
+As in the previous implementation, the next step allows to determine in
+which category (brand) each tweet in the stream belongs to. This step is
+needed, since the informations that come from the APIs refer to both the
+brands. To perform the work, a simple flatMap will take care of this
+job.
+
+\begin{verbatim}
+    //...
+    .flatMap(tuple => {
+      val matchedFilters = filters
+        .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
+        .map(matchedFilter => (matchedFilter, tuple._2))
+      Observable.from(matchedFilters)
+    })
+\end{verbatim}
+
+Note that, also with this implementation, now the stream puts out a
+tuple of \texttt{String} and \texttt{Double}, that correspond to the
+current category and valutation for the \texttt{Tweet} arrived from the
+input.
+
+At this point, the stream of tuples needs to grouped for brand, and then
+reduced by applying a function that aggregates all the partial result to
+compose a result. This step has a really shorter and concise syntax in
+this RxScala's implementation.
+
+\begin{verbatim}
+  val groupKey: ((String, Double)) => String = tuple => tuple._1
+  val foldZero: (String) => Double = key => 0.0
+  val fold: (Double, (String, Double)) => Double
+    = (count: Double, elem: (String, Double)) => elem._2 + count
+
+    //...
+    .groupBy(groupKey)
+    .flatMap {
+      case (key, groupStream) =>
+        groupStream.scan((key, foldZero(key))) {
+            case ((key, aggregated), elem) =>
+                (key, fold(aggregated, elem))
+        }
+    }
+\end{verbatim}
+
+The groupBy operator creates a new observable for each brand. Each
+sub-observable is then reduced and flattened.
+
+Putting all pieces together, the overall code is the following.
+
+\begin{verbatim}
+object MainRxExample extends App {
+
+  // ... config twitter APIs and client ...
+
+  val filters: scala.collection.immutable.List[String]
+    = "google" :: "apple" :: List() // our targets brands
+  val twitterStreamListener
+    = new TwitterStreamListener(filters.toArray, 
+    	twConfigBuilder.build())
+
+  val groupKey: ((String, Double)) => String = tuple => tuple._1
+  val foldZero: (String) => Double = key => 0.0
+  val fold: (Double, (String, Double)) => Double
+    = (count: Double, elem: (String, Double)) => elem._2 + count
+
+  twitterStreamListener.getTweetObservable
+
+     // assign a "static" score
+    .map(tweet => (tweet, (1.0 + 1.01 * tweet.author.followerCount)))
+
+    // extract the "sentiment" from the tweet
+    .map(tweetScoreTuple =>
+      if (/*... positive or negative content? ...*/)
+        (tweetScoreTuple._1, tweetScoreTuple._2)
+      else (tweetScoreTuple._1, -tweetScoreTuple._2)
+    )
+
+    // groups the tweets for brand and sum the valutations
+    .flatMap(tuple => {
+      val matchedFilters = filters
+        .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
+        .map(matchedFilter => (matchedFilter, tuple._2))
+      Observable.from(matchedFilters)
+    })
+
+    // groups the tweets for brand and sum the valutations
+    .groupBy(groupKey)
+    .flatMap {
+      case (key, groupStream) =>
+        groupStream.scan((key, foldZero(key))) {
+            case ((key, aggregated), elem) =>
+                (key, fold(aggregated, elem))
+        }
+    }
+
+    .subscribe(t => println("[Out] key: " + t._1
+        + " partial score: " + t._2))
+}
+\end{verbatim}
+
+
+\subsection{Considerations}\label{considerations}
+
+The usage of both the library seems to be a good fit for the simple case
+study introduced.
+
+The imlementation that uses Akka Stream looks a little bit more verbose,
+since there's some ``setup and wiring work'' that needs to take place,
+but the final result looks pretty elegant.
+
+The implementation that uses RxScala is pretty clean and
+straight-forward, indeed.
+
+For both the solutions, the most important thing to note is the fact
+that all the computations is build starting from the definition of a
+static-typed chain of operators (or flows).
+

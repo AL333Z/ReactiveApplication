@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+               %    Scelta dei package da usare     %
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{deistesi}
+\usepackage{fancyhdr}
+
+
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+               % Scelta delle dimensioni della pagina %
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\textwidth}{13.5cm}
+\setlength{\textheight}{19cm}
+\setlength{\footskip}{3cm}
+
+
+
+
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+               %  Informazioni generali sulla Tesi  %
+               %    da usare nell'intestazione      %
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titolo{Applying the Reactive Programming Paradigm: Toward a More Declarative Application Development Approach}
+\laureando{Alessandro Zoffoli}
+\annoaccademico{2015--2016}
+\scuola{}
+\facolta{Ingegneria}
+\corsodilaurea{CORSO DI LAUREA MAGISTRALE IN INGEGNERIA SCIENZE INFORMATICHE}
+\corso{Programmazione Avanzata e Paradigmi}
+\relatore{Alessandro Ricci}
+\corelatore{Philipp Haller}
+\parolechiave{Reactive Programming}{Declarative}{Streams}{State}{Side effects}{}
+\dedica{To my family.}
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+               % Fine Preambolo %
+               % Inizio tesi     %
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \sessione{I}
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+               % Fine Preambolo %
+               % Inizio tesi     %
+               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% inizio prefazione
+%
+% pagina del titolo, indice, sommario
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter \maketitle \pagestyle{plain} \tableofcontents
+%``testo''
+
+\input{introduzione.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% inizio corpo del documento
+%
+% sequenze dei vari capitoli
+% � consigliato mantenere una struttura logica ben definita per separare i vari capitoli
+% si consiglia di reificare tale struttura fisicamente sul file system
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+% stile della pagina
+\pagestyle{fancy} \fancyhead[LE,RO]{\bfseries\thepage}
+
+% inclusione dei capitoli
+\input{capitolo1.tex}
+\input{capitolo2.tex}
+\input{capitolo3.tex}
+\input{capitolo4.tex}
+\input{capitolo5.tex}
+
+\appendix
+
+\input{appendix1.tex}
+\input{appendix2.tex}
+\input{appendix3.tex}
+
+%\chapter*{Ringraziamenti}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% inizio parte finale del documento
+%
+% eventuali appendici, bibliografia obbligatoria,
+% eventuale lista delle tabelle e delle figure (nel caso decommentare la riga con i comandi \listoffigures e \listoftables)
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+
+%\input{./Appendice/appendice.tex}
+% \input{./Bibliografia/bibliografia.tex}
+
+\bibliography{biblio}
+\bibliographystyle{abbrv}
+
+%\listoffigures
+%\listoftables
+
+% chiusura del documento
+\end{document}

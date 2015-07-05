@@ -1,0 +1,137 @@
+\chapter{A conclusive comparison}\label{a-conclusive-comparison}
+
+This thesis started with an overview of RP, that introduced the
+foundations and the main aspects of the paradigm, and then continued
+with a detailed overview of some of the most popular or relevant
+frameworks that allow the application of the paradigm in different
+platforms and languages, with also some pratical use cases.
+
+This final section will attempt to wrap everything up, with a conclusive
+comparison of each library peculiarities and the approach to RP that
+each library suggests, with also some subjective hopinions.
+
+\section{Operators, Expressions,
+Declarativness}\label{operators-expressions-declarativness}
+
+In regards to \textbf{expressing a computation in terms of a flow of
+intermediate steps}, the approach that Scala.React suggests with its
+\textbf{signal expressions} is the main difference in respect to all
+other approaches, that are instead based on the presence of
+\textbf{operators}. Scala.React's Signal type has no operator at all,
+and lets the developer to build a ``reactive'' computation with an
+imperative-style code, at least in appearance. Infact, signal
+expressions and the magic behind \texttt{Var} and \texttt{Val} implicit
+conversion looks natural to a developer with an object oriented
+background.
+
+All the other libraries introduce an approach based on operators,
+indeed:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  RxJava offers a wide range of \textbf{methods} in the
+  \texttt{Observable} type;
+\item
+  ReactiveCocoa offers a wide range of \textbf{free functions}, used in
+  combination with the pipe-forward operator
+  \texttt{\textbar{}\textgreater{}} on the \texttt{Signal} and
+  \texttt{SignalProducer} type to give the user an elegant way to build
+  a chain of operators without loosing the purity of the approach based
+  on free functions;
+\item
+  Akka Strams offers a (still) minimal but effective set of
+  \textbf{components}, with the foundamental abstraction defined in
+  terms of the \texttt{Flow}, \texttt{Sink} and \texttt{Source} type,
+  and the ability to build linear or graph computations simply using the
+  to \texttt{\textasciitilde{}\textgreater{}} operator.
+\end{itemize}
+
+All the library previously introduced presented an high level of
+declarativness, with a good level of intregation in the ecosystem they
+belong to:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Scala.React does an amazing job in solving the issues of the
+  ``standard'' observer pattern leveraging on the construct offered by
+  the Scala language;
+\item
+  RxJava offer a pretty straigh-forward implementation of Rx to the Java
+  ecosystem. Both the implementation and the interfaces really
+  benefitted by the advent of Java 8 and lambda expression (or, in
+  Android, Retrolambda) in the language ecosystem;
+\item
+  RAC has come a long way from its Objective-C years, and now, with
+  Swift and the current 3.0 version, offers a nice and clean set of
+  interfaces and abstractions;
+\item
+  Akka Streams is, in this thesis author's hopinion, the most impressive
+  approach to modelling computation declaratively. The approach of
+  building a graph-resembling DSL to express not-linear computation is a
+  feature that really helps in keeping the code clean and intuitive,
+  even if the initial learning curve and some of the magic behind the
+  library is a thing to always keep in consideration when evaluating a
+  tool.
+\end{itemize}
+
+\section{Hot and Cold, Push and Pull,
+Back-pressure}\label{hot-and-cold-push-and-pull-back-pressure}
+
+Another aspect that distinguish the libraries is the way they abstract
+the notion of \textbf{who actually starts the computation}, and thus,
+the propagation of changes.
+
+In this regards, RAC offer a pretty straight forward abstraction putting
+this distinction directly at type level: the \texttt{Signal} type is
+producer-driven, so the changes are pushed to the subscribers as they
+happens/are produced, while the \texttt{SignalProducer} type is demand
+driven, so the changes are pulled.
+
+In RxJava this distinction is not obvious, but there're a set of types
+and operators that helps when building observables that should be
+producer-driven or demand-driven. For example, the \texttt{Subject} type
+is usually used to ``warm'' a cold observable into an hot observable.
+RxJava is also conform to Reactive Streams, just like Akka Streams.
+Being conform to Reactive Streams means that for both libraries is valid
+the principle that a producer can never send more items than a consumer
+can handle, using the so called ``dynamic push-pull'' approach.
+
+In practice, the usage of this feature really depends from the use case
+to satisfy. For example, for Akka Streams and RxJava the conformation to
+Reactive Streams was a pretty straight forward process (engineers from
+Netflix, Typesafe, etc.. all find it problematic having a consumer
+overwhelmed by a production of items they can handle), since those
+frameworks are used to process an high number of items and also to build
+infrastructures and services. In the context of mobile applications,
+currently RAC doesn't directly solve this issue, since RAC mantainers
+believe that figuring out the behavior of side effects is far more
+important, since effects dominate GUI applications.
+
+\section{Solving problems the reactive
+way}\label{solving-problems-the-reactive-way}
+
+Coming from an OO background, applying RP seems quite unnatural at
+first, since the way that most developers learnt programming is
+tipycally with an imperative approach.
+
+What RP propose is a more declarative approach to solving problems, that
+leverages to some well defined principles:
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  a set of minimal abstractions, that allow to wrap computations in
+  which latency plays a main role, in an elegant way;
+\item
+  a set of operators with a clear semantics, that allows to build
+  typesafe and statically-typed computation chains, without worrying
+  about classic concurrency issues but focusing mainly on better
+  expressing what each computation should do.
+\end{itemize}
+
+How these principles fits real-world problems is currently a topic of
+discussion and this thesis only covered two main contexts of modern
+applications.
+

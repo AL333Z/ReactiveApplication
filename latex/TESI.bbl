@@ -1,0 +1,104 @@
+\begin{thebibliography}{1}
+
+\bibitem{fran}
+\newblock 1997,  Elliott, Hudak.\\
+\newblock Functional reactive animation
+
+\bibitem{obs}
+\newblock 2012,  Odersky, Maier, Rompf.\\
+\newblock Deprecating the Observer Pattern
+
+\bibitem{rpsurvey}
+\newblock 2012, Bainomugisha, Lombide Carreton, Van Cutsem, Monstinckx, De Meuter.\\
+\newblock A Survey on Reactive Programming
+
+\bibitem{rpanalysys}
+\newblock 2013, Salvaneschi, Mezini.\\
+\newblock Reactive Behavior in Object-oriented Applications: An Analysis and a Research Roadmap
+
+\bibitem{agha}
+\newblock 1986, Agha.\\
+\newblock Actors: a model of concurrent computation in distributed systems
+
+\bibitem{push-pull}
+\newblock 2009, Elliot.\\
+\newblock Push-pull functional reactive programming
+
+\bibitem{rxnet}
+\newblock 2010, http://msdn.microsoft.com/en- us/devlabs/.\\
+\newblock Reactive Extensions for .NET (Rx)
+
+\bibitem{meijer-duality}
+\newblock 2014, Meijer, http://channel9.msdn.com/Events/Lang-NEXT/Lang-NEXT-2014/Keynote-Duality
+.\\
+\newblock Duality and the End of Reactive
+
+\bibitem{meijer1}
+\newblock 2014, Meijer.\\
+\newblock The curse of the excluded middle
+
+\bibitem{meijer2}
+\newblock 2012, Meijer.\\
+\newblock Your mouse is a database
+
+\bibitem{scalareact}
+\newblock https://github.com/ingoem/scala-react.\\
+\newblock Scala.react
+
+\bibitem{rxjava-rxandroid}
+\newblock https://github.com/ReactiveX/RxJava.\\
+\newblock RxJava and RxAndroid
+
+\bibitem{rac}
+\newblock https://github.com/ReactiveCocoa/ReactiveCocoa.\\
+\newblock ReactiveCocoa
+
+\bibitem{akka}
+\newblock https://github.com/akka/akka.\\
+\newblock Akka
+
+\bibitem{rac-intro}
+\newblock 2015, Salazar, http://nomothetis.svbtle.com/an-introduction-to-reactivecocoa, 2015.\\
+\newblock An Introduction to ReactiveCocoa
+
+\bibitem{rac-intro2}
+\newblock 2015, Eberhardt, http://blog.scottlogic.com/2015/04/24/first-look-reactive-cocoa-3.html.\\
+\newblock A first look at ReactiveCocoa 3.0
+
+\bibitem{rac-intro3}
+\newblock 2015, Eberhardt, http://blog.scottlogic.com/2015/04/28/reactive-cocoa-3-continued.html.\\
+\newblock ReactiveCocoa 3.0 - Signal producers and API clarity
+
+\bibitem{akkastream}
+\newblock  http://doc.akka.io/docs/akka-stream-and-http-experimental.\\
+\newblock Akka Stream documentation
+
+\bibitem{rxjava}
+\newblock https://github.com/ReactiveX/RxJava/wiki.\\
+\newblock RxJava documentation
+
+\bibitem{reactivepattern}
+\newblock 2015, Kuhn, Allen.\\
+\newblock Reactive Design Patterns
+
+\bibitem{fpscala}
+\newblock 2014, Chiusano, Bjarnason.\\
+\newblock Functional Programming in Scala
+
+\bibitem{rpmodeling}
+\newblock 2015, Ghosh.\\
+\newblock Functional and Reactive Domain Modeling
+
+\bibitem{okasaki}
+\newblock 1999, Okasaki.\\
+\newblock Purely Functional Data Structures
+
+\bibitem{evans}
+\newblock 2003, Evans.\\
+\newblock Tackling Complexity in the Heart of Software
+
+\bibitem{flows}
+\newblock 2014, Salvaneschi, Mezini, Eugster.\\
+\newblock Programming with Implicit Flows
+
+\end{thebibliography}

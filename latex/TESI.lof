@@ -1,0 +1,25 @@
+\select@language {italian}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Push- Versus Pull-based evaluation model, from the paper ``A survey on Reactive Programming''}}{5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Momentary view of inconsistent program state and recomputation.}}{7}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A marble diagram}}{17}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Map operator}}{19}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces FlatMap operator}}{21}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Filter operator}}{21}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Scan operator}}{22}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Take operator}}{23}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces PublishSubject}}{27}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ReplaySubject}}{27}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces AsyncSubject}}{28}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces BehaviorSubject}}{29}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces A hand written graph expressing a computation}}{44}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Traditional MVC in iOS}}{53}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Cocoa version of MVC}}{54}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A revised iOS application architecture, in which the view and the controller are coupled}}{54}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The MVVM architecural pattern}}{56}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The overall architecture}}{58}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
