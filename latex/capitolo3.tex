@@ -3,8 +3,8 @@
 The first chapter introduced the literature and the main concepts of the
 RP paradigm, and the second one depicted some of the main popular and
 used libraries and framework for RP. This chapter will propose a
-concrete applications of the paradigm to some pratical use cases that
-recur pretty frequently when developpig mobile application nowadays.
+concrete applications of the paradigm to some practical use cases that
+recur pretty frequently when developing mobile application nowadays.
 
 Thus, this chapter will focus its attention on mobile application
 development, in both the Android and iOS platforms.
@@ -28,13 +28,13 @@ a Rest API) to fetch some resource, so this initial use case can be
 considered as a foundational building block for every application.
 
 The abstraction of event streams can be used to model this use case in a
-pretty straigh-forward way.
+pretty straight-forward way.
 
 In the case of a web request, the stream will either emit one value -
-containing the body of the response - and succed, or fail with an error.
+containing the body of the response - and succeed, or fail with an error.
 
 In the case of more complex request-response configuration (e.g.~a
-request that opens a web socket, that then emits and push new data over
+request that opens a websocket, that then emits and push new data over
 a long time) the stream will emit more values, as long as the flow of
 items continues, or terminate if a failure occurs.
 
@@ -44,11 +44,11 @@ certain number of processing stages can be run over these data. Thus,
 the notion of event streams and operators fits really nicely also on
 this part.
 
-To demostrate a possible solution of this scenario using an approach
+To demonstrate a possible solution of this scenario using an approach
 based on RP, lets introduce a sample use case:
 
 \begin{quote}
-The application has to query a web service, that returns a list of words
+The application has to query a webservice, that returns a list of words
 for a given month. Each word refers to a specific day, month and year.
 The application should show all the words in the given month, sorted by
 date, with the first one highlighted with a different color.
@@ -151,10 +151,10 @@ common transformation when dealing with list of elements, and since
 operators like \texttt{map}, \texttt{filter}, etc.. need to operate on
 single elements, this operation is essential to build the chain.
 
-Another pattern is the usage of \texttt{map} in conjuction with
+Another pattern is the usage of \texttt{map} in conjunction with
 \texttt{scan}, to accumulate the result of a computation. The code
 presented does the trivial job of associating to each element its index
-in the observable, but it's a use case useful enought to deserve a
+in the observable, but it's a use case useful enough to deserve a
 citation.
 
 The presentation of the items is provided by the
@@ -197,7 +197,7 @@ public struct Word {
 \end{verbatim}
 
 Also on iOS, the semantics for this signal producer is pretty simple and
-similar to the androd counterpart:
+similar to the android counterpart:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -230,7 +230,7 @@ getWords(month, year)
     |> start(next: { elem in self.updateView(elem)})
 \end{verbatim}
 
-Almost every step of the chain is the same as its android conunterpart.
+Almost every step of the chain is the same as its android counterpart.
 The main difference is that RAC doesn't offer a method to sort the
 elements of a SignalProducer, so, in this case, the elements are
 filtered at the beginning of the chain using a method of the
@@ -240,11 +240,11 @@ filtered at the beginning of the chain using a method of the
 \section{Choosing an architectural
 pattern}\label{choosing-an-architectural-pattern}
 
-This section will explore a foundamental aspect of mobile application
+This section will explore a fundamental aspect of mobile application
 development: the architectural pattern.
 
-When developping a mobile applications, usually the target platform
-implicitely or explicitely suggests an architecture.
+When developing a mobile applications, usually the target platform
+implicitly or explicitly suggests an architecture.
 
 \subsection{State of the art in iOS}\label{state-of-the-art-in-ios}
 
@@ -276,7 +276,7 @@ In its original abstraction, in MVC:
   the user manipulates a view and, as a result, an event is generated
 \item
   a controller receives the event and manage apply an
-  appliction-specific strategy
+  application-specific strategy
 \item
   this strategy can consist in requesting a model object to update its
   state or in requesting a view object to change its appearance.
@@ -319,7 +319,7 @@ coupling a view and its controller:
 \end{itemize}
 
 With this said, it is reasonable to modify the previous model with an
-update in which the view and the view controller are paired togheter.
+update in which the view and the view controller are paired together.
 
 \begin{figure}[htbp]
 \centering
@@ -333,7 +333,7 @@ this architectural pattern to design applications. This has often lead
 to what is called the ``Massive View Controller'' anti-pattern. The term
 ``Massive'' is used to denote the use and abuse of the view controller
 entity to host most of the application logic, grouping functionalities
-that don't stricly relate to the controller entity.
+that don't strictly relate to the controller entity.
 
 \subsection{State of the art in
 Android}\label{state-of-the-art-in-android}
@@ -410,7 +410,7 @@ The MVVM pattern consists of the following parts:
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.75]{imgs/mvvm.png}
-\caption{The MVVM architecural pattern}
+\caption{The MVVM architectural pattern}
 \end{figure}
 
 Looking at the diagram, it's clear that the view-model:
@@ -436,7 +436,7 @@ the views with their associated view-models}, allowing the proper
 
 \section{A case study}\label{a-case-study}
 
-To illustrate the application of the MVVM pattern in conjuction with RP
+To illustrate the application of the MVVM pattern in conjunction with RP
 frameworks, let's introduce a simple-but-effective use case.
 
 The use case is an app for iOS and Android, that will:
@@ -457,8 +457,8 @@ The use case is an app for iOS and Android, that will:
 
 The requirements are pretty trivial for an experienced developer that
 use to work following the ``standard'' way to develop mobile
-applications, but in this thesis author's hopinion is a pretty
-significative example, since it allows to demostrate a lot of concepts:
+applications, but in this thesis author's opinion is a pretty
+significative example, since it allows to demonstrate a lot of concepts:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -466,7 +466,7 @@ significative example, since it allows to demostrate a lot of concepts:
   abstracting the retrieval, manipulation and presentation of data (also
   see the previous dedicated section);
 \item
-  presenting an uniform abstraction, applyable on both the platforms;
+  presenting an uniform abstraction, applicable on both the platforms;
 \item
   proper separation of concerns, applying MVVM.
 \end{itemize}
@@ -475,7 +475,7 @@ significative example, since it allows to demostrate a lot of concepts:
 \subsection{A common architecture}\label{a-common-architecture}
 
 Starting from the requirements and with \textbf{MVVM} in mind, what
-follows is the proposed overall system architecure.
+follows is the proposed overall system architecture.
 
 \begin{figure}[htbp]
 \centering
@@ -487,7 +487,7 @@ NB: the diagram is incomplete, and shows only the relevant building
 block of the system. The convention used here to express the abstraction
 of stream of items is the RxJava's \texttt{Observable} type.
 
-What immediately emerges looking at the digram is how the MVVM pattern
+What immediately emerges looking at the diagram is how the MVVM pattern
 is applied to model the requirements.
 
 The \textbf{Model} provides a view-independent representation of the
@@ -499,7 +499,7 @@ it heavily depends on platform-specific abstractions, and for this
 reason it will be better depicted in the next two sections.
 
 The \textbf{ViewModel} is the bridge between the view and the model,
-wrapping all the presentation logic. In particular, there're two
+wrapping all the presentation logic. In particular, there are two
 concrete type of viewmodels:
 
 \begin{itemize}
@@ -535,7 +535,7 @@ abstractions that help in binding the viewmodel to the view, allowing to
 set up the automatic update of the view layer when the model gets
 updated.
 
-Note that this architecture is platform-agnostic and there're no
+Note that this architecture is platform-agnostic and there are no
 reference to a specific platform or native abstractions, except for the
 \texttt{Observable} type (which can be easily traduced in
 \texttt{SignalProducer}, in this specific context).
@@ -630,7 +630,7 @@ public class WordService {
 
 To better understand the following steps, it's necessary to introduce
 the abstraction of \texttt{MutableProperty} and
-\texttt{ConstantProperty}. On the iOS conterpart, ReactiveCocoa already
+\texttt{ConstantProperty}. On the iOS counterpart, ReactiveCocoa already
 offers the corresponding abstraction. RxJava and RxAndroid don't
 directly offer the conceptual equivalent, but it's pretty easy to build
 the same abstraction starting from a \texttt{BehaviorSubject}.
@@ -839,7 +839,7 @@ The view layer is represented by three main components:
   necessary to implement a list view in Android
 \end{itemize}
 
-The \texttt{MainActivity}'s only job is to instatiate a
+The \texttt{MainActivity}'s only job is to instantiate a
 \texttt{MainActivityFragment}, so its code is omitted.
 
 \begin{verbatim}
@@ -908,10 +908,10 @@ public class WordListAdapter
 
     /**
      * Constructor that returns a WordListAdapter, with an observable
-     * containing a list of view models
+     * containing a list of viewmodels
      *
      * @param viewModelsObservable an observable with 
-     * the list of view models
+     * the list of viewmodels
      */
     public WordListAdapter(Observable<List<WordViewModel>> 
     	viewModelsObservable) {
@@ -1010,7 +1010,7 @@ public class WordListAdapter
 \end{verbatim}
 
 The class \texttt{WordListAdapter} contains a lot of boilerplate code
-that directly depend on the undelyind abstractions. The relevant code is
+that directly depend on the underlying abstractions. The relevant code is
 in the \texttt{ViewHolder} class, in which:
 
 \begin{itemize}
@@ -1038,7 +1038,7 @@ for the introduced architecture.
 \subsubsection{Model}\label{model}
 
 The \texttt{Word} type only contains some read-only properties and a
-constructor, just like the Android conterpart.
+constructor, just like the Android counterpart.
 
 \begin{verbatim}
 struct Word {
@@ -1120,7 +1120,7 @@ class WordListViewModel {
 
         self.wordService = wordService
 
-        // retrieve the words, create a view model for each words,
+        // retrieve the words, create a viewmodel for each words,
         // and update the overall view model
         self.wordService.getWords(1, year: 2015)
             |> on(started: { self.isLoading.put(true) })
@@ -1338,3 +1338,5 @@ One could also think to create a \emph{meta-meta-model} that allows to
 describe the architecture of the application with some high-level DSL
 and then generate the code for both the platforms, but this argument
 goes outside the scope of this thesis.
+
+

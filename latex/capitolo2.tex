@@ -1,6 +1,6 @@
 \chapter{State of the union}\label{state-of-the-union}
 
-The previous chapter quicly introduces the basic notions of RP. This
+The previous chapter quickly introduces the basic notions of RP. This
 chapter will give an overview of the state of the art for RP frameworks.
 
 This thesis author arbitrarily choose four relevant libraries:
@@ -81,8 +81,7 @@ The difference between the two types can be seen directly in the types:
   notion of ``current value'' has no sense at all.
 \end{itemize}
 
-The two subclasses need to implement two methods which obtain the
-reactive's current message or value and create dependencies in a single
+The two subclasses need to implement two methods which obtain reactive's current message or value and create dependencies in a single
 turn.
 
 The next two sections will better examine the two abstraction introduced
@@ -122,12 +121,12 @@ ob.dispose()
 \texttt{observe(\ )} returns an handle of the observer,that can be used
 to uninstall and dispose the observer prematurely, via its
 \texttt{dispose()} method. This is a common pattern in all of the other
-frameworks/libraries presentend in this thesis.
+frameworks/libraries presented in this thesis.
 
 The basic types for events handling are pretty neat and simple to reason
 about, since they are first-class values. The usage of these types
 starts to be helpful only if combined with a set of operators, that
-enables developers to build better and declarative abstration.
+enables developers to build better and declarative abstraction.
 
 For example, the \texttt{Events} trait defines some common operators as
 follows:
@@ -151,7 +150,7 @@ these needs.
 
 In simple words, a \texttt{Signal} is the \textbf{continuous}
 counterpart of trait \texttt{Events} and represents \textbf{time-varying
-values}, mantaining:
+values}, maintaining:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -289,7 +288,7 @@ composing asynchronous and event-based programs using observable
 sequences for the JVM}.
 
 The library was heavily inspired by Rx.NET by Microsoft and is
-developped by Netflix and other contributors. The code is open source
+developed by Netflix and other contributors. The code is open source
 and recently, after 2 years of development, has reached the 1.0 version.
 
 RxJava is also conform to the Reactive Streams initiative (see the
@@ -300,7 +299,7 @@ Reactive Streams implementations.
 
 \subsection{Observable}\label{observable}
 
-The foundamental entity of RxJava is the \textbf{Observable} type. An
+The fundamental entity of RxJava is the \textbf{Observable} type. An
 observable is a \emph{sequence of ongoing event ordered in time}.
 
 An \texttt{Observable} can emit 3 type of items:
@@ -312,7 +311,7 @@ An \texttt{Observable} can emit 3 type of items:
 \item
   error
 \item
-  completition event
+  completion event
 \end{itemize}
 
 RxJava provides a really nice documentation, with also some graphical
@@ -344,7 +343,7 @@ class Observable<T> { ... }
 \end{verbatim}
 
 An \texttt{Observable} can emit - in order - \textbf{zero, one or more
-values, an error or a completition event}.
+values, an error or a completion event}.
 
 An \texttt{Observable} is an \textbf{immutable} entity, so the only way
 to change the sequence of values it emits is through the application of
@@ -352,7 +351,7 @@ an \textbf{operator} and the subsequent creation of a new
 \texttt{Observable}.
 
 An entity can subscribe its interest in the values coming from an
-\texttt{Observalbe} through its \texttt{subsribe(\ )} method, that
+\texttt{Observalbe} through its \texttt{subscribe(\ )} method, that
 accepts one, two or three \texttt{Action} parameters (that correspond to
 the \texttt{onNext(\ )}, \texttt{onError(\ )} and
 \texttt{onComplete(\ )} callbacks).
@@ -394,12 +393,12 @@ of these is the following:
   \ldots{}
 \end{itemize}
 
-Usually, observables created with these methods are used in conjuction
+Usually, observables created with these methods are used in conjunction
 with other observables and operators, to create more complex logics.
 
 \subsubsection{Operator}\label{operator}
 
-In RxJava, operators are what enable the devolper to \textbf{model} the
+In RxJava, operators are what enable the developer to \textbf{model} the
 actual computation. An operator allows to perform \textbf{almost every
 type of manipulation} on the source observer in a declarative way.
 
@@ -549,7 +548,7 @@ query("Hello, world!")                    // -> Observable<List<String>>
       							   indexItemPair.second ));
 \end{verbatim}
 
-The example starts with the hyphotesis of having two methods that
+The example starts with the hypothesis of having two methods that
 returns observable, for example coming from the network layer of an
 application. \texttt{query} return a list of url given a text and
 \texttt{getTitle} returns the title of a website or null.
@@ -643,7 +642,7 @@ section will cover one of the most important aspects of the framework:
 \textbf{schedulers}.
 
 A scheduler is an \emph{object that schedules unit of work}, and it's
-implemented throgh the the \texttt{Scheduler} type. This type allows to
+implemented through the the \texttt{Scheduler} type. This type allows to
 specify \textbf{in which execution context} the chain or part of the
 chain has to run. In particular, the developer can choose in which
 thread:
@@ -705,12 +704,12 @@ observer and as an \texttt{Observable}:
   or more observables
 \item
   because \textbf{it is an Observable}, it can pass through the items it
-  observes by \textbf{reemitting} them, and it can also \textbf{emit}
+  observes by \textbf{re-emitting} them, and it can also \textbf{emit}
   new \textbf{items}
 \end{itemize}
 
 \texttt{Subject} has the ``power'' of \textbf{turning a cold observable
-hot}. Infact, when a \texttt{Subject} subscribes to an
+hot}. In fact, when a \texttt{Subject} subscribes to an
 \texttt{Observable}, it will trigger that \texttt{Observable} to begin
 emitting items (and if that \texttt{Observable} is ``cold'' --- that is,
 if it waits for a subscription before it begins to emit items). This can
@@ -744,7 +743,7 @@ previous emitted items.
 
 \texttt{ReplaySubject} emits to any observer \textbf{all} of the items
 that were emitted by the source Observable(s), regardless of when the
-observer subscribes. To keep the memory consuption limited, this subject
+observer subscribes. To keep the memory consumption limited, this subject
 also use a bounded buffer that enable to discard old items when the
 limit size has been reached.
 
@@ -846,7 +845,7 @@ At the time of writing (may/june/july 2015), RAC 3.0 is in beta. The 3.0
 version offers new APIs in Swift, that are also mostly backward
 compatible with version 2.0 (that is written in Objective-C).
 
-Using Swift, the APIs now have a better and cleaner form. Infact, Swift
+Using Swift, the APIs now have a better and cleaner form. In fact, Swift
 is a language that allows to build composable abstraction pretty easily,
 supporting immutability (value types vs reference types), high-order
 functions, optionals, custom operators, etc\ldots{}
@@ -862,7 +861,7 @@ The first abstraction that the framework introduces is the notion of
 event. An \textbf{event} enables to account for \emph{discrete
 phenomena}, and each of which has a stream (finite or infinite) of
 occurrences. Each occurrence is a value paired with a time.
-Events are considered to be improving list of occurences. Or, in simpler
+Events are considered to be improving list of occurrences. Or, in simpler
 words, events are things that happens.
 
 In RAC, events are first-class citizens, with the following type:
@@ -885,7 +884,7 @@ of related values and enables you to work with those values in a
 type-safe way within your code.
 \end{quote}
 
-The other foundamental type in RAC is the \texttt{Signal} type, defined
+The other fundamental type in RAC is the \texttt{Signal} type, defined
 as:
 
 \begin{verbatim}
@@ -895,7 +894,7 @@ public final class Signal<T, E: ErrorType>
 A signal is just a sequence of events in time that is conforms to the
 grammar
 \texttt{Next*\ (Error\ \textbar{}\ Completed\ \textbar{}\ Interrupted)?}.
-The grammar introduces a precise semantics and clearify the meaning of
+The grammar introduces a precise semantics and clarify the meaning of
 the concrete possible instances for the Event type:
 
 \begin{itemize}
@@ -915,8 +914,8 @@ the concrete possible instances for the Event type:
 
 Just like RxJava's Observable, also RAC's signal can be distincted in
 two main categories: hot and cold signals. The main difference from
-RxJava's implementation is that in RAC this foundamental distinction can
-be found directly in the types. Infact, RAC defines \texttt{Signal}as
+RxJava's implementation is that in RAC this fundamental distinction can
+be found directly in the types. In fact, RAC defines \texttt{Signal}as
 hot and \texttt{SignalProducer} as cold signals.
 
 \emph{NB}: the previous introduction of Signal is general and applicable
@@ -931,12 +930,12 @@ As introduced previously, Signal implements the abstraction of
 \textbf{hot signal} as a signal that typically has \textbf{no start and
 no end}.
 
-A typical pratical example for this type can be represented by the press
-events of a button or the arrive of some notifications. They are just
+A typical practical example for this type can be represented by the press
+events of a button or the arrival of some notifications. They are just
 events that happens with no relevance of the fact that someone is
 observing them.
 
-Using a popular philosophical metaphore:
+Using a popular philosophical metaphor:
 
 \begin{quote}
 If a tree falls in a forest and no one is around to hear it, \textbf{it
@@ -958,7 +957,7 @@ Signals are generally used to represent event streams that are already
 streams that must first be \emph{started}, see the SignalProducer type.
 \end{quote}
 
-The RAC' mantainers decided to keep the distinction between hot and cold
+The RAC' maintainers decided to keep the distinction between hot and cold
 Signal at the type level, so RAC offers both the \texttt{Signal} and
 \texttt{SignalProducer} types.
 
@@ -970,14 +969,14 @@ class Signal<T, E: ErrorType> {
 }
 \end{verbatim}
 
-Signal is parametrized over \texttt{T}, the type of the events emitted
+Signal is parameterized over \texttt{T}, the type of the events emitted
 by the signal and \texttt{E}, the type that denotes the errors.
 
 A Signal can be created by passing to the initializer a generator
 closure, which is then invoked with a sink of type
 \texttt{SinkOf\textless{}Event\textless{}String,\ NoError\textgreater{}\textgreater{}}.
 The sink is then used by the closure to forward events to the Signal
-through the \texttt{sendNext(\ )} method. A similiar approach has been
+through the \texttt{sendNext(\ )} method. A similar approach has been
 implemented also by Akka Streams.
 
 \textbf{In many cases, a stream of events that has no start and no end
@@ -992,7 +991,7 @@ For the ``button example'', the type for the related signal might be
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  the user of the signal only cares about the occurence of the event, no
+  the user of the signal only cares about the occurrence of the event, no
   further information will be provided
 \item
   the signal can't error out, since in this particular case it has no
@@ -1085,7 +1084,7 @@ createSignal()
 
 The beauty of this approach is that the chain of operations fits the
 types of each operation, so when the code compiles (and if the user of
-the APIs has learnead the semantics of each operators) the computation
+the APIs has learned the semantics of each operators) the computation
 acts as expected. All the relevant work for the newcomers of the
 paradigm consist in taking the time needed to learn the basics and play
 with the types and the operators.
@@ -1120,7 +1119,7 @@ func createSignalProducer() -> SignalProducer<String, NoError> {
 }
 \end{verbatim}
 
-Using a popular philosophical metaphore, again:
+Using a popular philosophical metaphor, again:
 
 \begin{quote}
 If a tree falls in a forest and no one is around to hear it, \textbf{it
@@ -1134,7 +1133,7 @@ events is \texttt{start(\ )}.
 If more than one observer subscribe to the same SignalProducer, the
 resources are allocated for each observer. In the example above, every
 time an observer invoke the \texttt{start(\ )} method on the same
-SignalProducer instance, a new istance of NSTimer is allocated.
+SignalProducer instance, a new instance of NSTimer is allocated.
 
 Also on SignalProducers can be applied a wide range of operators. RAC
 doesn't implement all the operators twice for Signal and SignalOperator,
@@ -1156,7 +1155,7 @@ public func |> <T, E, U, F>(producer: SignalProducer<T, E>,
 
 The previous sections introduced the abstractions that RAC offers to
 describe signal. This section will introduce other collateral but
-usefull types.
+useful types.
 
 \texttt{PropertyType} is a protocol that, when applied to a property,
 \textbf{allows the observation of its changes}. Its definition is as
@@ -1228,7 +1227,7 @@ The constructor of an Action accepts a closure or a function that
 creates a SignalProducer for each input, with the type
 \texttt{Input\ -\textgreater{}\ SignalProducer\textless{}Output,\ Error\textgreater{})}.
 
-A pratical and useful use of Action is in conjunction with
+A practical and useful use of Action is in conjunction with
 \texttt{CocoaAction}, that is another type that wraps an Action for use
 by a GUI control, with key-value observing, or with other Cocoa
 bindings.
@@ -1297,7 +1296,7 @@ following building blocks:
 \item
   \textbf{Sink}: A processing stage with exactly one input, signalling
   demand to the upstream and accepting data elements in response, as
-  soon as thei're produced.
+  soon as they're produced.
 \item
   \textbf{Flow}: A processing stage which has exactly one input and
   output, which connects its upstream and downstreams by transforming
@@ -1314,7 +1313,7 @@ graphs:
 \itemsep1pt\parskip0pt\parsep0pt
 \item
   \textbf{Graphs}: A processing stage with multiple flows
-connected at a signle point.
+connected at a single point.
 \end{itemize}
 
 The next sections will depict all the core abstractions introduced here.
@@ -1456,7 +1455,7 @@ with fast subscriber} and \textbf{fast publisher with slow subscriber}.
 
 The best scenario is the former, where all the items produced by the
 publisher are always delivered to the subscriber with no delay due to a
-lack of demand. Infact, the protocol guarantees that the publisher will
+lack of demand. In fact, the protocol guarantees that the publisher will
 never signal more items than the signalled demand, and since the
 subscriber however is currently faster, it will be signalling demand at
 a higher rate, so the publisher should not ever have to wait in
@@ -1468,7 +1467,7 @@ The latter case if more problematic, since the subscriber is not able to
 keep the pace of the publisher in accepting incoming items and needs to
 signal its lack of demand to the publisher. Since the protocol
 guarantees that the publisher will never signal more items than the
-signalled demand, there the following strategies availlable:
+signalled demand, there the following strategies available:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -1551,7 +1550,7 @@ The following image shows a graph that express a computation in which:
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.75]{imgs/graph.png}
-\caption{A hand written graph expressing a computation}
+\caption{A handwritten graph expressing a computation}
 \end{figure}
 
 The corresponding computation can be implemented as follows:
@@ -1571,7 +1570,7 @@ val g = FlowGraph.closed() {
 \end{verbatim}
 
 When building and connecting each component, the compiler will check for
-type correctness and this is a really usefull things. The check to
+type correctness and this is a really useful things. The check to
 control whether or not all elements have been properly connected is done
 at run-time, though.
 
@@ -1639,7 +1638,7 @@ in the following manner, with:
   with the source
 \item
   a \texttt{Concat(\ )} combined with another \texttt{Source(\ )} with
-  an initial element that performs an initial ``kick-off''. Infact,
+  an initial element that performs an initial ``kick-off''. In fact,
   using a balancing operator to balance a feedback loops require an
   initial element in the feedback loop, otherwise we fall in the
   ``chicken-and-egg'' problem.

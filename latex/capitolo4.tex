@@ -1,7 +1,7 @@
 \chapter{Towards reactive event
 processing}\label{towards-reactive-event-processing}
 
-The previous chapter depicted a possbile approach to apply RP techniques
+The previous chapter depicted a possible approach to apply RP techniques
 to the context of mobile applications development.
 
 This chapter will instead introduce a possible application of RP
@@ -13,13 +13,13 @@ information about things that happen, and \emph{deriving} a conclusion
 from them.
 
 Also in this chapter, to better understand and see how RP plays a
-foundamental role in the game, a use case will be introduced, discussed
+fundamental role in the game, a use case will be introduced, discussed
 and solved.
 
 \section{Building a processing pipeline: a case
 study}\label{building-a-processing-pipeline-a-case-study}
 
-The use case proposed to demostrate the application of RP to the event
+The use case proposed to demonstrate the application of RP to the event
 processing context is an example of sentiment analysis.
 
 From the Wikipedia definition:
@@ -38,7 +38,7 @@ The requirements the the application needs to satisfy are the following:
   the application should monitor and elaborate the sentiment toward two
   popular brands: Apple and Google;
 \item
-  the analisys should be performed starting from the information taken
+  the analysis should be performed starting from the information taken
   from Twitter, by reading and elaborating what people tweets;
 \item
   the computation should assign to each tweet a ``static score'',
@@ -55,7 +55,7 @@ The requirements the the application needs to satisfy are the following:
 
 \textbf{NB}: This approach to sentiment analysis is for sure
 oversimplified and not correct at all, but in this thesis author's
-hopinion what really matters about this case study is not the
+opinion what really matters about this case study is not the
 correctness of the analysis method, but the application of the
 abstractions introduced in this thesis to solve problems.
 
@@ -83,11 +83,11 @@ class TwitterStreamListener(filter: Array[String],
 \end{verbatim}
 
 This method will introduce tweets regarding our two brands as they are
-pubblished.
+published.
 
 Once we get the source of our items, two further steps to performs are
 the ones that assign to each tweet a ``static score'', and then a
-valutation.
+valuation.
 
 \begin{verbatim}
   val g = FlowGraph.closed() {
@@ -124,7 +124,7 @@ At this point, the last node of the linear graph has type
 \texttt{Flow{[}(Tweet,\ Double),\ (Tweet,\ Double),\ Unit{]}}, meaning
 that: - it accepts a tuple containing a Tweet and a Double, and it puts
 out the same type; - looking at the code itself, if returns a stream of
-pairs of tweets and valutations.
+pairs of tweets and valuations.
 
 The next step allows to determine in which category (brand) each tweet
 in the stream belongs to. This step is needed, since the informations
@@ -146,9 +146,9 @@ in ~> mapToScore ~> mapToValutation ~> mapWithCategory
 \end{verbatim}
 
 Note that now the stream puts out a tuple of \texttt{String} and
-\texttt{Double}, that correspond to the current category and valutation
+\texttt{Double}, that correspond to the current category and valuation
 for the \texttt{Tweet} arrived from the input. At this stage, the other
-further information about the tweet are no more necesary.
+further information about the tweet are no more necessary.
 
 At this point, the stream of tuples needs to grouped for brand, and then
 reduced by applying a function that aggregates all the partial result to
@@ -157,7 +157,7 @@ compose a result. In this simplified case, this function is a sum.
 \begin{verbatim}
 // ...
 
-// groups the tweets for brand and sum the valutations
+// groups the tweets for brand and sum the valuations
 def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
     = reduceByKey(
   filters.length,
@@ -279,7 +279,7 @@ object MainStreamingExample extends App {
         .map(matchedFilter => (matchedFilter, tuple._2))
     )
 
-    // groups the tweets for category and sum the valutations
+    // groups the tweets for category and sum the valuations
     def sumReducedByKey: Flow[(String, Double), (String, Double), Unit]
         = reduceByKey(
             filters.length,
@@ -348,7 +348,7 @@ class TwitterStreamListener(filter: Array[String],
 
 Once we get the source of tweets, two further steps to performs are the
 ones that assign to each tweet a ``static score'', and then a
-valutation.
+valuation.
 
 \begin{verbatim}
 val filters: scala.collection.immutable.List[String]
@@ -377,7 +377,7 @@ At this point, the resulting observable has type
   and it puts out the same type;
 \item
   looking at the code itself, if returns a stream of pairs of tweets and
-  valutations.
+  valuations.
 \end{itemize}
 
 As in the previous implementation, the next step allows to determine in
@@ -398,12 +398,12 @@ job.
 
 Note that, also with this implementation, now the stream puts out a
 tuple of \texttt{String} and \texttt{Double}, that correspond to the
-current category and valutation for the \texttt{Tweet} arrived from the
+current category and valuation for the \texttt{Tweet} arrived from the
 input.
 
 At this point, the stream of tuples needs to grouped for brand, and then
 reduced by applying a function that aggregates all the partial result to
-compose a result. This step has a really shorter and concise syntax in
+compose a result. This step has a really short and concise syntax in
 this RxScala's implementation.
 
 \begin{verbatim}
@@ -456,7 +456,7 @@ object MainRxExample extends App {
       else (tweetScoreTuple._1, -tweetScoreTuple._2)
     )
 
-    // groups the tweets for brand and sum the valutations
+    // groups the tweets for brand and sum the valuations
     .flatMap(tuple => {
       val matchedFilters = filters
         .filter(f => tuple._1.body.toLowerCase.contains(f.toLowerCase))
@@ -464,7 +464,7 @@ object MainRxExample extends App {
       Observable.from(matchedFilters)
     })
 
-    // groups the tweets for brand and sum the valutations
+    // groups the tweets for brand and sum the valuations
     .groupBy(groupKey)
     .flatMap {
       case (key, groupStream) =>
@@ -485,7 +485,7 @@ object MainRxExample extends App {
 The usage of both the library seems to be a good fit for the simple case
 study introduced.
 
-The imlementation that uses Akka Stream looks a little bit more verbose,
+The implementation that uses Akka Stream looks a little bit more verbose,
 since there's some ``setup and wiring work'' that needs to take place,
 but the final result looks pretty elegant.
 
@@ -495,4 +495,5 @@ straight-forward, indeed.
 For both the solutions, the most important thing to note is the fact
 that all the computations is build starting from the definition of a
 static-typed chain of operators (or flows).
+
 

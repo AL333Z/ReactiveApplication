@@ -17,7 +17,7 @@ var selected    // → 8 states
 var highlighted // → 16 states
 \end{verbatim}
 
-In other words, state management quickly become hard to mantain and
+In other words, state management quickly become hard to maintain and
 unpredictable. By avoiding mutable state a programmer has the assurance
 that no one else can possibly have changed his application's state, and
 can reason about \emph{what a value will be at a given time}.
@@ -32,14 +32,14 @@ objects}\label{entities-and-value-objects}
 In functional domain modelling, a system may be represented through the
 following main domain elements: entities, value objects and services.
 
-Each \emph{entitiy} has a unique identity. An entity may have many
+Each \emph{entity} has a unique identity. An entity may have many
 attributes, and each attribute may changes in course of the lifetime of
 the system. When an attribute within an entity changes, the identity
 itself is still the same. In this meta-model, attributes are abstracted
 by \emph{value objects}.
 
 A value object is immutable by definition and can be freely shared
-across entities. This doesn't mean that an entities's attributes can't
+across entities. This doesn't mean that an entity's attributes can't
 change. To clear this concept, let's consider the following example,
 with an entity person within a system, which is univocally identified by
 an unique id and that has an ``address'' attribute. Now the difference
@@ -69,7 +69,7 @@ using immutable constructs for its implementation.
 The last element of this meta-model is the \textbf{service}, that is a
 more macro level abstraction than entity and value object. In short, a
 service models a use case, encapsulating a complete operation that has a
-certaing value to user of the system.
+certain value to user of the system.
 
 A service usually involves multiple entities and value objects, that
 interact according to specific business rules to deliver specific
@@ -113,7 +113,7 @@ final case class Left[+A, +B](a: A) extends Either[A, B] {...}
 final case class Right[+A, +B](b: B) extends Either[A, B] {...}
 \end{verbatim}
 
-Basically, Sum Types express an \emph{OR} of types. Remebering that in
+Basically, Sum Types express an \emph{OR} of types. Remembering that in
 logic OR is presented by a plus, we can say that algebraically:
 \emph{type Either = Left + Right}.
 
@@ -153,7 +153,7 @@ Always in this example, we also have that Animal is a Sum Type, since an
 Animal is a Dog, OR an Hamster, and so on..
 
 Sum Type and Product Type are really important in functional domain
-modelling, since they provide the abstaction needed for structuring the
+modelling, since they provide the abstraction needed for structuring the
 various data of the domain model.
 
 The values of a Sum Type are typically grouped into several classes,
@@ -165,7 +165,7 @@ types.
 Product Types represent a larger abstraction instead, that allows to
 \emph{clubbing} together some types and \emph{tagging} it with a new
 data type. This extra tag could also be avoided, simply expressing every
-Product Type in terms of a tuple of types, but in funcional domain
+Product Type in terms of a tuple of types, but in functional domain
 modelling it's always convenient to express an entity with a tagged data
 type.
 
@@ -200,7 +200,7 @@ fact that they simplify the management of parallel and concurrent
 systems. If data structures are immutables, they can be freely shared
 between different execution contexts, without any fears.
 
-To better undestand what does it mean to have an immutable data
+To better understand what does it mean to have an immutable data
 structure, let's consider the following example from the book
 ``Functional Programming in Scala'':
 
@@ -237,8 +237,8 @@ list (in the following example, the 1 to the front).
 This property of reuse object instead of modify or copy the object
 itself is called \emph{sharing}.
 
-The indroduction of this chapter depicteds three elements as the
-foundamental domain elements: entities, value objects and services. So,
+The introduction of this chapter depicted three elements as the
+fundamental domain elements: entities, value objects and services. So,
 how do ADTs relate to these elements? As previously written, a value
 object is \emph{semantically immutable}, so abstracting this with an ADT
 is a good choice. For example, let's consider the following example:
@@ -308,7 +308,7 @@ From the implementation it emerges that \textbf{Lenses}:
   returns a new instance of the object set to the value
 \end{itemize}
 
-To demostrate that lenses just work as the copy method introduced below,
+To demonstrate that lenses just work as the copy method introduced below,
 let's consider the following example:
 
 \begin{verbatim}
@@ -333,8 +333,8 @@ def compose[Outer, Inner, Value](
 \end{verbatim}
 
 Compose, as the name suggests, takes care of composing two lenses. Lens
-composition is really helpful to mantain the code clean and safe, as the
-following sample will demostrate.
+composition is really helpful to maintain the code clean and safe, as the
+following sample will demonstrate.
 
 \begin{verbatim}
 val personAddressZipLens: Lens[Person,String] 
@@ -350,7 +350,7 @@ data}, allowing to get and modify the data \emph{the functional way}.
 \section{Referential trasparency}\label{referential-trasparency}
 
 An important concept in functional programming is referential
-transparancy. Referential transparency is a property of programs, that
+transparency. Referential transparency is a property of programs, that
 makes it easier to verify, optimize, and parallelize programs.
 
 From Wikipedia's definition:
@@ -397,7 +397,7 @@ A possible definition of equational reasoning is \emph{the process of
 interpreting code by substituting equals-for-equals}.
 
 Equational reasoning is an important property, since it keeps the models
-easy to reason about and easy to validate. The correctenss of the
+easy to reason about and easy to validate. The correctness of the
 properties of a model that respect equational reasoning can be verified
 just as the properties of a math theorem.
 
@@ -443,7 +443,7 @@ trait Monoid[A] {
 }
 \end{verbatim}
 
-More formally, a monoid needs to satysfy the following laws:
+More formally, a monoid needs to satisfy the following laws:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -457,7 +457,7 @@ More formally, a monoid needs to satysfy the following laws:
 \end{itemize}
 
 Back to the initial example, with the given definition List and String
-concatenation can be expressed as monoids as folllows.
+concatenation can be expressed as monoids as follows.
 
 \begin{verbatim}
 val stringMonoid = new Monoid[String] {
@@ -476,7 +476,7 @@ modelled as monoids is given by the fact that monoids offer
 \emph{parametricity} and the ability to \emph{abstract over behaviors}.
 
 A brilliant example that illustrates the power of monoids is given when
-they are used in conjuction with lists and list folding functions.
+they are used in conjunction with lists and list folding functions.
 Looking at \texttt{foldLeft} function definition:
 
 \begin{verbatim}
@@ -492,7 +492,7 @@ def foldLeft(z: A)(f: (A, A) => A): A
 it can be observed that the function signature perfectly matches the
 signature of \texttt{op} operation on the monoid type.
 
-This brings to a really nice proof of concept about the pratical usage
+This brings to a really nice proof of concept about the practical usage
 of monoids, like in the following example.
 
 \begin{verbatim}
@@ -503,7 +503,7 @@ val t = words.foldLeft(stringMonoid.zero)(stringMonoid.op)
 \subsection{Functor}\label{functor}
 
 The previous section introduced an ubiquitous pattern that recurs
-frequently in programming, monoid. This section will make a futher step
+frequently in programming, monoid. This section will make a further step
 towards the king abstraction of functional programming, that will be
 introduced in the next one.
 
@@ -524,7 +524,7 @@ In the classes of the example, the effect of \texttt{map} is:
   for List, \texttt{map} applies the function \texttt{f} on each element
   of the list
 \item
-  for Option, \texttt{map} aplies the function \texttt{f} only if the
+  for Option, \texttt{map} applies the function \texttt{f} only if the
   element is instance of \texttt{Some} and return \texttt{Some} of the
   result, otherwise it returns \texttt{None}
 \end{itemize}
@@ -552,7 +552,7 @@ signature has a more ``functional'' approach, with an additional
 parameter (the first one) that takes the object to map on.
 
 With this new abstraction defined, it's possible to define functors
-explicitely for List and Option in the following way, reusing the object
+explicitly for List and Option in the following way, reusing the object
 oriented implementation provided by the Scala standard library:
 
 \begin{verbatim}
@@ -688,7 +688,7 @@ unit(x) flatMap f  ==  f(x)
 \end{verbatim}
 
 The left unit law can be considered the most important law, since it
-guarantes that flatMap let's you apply a transformation to the value
+guarantees that flatMap let's you apply a transformation to the value
 contained in a monad, without leaving the monad. In other words, monads
 promote and allows \emph{containment} and \emph{chainability} of
 transformations.
@@ -696,7 +696,7 @@ transformations.
 \subsubsection{Right unit}\label{right-unit}
 
 The right unit law demands that applying unit to a monad has no effects
-at all (or, better, has the same outcame as not calling it at all).
+at all (or, better, has the same outcome as not calling it at all).
 Formally:
 
 \begin{verbatim}
@@ -735,4 +735,5 @@ def flatMap[S](f: T => 􏰀Try[S]): Try[S] = this match {
 
 At first sight Try looks like a monad, implementing \texttt{flatMap}
 (and \texttt{unit}), but formally it doesn't respect the left unit law.
+
 

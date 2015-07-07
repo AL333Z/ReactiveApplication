@@ -59,13 +59,13 @@ declarative programming language.
 Informally, \textbf{functional reactive programming} is a programming
 paradigm which brings a notion of \textbf{time} in the functional
 programming paradigm, providing a conceptual framework for implementing
-reactive systems. Infact, FRP let the application achieve reactivity by
+reactive systems. In fact, FRP let the application achieve reactivity by
 providing constructs for specifying \emph{how behaviors change in
 response to events}.
 
 Elliott says that FRP is all about two main things: \emph{denotative}
 and \emph{temporally continuos}. Infact, he also likes the term
-``\emph{denotative, continuos-time programming}'' to replace functional
+``\emph{denotative, continuous-time programming}'' to replace functional
 reactive programming, since it reduces the confusion.
 
 Always about the \textbf{denotative} part, he means that the paradigm
@@ -130,7 +130,7 @@ FRP introduces two special abstractions:
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
 \item
-  \textbf{behaviors or signals}, values that are continuos functions of
+  \textbf{behaviors or signals}, values that are continuous functions of
   time.
 \item
   \textbf{event streams}, values which are discrete functions of time.
@@ -160,7 +160,7 @@ Examples of behaviours are the following:
 \item
   the cursor position
 \item
-  the position of a image during an animation
+  the position of an image during an animation
 \item
   audio data
 \item
@@ -170,7 +170,7 @@ Examples of behaviours are the following:
 \textbf{Events} enable to account for discrete phenomena, and each of it
 has a stream (finite or infinite) of occurrences. Each occurrence is a
 value paired with a time. Events are considered \emph{to be improving
-list of occurences}.
+list of occurrences}.
 
 Formally, the points at which an event stream is defined are termed
 \emph{events} and events are said to \emph{occur} on an \emph{event
@@ -207,7 +207,7 @@ of a value is automatically propagated to all dependent computations
 without the user has to manually propagate the changes by himself.
 
 At the language level this means that there should be a mechanism that
-is triggered when there's an event occurence at an event source. This
+is triggered when there's an event occurrence at an event source. This
 mechanism will fire a notification about the changes to dependent
 computations, that will possibly trigger a recomputation, and so on.
 
@@ -236,9 +236,9 @@ In the literature there are two main evaluation models:
   \emph{demand-driven}. The pull model has been implemented in Fran,
   also thanks to the lazy evaluation of Haskell. A main trait of this
   approach is that the computation requiring the value has the liberty
-  to only pull the new values when if actually needs it. From another
+  to only pull the new values when it actually needs it. From another
   point of view, this trait can lead to a significant latency between an
-  occurence of an event and when its reactions are triggered.
+  occurrence of an event and when its reactions are triggered.
 \item
   \textbf{Push-Based}, in which when the event source has new data it
   pushes the data to its dependent computations. The propagation is said
@@ -249,7 +249,7 @@ In the literature there are two main evaluation models:
   recomputation.
 \end{itemize}
 
-Tipically, reactive programming languages use \textbf{either a
+Typically, reactive programming languages use \textbf{either a
 pull-based or push-based model}, but there are also languages that
 employ \textbf{both} approaches. In latter case there've both the
 benefits of the push-based model (efficiency and low latency) and those
@@ -366,12 +366,12 @@ Functional reactive programming introduced by Connal Elliott has a clear
 and simple denotative semantics. In advance to this, Elliott himself
 doesn't like the name he gave to the paradigm.
 
-The concepts behind these newly introduced paradigms are prerry similar.
+The concepts behind these newly introduced paradigms are pretty similar.
 Reactive programming is a paradigms that facilitates the development of
 applications by providing \textbf{abstractions} to express
 \emph{time-varying values} and automatically propagating the
 \emph{changes}: behaviors and events. Functional reactive programming
-can be considered a ``sibiling'' of reactive programming, providing
+can be considered a ``sibling'' of reactive programming, providing
 composable abstractions. Elliot identifies the key advantages of the
 functional reactive programming paradigm as: \emph{clarity, ease of
 construction, composability, and clean semantics}.

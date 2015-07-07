@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.2.18)  6 JUL 2015 21:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.2.18)  7 JUL 2015 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,21 +669,21 @@ of object-oriented,
 [11
 
 ] [12] [13] [14]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 213
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 212
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 213.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 212.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 213.
+(Font)              for symbol `textbraceleft' on input line 212.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 262.
+               Default added (so using `tbp') on input line 261.
 
 [15]
-Overfull \hbox (11.15971pt too wide) in paragraph at lines 274--281
+Overfull \hbox (11.15971pt too wide) in paragraph at lines 273--280
 \OT1/cmr/m/n/12 started with an in-tu-ition of Erik Mei-jer, that the-o-rized t
 hat \OT1/cmr/bx/n/12 it-er-able/iterator
  []
@@ -691,154 +691,161 @@ hat \OT1/cmr/bx/n/12 it-er-able/iterator
 [16] <imgs/marble.png, id=107, 554.07pt x 268.00125pt>
 File: imgs/marble.png Graphic file (type png)
  <use imgs/marble.png>
-Package pdftex.def Info: imgs/marble.png used on input line 323.
+Package pdftex.def Info: imgs/marble.png used on input line 322.
 (pdftex.def)             Requested size: 415.55148pt x 201.00043pt.
 
-Overfull \hbox (31.43929pt too wide) in paragraph at lines 323--324
+Overfull \hbox (31.43929pt too wide) in paragraph at lines 322--323
  [][] 
  []
 
 
-Overfull \hbox (17.40097pt too wide) in paragraph at lines 354--359
+Overfull \hbox (17.40097pt too wide) in paragraph at lines 353--358
 []\OT1/cmr/m/n/12 An en-tity can sub-scribe its in-ter-est in the val-ues com-i
 ng from an \OT1/cmtt/m/n/12 Observalbe
  []
 
+
+Overfull \hbox (10.08989pt too wide) in paragraph at lines 353--358
+\OT1/cmr/m/n/12 pa-ram-e-ters (that cor-re-spond to the \OT1/cmtt/m/n/12 onNext
+( )\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 onError( ) \OT1/cmr/m/n/12 and \OT1/cmtt/
+m/n/12 onComplete(
+ []
+
 [17 <./imgs/marble.png>]
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 365--365
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 364--364
 []\OT1/cmtt/m/n/12 Observable.just("Hello, world!").subscribe(s -> System.out.p
 rintln(s));[] 
  []
 
 [18]
 ! Undefined control sequence.
-l.426 \subsubsubsection
+l.425 \subsubsubsection
                        {Map}\label{map}
 ? 
 <imgs/map.png, id=115, 642.4pt x 306.14375pt>
 File: imgs/map.png Graphic file (type png)
  <use imgs/map.png>
-Package pdftex.def Info: imgs/map.png used on input line 435.
+Package pdftex.def Info: imgs/map.png used on input line 434.
 (pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 477--477
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 476--476
 []\OT1/cmtt/m/n/12 public final <R> Observable<R> map(Func1<? super T, ? extend
 s R> func) {[] 
  []
 
 [19 <./imgs/map.png>]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 477--477
+Overfull \hbox (11.088pt too wide) in paragraph at lines 476--476
 []\OT1/cmtt/m/n/12 public final class OperatorMap<T, R> implements Operator<R, 
 T> {[] 
  []
 
 
-Overfull \hbox (29.613pt too wide) in paragraph at lines 477--477
+Overfull \hbox (29.613pt too wide) in paragraph at lines 476--476
 []    \OT1/cmtt/m/n/12 public OperatorMap(Func1<? super T, ? extends R> transfo
 rmer) {[] 
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 477--477
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 476--476
 []    \OT1/cmtt/m/n/12 public Subscriber<? super T> call(final Subscriber<? sup
 er R> o) {[] 
  []
 
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 477--477
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 476--476
 []                    \OT1/cmtt/m/n/12 onError(OnErrorThrowable.addValueAsLastC
 ause(e, t));[] 
  []
 
 ! Undefined control sequence.
-l.479 \subsubsubsection
+l.478 \subsubsubsection
                        {FlatMap}\label{flatmap}
 ? 
 <imgs/flatMap.png, id=121, 642.4pt x 311.1625pt>
 File: imgs/flatMap.png Graphic file (type png)
  <use imgs/flatMap.png>
-Package pdftex.def Info: imgs/flatMap.png used on input line 488.
+Package pdftex.def Info: imgs/flatMap.png used on input line 487.
 (pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
 
 ! Undefined control sequence.
-l.492 \subsubsubsection
+l.491 \subsubsubsection
                        {Filter}\label{filter}
 ? 
 <imgs/filter.png, id=122, 642.4pt x 311.1625pt>
 File: imgs/filter.png Graphic file (type png)
  <use imgs/filter.png>
-Package pdftex.def Info: imgs/filter.png used on input line 498.
+Package pdftex.def Info: imgs/filter.png used on input line 497.
 (pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
 
 ! Undefined control sequence.
-l.502 \subsubsubsection
+l.501 \subsubsubsection
                        {Scan}\label{scan}
 ? 
 [20] [21 <./imgs/flatMap.png> <./imgs/filter.png>]
 <imgs/scan.png, id=131, 642.4pt x 321.2pt>
 File: imgs/scan.png Graphic file (type png)
  <use imgs/scan.png>
-Package pdftex.def Info: imgs/scan.png used on input line 513.
+Package pdftex.def Info: imgs/scan.png used on input line 512.
 (pdftex.def)             Requested size: 321.19922pt x 160.59961pt.
 
 ! Undefined control sequence.
-l.517 \subsubsubsection
+l.516 \subsubsubsection
                        {Take}\label{take}
 ? 
 <imgs/take.png, id=132, 642.4pt x 306.14375pt>
 File: imgs/take.png Graphic file (type png)
  <use imgs/take.png>
-Package pdftex.def Info: imgs/take.png used on input line 524.
+Package pdftex.def Info: imgs/take.png used on input line 523.
 (pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
 
 ! Undefined control sequence.
-l.528 \subsubsubsection
+l.527 \subsubsubsection
                        {A complex example}\label{a-complex-example}
 ? 
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 550--550
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 549--549
 []\OT1/cmtt/m/n/12 query("Hello, world!")                    // -> Observable<L
 ist<String>>[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 550--550
+Overfull \hbox (23.438pt too wide) in paragraph at lines 549--549
 []  \OT1/cmtt/m/n/12 .flatMap(urls -> Observable.from(urls)) // -> Observable<S
 tring>[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 550--550
+Overfull \hbox (23.438pt too wide) in paragraph at lines 549--549
 []  \OT1/cmtt/m/n/12 .flatMap(url -> getTitle(url))          // -> Observable<S
 tring>[] 
  []
 
 [22 <./imgs/scan.png>]
-Overfull \hbox (79.01303pt too wide) in paragraph at lines 550--550
+Overfull \hbox (79.01303pt too wide) in paragraph at lines 549--549
 []  \OT1/cmtt/m/n/12 .scan((sum, item) -> new Pair<Integer, Word>(sum.first + 1
 , item.second))[] 
  []
 
 
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 550--550
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 549--549
 []      \OT1/cmtt/m/n/12 System.out.println("Pos: " + indexItemPair.first + ": 
 title:" +[] 
  []
 
 [23 <./imgs/take.png>]
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 590--590
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 589--589
 []      \OT1/cmtt/m/n/12 public void onCompleted() { System.out.println("Comple
 ted!"); }[] 
  []
 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 590--590
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 589--589
 []      \OT1/cmtt/m/n/12 public void onError(Throwable e) { System.out.println(
 "Ouch!"); }[] 
  []
 
 [24]
-Overfull \hbox (4.53392pt too wide) in paragraph at lines 664--667
+Overfull \hbox (4.53392pt too wide) in paragraph at lines 663--666
 []\OT1/cmtt/m/n/12 immediate( )\OT1/cmr/m/n/12 , that ex-e-cutes work \OT1/cmr/
 bx/n/12 im-me-di-ately \OT1/cmr/m/n/12 on the cur-rent thread 
  []
@@ -846,71 +853,65 @@ bx/n/12 im-me-di-ately \OT1/cmr/m/n/12 on the cur-rent thread
 [25] <imgs/pubsubj.png, id=148, 642.4pt x 396.48125pt>
 File: imgs/pubsubj.png Graphic file (type png)
  <use imgs/pubsubj.png>
-Package pdftex.def Info: imgs/pubsubj.png used on input line 728.
+Package pdftex.def Info: imgs/pubsubj.png used on input line 727.
 (pdftex.def)             Requested size: 321.19922pt x 198.24013pt.
 
 <imgs/replaysub.png, id=149, 642.4pt x 406.51875pt>
 File: imgs/replaysub.png Graphic file (type png)
  <use imgs/replaysub.png>
-Package pdftex.def Info: imgs/replaysub.png used on input line 741.
+Package pdftex.def Info: imgs/replaysub.png used on input line 740.
 (pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
 
 [26] [27 <./imgs/pubsubj.png> <./imgs/replaysub.png>]
 <imgs/asyncsubj.png, id=158, 642.4pt x 406.51875pt>
 File: imgs/asyncsubj.png Graphic file (type png)
  <use imgs/asyncsubj.png>
-Package pdftex.def Info: imgs/asyncsubj.png used on input line 755.
+Package pdftex.def Info: imgs/asyncsubj.png used on input line 754.
 (pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
 
 <imgs/behasubj.png, id=159, 642.4pt x 416.55624pt>
 File: imgs/behasubj.png Graphic file (type png)
  <use imgs/behasubj.png>
-Package pdftex.def Info: imgs/behasubj.png used on input line 767.
+Package pdftex.def Info: imgs/behasubj.png used on input line 766.
 (pdftex.def)             Requested size: 321.19922pt x 208.2776pt.
 
-[28 <./imgs/asyncsubj.png>] [29 <./imgs/behasubj.png>] [30] [31]
-Overfull \hbox (23.56418pt too wide) in paragraph at lines 961--964
-\OT1/cmr/m/n/12 cold Sig-nal at the type level, so RAC of-fers both the \OT1/cm
-tt/m/n/12 Signal \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 SignalProducer
- []
-
-[32]
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 978
+[28 <./imgs/asyncsubj.png>] [29 <./imgs/behasubj.png>] [30] [31] [32]
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 977
 .
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 978.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 977.
 
 
 LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 978.
+(Font)              for symbol `textless' on input line 977.
 
 [33] [34]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1121--1121
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1120--1120
 []\OT1/cmtt/m/n/12 func createSignalProducer() -> SignalProducer<String, NoErro
 r> {[] 
  []
 
 [35]
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 1153--1153
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 1152--1152
 []      \OT1/cmtt/m/n/12 transform: Signal<T, E> -> Signal<U, F>) -> SignalProd
 ucer<U, F> {[] 
  []
 
 [36]
-Overfull \hbox (47.35472pt too wide) in paragraph at lines 1227--1230
+Overfull \hbox (47.35472pt too wide) in paragraph at lines 1226--1229
 \OT1/cmr/m/n/12 a Sig-nal-Pro-ducer for each in-put, with the type \OT1/cmtt/m/
 n/12 Input -\OML/cmtt/m/n/12 > \OT1/cmtt/m/n/12 SignalProducer\OML/cmtt/m/n/12 
 <\OT1/cmtt/m/n/12 Output,
  []
 
 [37] [38]
-Overfull \hbox (3.72128pt too wide) in paragraph at lines 1310--1312
+Overfull \hbox (3.72128pt too wide) in paragraph at lines 1309--1311
 []\OT1/cmr/m/n/12 The APIs also of-fer an-other core ab-strac-tion to build com
 -pu-ta-tion graphs: 
  []
 
 [39] [40]
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1419--1419
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1418--1418
 []      \OT1/cmtt/m/n/12 case (count, tweet) => println(count + " Current tweet
 : "[] 
  []
@@ -919,7 +920,7 @@ Overfull \hbox (4.913pt too wide) in paragraph at lines 1419--1419
 File: imgs/graph.png Graphic file (type png)
 
 <use imgs/graph.png>
-Package pdftex.def Info: imgs/graph.png used on input line 1553.
+Package pdftex.def Info: imgs/graph.png used on input line 1552.
 (pdftex.def)             Requested size: 300.37144pt x 84.31479pt.
  [44 <./imgs/graph.png (PNG copy)>]
 
@@ -929,11 +930,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1628 \end{verbatim}
+l.1627 \end{verbatim}
                      
 ? 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 1628--1628
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1627--1627
 []      \OT1/cmtt/m/n/12 merge <~ Flow[Int].buffer(10, OverflowStrategy.dropHea
 d) <~ bcast[] 
  []
@@ -1022,6 +1023,12 @@ Package pdftex.def Info: imgs/ios_traditional_mvc.png used on input line 267.
 
 Overfull \hbox (2.07967pt too wide) in paragraph at lines 267--268
  [][] 
+ []
+
+
+Overfull \hbox (2.45879pt too wide) in paragraph at lines 278--281
+[]\OT1/cmr/m/n/12 a con-troller re-ceives the event and man-age ap-ply an appli
+cation-specific
  []
 
 <imgs/cocoa_mvc.png, id=244, 515.9275pt x 186.6975pt>
@@ -1244,9 +1251,9 @@ del]())[]
  []
 
 [72]
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1142--1142
-[]        \OT1/cmtt/m/n/12 // retrieve the words, create a view model for each 
-words,[] 
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1142--1142
+[]        \OT1/cmtt/m/n/12 // retrieve the words, create a viewmodel for each w
+ords,[] 
  []
 
 [73]
@@ -1680,9 +1687,9 @@ Overfull \hbox (79.01303pt too wide) in paragraph at lines 333--333
  []
 
 [101]
-Overfull \hbox (1.14908pt too wide) in paragraph at lines 352--355
+Overfull \hbox (0.4963pt too wide) in paragraph at lines 352--355
 \OT1/cmr/m/n/12 An im-por-tant con-cept in func-tional pro-gram-ming is ref-er-
-en-tial transparancy.
+en-tial trans-parency.
  []
 
 [102] [103] [104] [105] [106]
@@ -1929,7 +1936,7 @@ sfonts/cm/cmti12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on TESI.pdf (137 pages, 1843862 bytes).
+Output written on TESI.pdf (137 pages, 1843768 bytes).
 PDF statistics:
  527 PDF objects out of 1000 (max. 8388607)
  338 compressed objects within 4 object streams

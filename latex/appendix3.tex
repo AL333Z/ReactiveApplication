@@ -66,7 +66,7 @@ will start to:
 \end{itemize}
 
 A \textbf{just pull} approach is too slow in the case that the
-\textbf{subscriber is faster} than the pubblisher.
+\textbf{subscriber is faster} than the publisher.
 
 Two important notes about the fact that data and demand \emph{flows} in
 different channels and directions are the following:
@@ -157,7 +157,7 @@ achieve non blocking back-pressure in a Reactive Streams.
 
 \section{Publisher}\label{publisher}
 
-The \textbf{Publisher} interface has only one method to impelement, and
+The \textbf{Publisher} interface has only one method to implement, and
 is as follows.
 
 \begin{verbatim}
@@ -180,7 +180,7 @@ that the subscriber has signalled demand for.
 When the subscriber \texttt{cancel(\ )} the subscription, the publisher
 must start sending items.
 
-Finally, a pubblisher must notify to the subsciber through
+Finally, a publisher must notify to the subscriber through
 \texttt{onError(\ )} and \texttt{onComplete(\ )} methods if an error is
 encountered or the stream is successfully completed respectively.
 
@@ -199,5 +199,8 @@ A processor is an intermediate abstraction that enables to build
 \textbf{chain of processing stage}, in which each intermediate unit is a
 processor that can consume, transform and publish items. The importance
 of this abstraction is in the fact that, obeying to both Subscriber and
-Publischer interface, it has to \textbf{retain back-pressure
+Publisher interface, it has to \textbf{retain back-pressure
 propagation} with the original stream source.
+
+
+
