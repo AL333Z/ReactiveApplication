@@ -66,7 +66,7 @@ using immutable constructs for its implementation.
 
 \subsection{Services}\label{services}
 
-The last element of this meta-model is the \textbf{service}, that is a
+The last element of this meta-model is the \textbf{service}, which is a
 more macro level abstraction than entity and value object. In short, a
 service models a use case, encapsulating a complete operation that has a
 certain value to user of the system.
@@ -234,7 +234,7 @@ list (in the following example, the 1 to the front).
   }
 \end{verbatim}
 
-This property of reuse object instead of modify or copy the object
+This property of reuse object instead of modifying or copying the object
 itself is called \emph{sharing}.
 
 The introduction of this chapter depicted three elements as the
@@ -301,10 +301,10 @@ From the implementation it emerges that \textbf{Lenses}:
 \item
   are \textbf{parametrized} (on O and V types)
 \item
-  have a \textbf{getter} method, that takes an object with type O and
+  have a \textbf{getter} method, which takes an object with type O and
   return a value of type V
 \item
-  have a \textbf{setter} method, that takes an object of type O and
+  have a \textbf{setter} method, which takes an object of type O and
   returns a new instance of the object set to the value
 \end{itemize}
 
@@ -350,7 +350,7 @@ data}, allowing to get and modify the data \emph{the functional way}.
 \section{Referential trasparency}\label{referential-trasparency}
 
 An important concept in functional programming is referential
-transparency. Referential transparency is a property of programs, that
+transparency. Referential transparency is a property of programs, which
 makes it easier to verify, optimize, and parallelize programs.
 
 From Wikipedia's definition:
@@ -366,7 +366,7 @@ term is referential opaqueness.
 
 A necessary, but not sufficient, condition for referential transparency
 is the absence of side effects. In simple words, it's all about the fact
-that an expression can can be replaced with its value. This obviously
+that an expression can be replaced with its value. This obviously
 requires that the expression (that could be a function call, for
 example) has no side effects and always return the same output on the
 same input.
@@ -504,7 +504,7 @@ val t = words.foldLeft(stringMonoid.zero)(stringMonoid.op)
 
 The previous section introduced an ubiquitous pattern that recurs
 frequently in programming, monoid. This section will make a further step
-towards the king abstraction of functional programming, that will be
+towards the king abstraction of functional programming, which will be
 introduced in the next one.
 
 In the Scala standard library there are some classes that provide a
@@ -529,7 +529,7 @@ In the classes of the example, the effect of \texttt{map} is:
   result, otherwise it returns \texttt{None}
 \end{itemize}
 
-All this function signatures are pretty the same, with the only
+All these function signatures are pretty the same, with the only
 difference of the concrete type involved. As always in programming, when
 there are things that are pretty the same, it's possible that factorize
 the behavior and create a new abstraction. In this case, the abstraction
@@ -572,7 +572,7 @@ mapping over some data structure, with functions.
 \subsection{Monad}\label{monad}
 
 The concept of monad comes from category theory, and is one of the most
-important topic in functional programming development.
+important topics in functional programming development.
 
 From Wikipedia:
 
@@ -627,7 +627,7 @@ above is generic, so each type that implements a \texttt{unit} and a
 \textbf{NB}: in the literature, \texttt{flatMap} is often called
 \texttt{bind} and \texttt{unit} is often called \texttt{return}.
 
-Two example of monads are represented by \texttt{Option} and
+Two examples of monads are represented by \texttt{Option} and
 \texttt{List}. Starting from the definition of Monad, they can be
 defined as follows (reusing the implementation provided by the Scala
 standard library):
@@ -690,7 +690,7 @@ unit(x) flatMap f  ==  f(x)
 The left unit law can be considered the most important law, since it
 guarantees that flatMap let's you apply a transformation to the value
 contained in a monad, without leaving the monad. In other words, monads
-promote and allows \emph{containment} and \emph{chainability} of
+promote and allow \emph{containment} and \emph{chainability} of
 transformations.
 
 \subsubsection{Right unit}\label{right-unit}
@@ -706,8 +706,8 @@ m flatMap unit  ==  m
 Usually the term monad is also used \emph{informally}, to describe a
 type that has \texttt{flatMap} and \texttt{unit}, without any attention
 about the monad laws. An example of this is given by the \texttt{Try}
-type, that has a \texttt{Success} case that contains a value and a
-\texttt{Failure} case that contains an exceptions.
+type, which has a \texttt{Success} case that contains a value and a
+\texttt{Failure} case that contains an exception.
 
 \begin{verbatim}
 abstract class Try[+T]

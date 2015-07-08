@@ -81,7 +81,7 @@ The difference between the two types can be seen directly in the types:
   notion of ``current value'' has no sense at all.
 \end{itemize}
 
-The two subclasses need to implement two methods which obtain reactive's current message or value and create dependencies in a single
+The two subclasses need to implement two methods, which obtain reactive's current message or value and create dependencies in a single
 turn.
 
 The next two sections will better examine the two abstraction introduced
@@ -138,7 +138,7 @@ def collect[B](p: PartialFunction[A, B]): Events[B]
 \end{verbatim}
 
 When building abstractions, the developer doesn't need to take care of
-the events propagation, since this's provided by the framework itself.
+the events propagation, since the framework itself provides this.
 
 \subsubsection{Signal}\label{signal}
 
@@ -184,7 +184,7 @@ class Val[A](value: A) extends Signal[A]
 
 To compose signals, the framework doesn't provide combinator methods at
 all, but introduce the notion of \textbf{signal expressions}, indeed. To
-better explain the concept, let's look at an simple example.
+better explain the concept, let's look at a simple example.
 
 \begin{verbatim}
 val a = new Var(1)
@@ -198,13 +198,11 @@ b()= 35
 \end{verbatim}
 
 Signals are primarily used to create variable dependencies as seen
-above. In other words, all the ``plumbing work'' of connecting the
-dependencies and propagating the changes is already provided by the
-framework itself.
+above. In other words, the framework itself already performs all the “plumbing work” of connecting the dependencies and propagating the changes.
 
 The framework and the Scala language provide a convenient and simple
 syntax to get and update the current value of a Signal, and also to
-create a variable dependencies between signals. For example:
+create variable dependencies between signals. For example:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -222,7 +220,7 @@ create a variable dependencies between signals. For example:
 
 \subsection{Evaluation model}\label{evaluation-model}
 
-Scala.React's propagation model is \textbf{push-driven}, and use a
+Scala.React's propagation model is \textbf{push-driven}, and uses a
 \textbf{topologically ordered dependency graph}. This implementation
 detail ensures that an expression is always evaluated after all its
 dependants have been evaluated, so glitches can't happen.
@@ -302,7 +300,7 @@ Reactive Streams implementations.
 The fundamental entity of RxJava is the \textbf{Observable} type. An
 observable is a \emph{sequence of ongoing event ordered in time}.
 
-An \texttt{Observable} can emit 3 type of items:
+An \texttt{Observable} can emit 3 types of item:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -364,7 +362,7 @@ Observable.just("Hello, world!").subscribe(s -> System.out.println(s));
 \end{verbatim}
 
 The \texttt{Observable} type provides some convenience methods that
-returns an observable with the given specification. An incomplete list
+return an observable with the given specification. An incomplete list
 of these is the following:
 
 \begin{itemize}
@@ -399,7 +397,7 @@ with other observables and operators, to create more complex logics.
 \subsubsection{Operator}\label{operator}
 
 In RxJava, operators are what enable the developer to \textbf{model} the
-actual computation. An operator allows to perform \textbf{almost every
+actual computation. An operator allows performing \textbf{almost every
 type of manipulation} on the source observer in a declarative way.
 
 Expressing a computation in terms of a stream of values is translated in
@@ -418,7 +416,7 @@ Operators are methods of the \texttt{Observable} class, so creating a
 chain of operators starting from a source observable is a pretty
 straightforward process.
 
-RxJava provides a huge sets of operators, and a lot of them is defined
+RxJava provides a huge set of operators, and a lot of them is defined
 in terms of other ones. What follows is only a small introductive
 subset.
 
@@ -596,7 +594,7 @@ to the \texttt{Subscriber}, which has to manage all the error handling.
 
 \subsection{Subscription}\label{subscription}
 
-In RxJava, \texttt{Subscription} is an abstraction that represent the
+In RxJava, \texttt{Subscription} is an abstraction that represents the
 \textbf{link} between an \texttt{Observable} and a \texttt{Subscriber}.
 
 A subscription is a quite simple type:
@@ -777,11 +775,11 @@ Elliot's FRP.
 
 \subsection{RxAndroid}\label{rxandroid}
 
-The previous sections cover all the main topic of RxJava. This sections
+The previous sections cover all the main topic of RxJava. This section
 will go a step further, introducing some additional features that bring
 RxJava to the Android ecosystem.
 
-\textbf{RxAndroid} is a separate module of RxJava, that gives some
+\textbf{RxAndroid} is a separate module of RxJava that gives some
 useful bindings to the developer.
 
 The \texttt{AndroidSchedulers} package provides some specific scheduler
@@ -862,7 +860,7 @@ event. An \textbf{event} enables to account for \emph{discrete
 phenomena}, and each of which has a stream (finite or infinite) of
 occurrences. Each occurrence is a value paired with a time.
 Events are considered to be improving list of occurrences. Or, in simpler
-words, events are things that happens.
+words, events are things that happen.
 
 In RAC, events are first-class citizens, with the following type:
 
@@ -948,7 +946,7 @@ observers at the same time. So, if a Signal has different observers
 subscribed to its events, every observer will always see the same
 sequence of events.
 
-The documentation says another crucial thing, that clarifies the
+The documentation says another crucial thing that clarifies the
 modelling choice made by the developers:
 
 \begin{quote}
@@ -986,7 +984,7 @@ introduces the type \texttt{NoError}, meaning that the signal can't
 error out.
 
 For the ``button example'', the type for the related signal might be
-\texttt{Signal\textless{}Void,\ NoError\textgreater{}}, that means:
+\texttt{Signal\textless{}Void,\ NoError\textgreater{}}, which means:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -1067,7 +1065,7 @@ public func |> <T, E, X>(signal: Signal<T, E>,
 \end{verbatim}
 
 The \texttt{\textbar{}\textgreater{}} operator doesn't do anything
-special, it only creates a specification.
+special, since it only creates a specification.
 
 RAC already offers a numbers of built in operators as free functions,
 such as \texttt{combineLatest}, \texttt{zip}, \texttt{takeUntil},
@@ -1228,7 +1226,7 @@ creates a SignalProducer for each input, with the type
 \texttt{Input\ -\textgreater{}\ SignalProducer\textless{}Output,\ Error\textgreater{})}.
 
 A practical and useful use of Action is in conjunction with
-\texttt{CocoaAction}, that is another type that wraps an Action for use
+\texttt{CocoaAction}, which is another type that wraps an Action for use
 by a GUI control, with key-value observing, or with other Cocoa
 bindings.
 
@@ -1239,7 +1237,7 @@ bindings.
 and aims to provide a better tool for building \emph{ephemeral
 transformation pipelines}.
 
-Akka actors are used as a building block to build an higher abstraction.
+Akka actors are used as a building block to build a higher abstraction.
 Some of the biggest issues on building systems on untyped actor are the
 following:
 
@@ -1368,7 +1366,7 @@ sources.
 
 \subsection{Sink}\label{sink}
 
-The dual to the \texttt{Source} type is the \textbf{Sink} type, that
+The dual to the \texttt{Source} type is the \textbf{Sink} type, which
 abstracts a set of stream processing steps that has one open input and
 an attached output. In Scala the \texttt{Sink} type is defined as
 follows:
@@ -1537,7 +1535,7 @@ illustrates how the DSL provided by the library can be used to express
 graph computation keeping a great level of declarativeness and code
 readability.
 
-The following image shows a graph that express a computation in which:
+The following image shows a graph that expresses a computation in which:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -1574,7 +1572,7 @@ type correctness and this is a really useful things. The check to
 control whether or not all elements have been properly connected is done
 at run-time, though.
 
-The framework also provide the notion of partial graph. A
+The framework also provides the notion of partial graph. A
 \textbf{partial graph} is a graph with \emph{undefined sources, sinks or
 both}, and it's useful to structure the code in different components,
 that will be then connected with other components. In other words, the

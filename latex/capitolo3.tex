@@ -3,7 +3,7 @@
 The first chapter introduced the literature and the main concepts of the
 RP paradigm, and the second one depicted some of the main popular and
 used libraries and framework for RP. This chapter will propose a
-concrete applications of the paradigm to some practical use cases that
+concrete application of the paradigm to some practical use cases that
 recur pretty frequently when developing mobile application nowadays.
 
 Thus, this chapter will focus its attention on mobile application
@@ -48,7 +48,7 @@ To demonstrate a possible solution of this scenario using an approach
 based on RP, lets introduce a sample use case:
 
 \begin{quote}
-The application has to query a webservice, that returns a list of words
+The application has to query a webservice that returns a list of words
 for a given month. Each word refers to a specific day, month and year.
 The application should show all the words in the given month, sorted by
 date, with the first one highlighted with a different color.
@@ -151,16 +151,15 @@ common transformation when dealing with list of elements, and since
 operators like \texttt{map}, \texttt{filter}, etc.. need to operate on
 single elements, this operation is essential to build the chain.
 
-Another pattern is the usage of \texttt{map} in conjunction with
+Another pattern is the usages of \texttt{map} in conjunction with
 \texttt{scan}, to accumulate the result of a computation. The code
 presented does the trivial job of associating to each element its index
 in the observable, but it's a use case useful enough to deserve a
 citation.
 
-The presentation of the items is provided by the
-\texttt{WordListAdapter} and \texttt{WordListItem} classes.
+The \texttt{WordListAdapter}  and \texttt{WordListItem} classes provide the presentation of the items. 
 
-One last things to note is the usage of \texttt{subscribeOn} and
+One last thing to note is the usage of \texttt{subscribeOn} and
 \texttt{observeOn}, to keep the main thread responsive.
 
 \subsection{On iOS}\label{on-ios}
@@ -329,7 +328,7 @@ the controller are coupled}
 \end{figure}
 
 The iOS community, during the years, has adopted (also unconsciously)
-this architectural pattern to design applications. This has often lead
+this architectural pattern to design applications. This has often led
 to what is called the ``Massive View Controller'' anti-pattern. The term
 ``Massive'' is used to denote the use and abuse of the view controller
 entity to host most of the application logic, grouping functionalities
@@ -355,9 +354,9 @@ activity to show and manage a certain number of fragments, but still has
 some limitations like, for example, the possibility of manage stack of
 fragments.
 
-From this point of view, the iOS platform offers a clearer abstractions,
+From this point of view, the iOS platform offers clearer abstractions,
 with the notion of viewcontrollers, views and viewcontroller containers,
-that allow the developer to express multi-level view hierarchy in a
+which allow the developer to express multi-level view hierarchy in a
 cleaner way.
 
 Many developers suggest that what Android is offering is a broken
@@ -366,7 +365,7 @@ abstraction.
 Knowing the limitations of the abstractions that the platform offers,
 the most popular architectural pattern for Android is a variant of MVC
 (similar to Apple's variant), in which the \texttt{Activity} (and
-related fragments) is both a the view and the controller. Google
+related fragments) is both the view and the controller. Google
 encourages developers to split each view in a fragment, and then each
 fragment should interact with its parent activity, also to coordinate
 his actions and commands with other fragments.
@@ -375,7 +374,7 @@ his actions and commands with other fragments.
 MVVM}\label{toward-a-common-architecture-mvvm}
 
 On both the platforms, the MVC architectural pattern and its variations
-doesn't seem to be a perfect fit.
+don't seem to be a perfect fit.
 
 In this section and in the following ones a new architectural pattern
 will be proposed to better model mobile applications: the
@@ -458,7 +457,7 @@ The use case is an app for iOS and Android, that will:
 The requirements are pretty trivial for an experienced developer that
 use to work following the ``standard'' way to develop mobile
 applications, but in this thesis author's opinion is a pretty
-significative example, since it allows to demonstrate a lot of concepts:
+significative example, since it allows demonstrating a lot of concepts:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -500,7 +499,7 @@ reason it will be better depicted in the next two sections.
 
 The \textbf{ViewModel} is the bridge between the view and the model,
 wrapping all the presentation logic. In particular, there are two
-concrete type of viewmodels:
+concrete types of viewmodels:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -514,7 +513,7 @@ concrete type of viewmodels:
 
 \texttt{WordListViewModel} use a \texttt{WordService}, that is a class
 that wraps all the network and parsing operations, returning a
-\texttt{WordResponse}, that contains an array of \texttt{Word}.
+\texttt{WordResponse}, which contains an array of \texttt{Word}.
 \texttt{WordListViewModel} has two \texttt{MutableProperty}:
 
 \begin{itemize}
@@ -552,8 +551,8 @@ For example, the \texttt{WordService} class returns an
 \texttt{Observable}. This immediately suggests a whole set of
 considerations about the underlying computation.
 
-Another example are the \texttt{MutableProperty} and
-\texttt{ConstantProperty} classes, that under the hood are implemented
+Other examples are the \texttt{MutableProperty} and
+\texttt{ConstantProperty} classes, which under the hood are implemented
 as \texttt{Subject} (or \texttt{Signal/SignalProducer}).
 
 In conclusion, RP abstractions can be used as means to properly build
@@ -563,7 +562,7 @@ the overall architecture.
 \subsection{Implementation on Android}\label{implementation-on-android}
 
 The previous section proposed an overall architecture for the use case.
-This sections will depict a possible implementation for the Android
+This section will depict a possible implementation for the Android
 platform.
 
 \subsubsection{Model}\label{model}
@@ -609,7 +608,7 @@ public class WordResponse {
 }
 \end{verbatim}
 
-Finally, the \texttt{WordService} class only expose a public method that
+Finally, the \texttt{WordService} class only exposes a public method that
 returns an \texttt{Observable\textless{}WordResponse\textgreater{}}.
 Also in this case, the real implementation of this method is not
 important for the purpose of this thesis, and it's omitted. The real
@@ -744,7 +743,7 @@ single-assignment (constant) value.
 
 \subsubsection{ViewModel}\label{viewmodel}
 
-Moving to the viewmodel layer, things starts to become interesting.
+Moving to the viewmodel layer, things start to become interesting.
 
 \begin{verbatim}
 public class WordListViewModel {
@@ -893,7 +892,7 @@ The fragment then binds the viewmodel's properties:
   to show the list of items, through an adapter.
 \end{itemize}
 
-The last things that the fragment performs is to register its interest
+The last thing that the fragment performs is to register its interest
 in the item selection events from the adapter. In this simple use case,
 the fragment just shows a message in a \texttt{Toast}, but in more real
 use case scenario this can be the entry point for a fragment transaction
@@ -1032,7 +1031,7 @@ in the \texttt{ViewHolder} class, in which:
 
 \subsection{Implementation on iOS}\label{implementation-on-ios}
 
-This final section will depicts an implementation on the iOS platform
+This final section will depict an implementation on the iOS platform
 for the introduced architecture.
 
 \subsubsection{Model}\label{model}
@@ -1076,7 +1075,7 @@ struct WordResponse {
 }
 \end{verbatim}
 
-The \texttt{WordService} class only expose a public method that returns
+The \texttt{WordService} class only exposes a public method that returns
 an \texttt{SignalProducer\textless{}WordResponse\textgreater{}}. Also in
 this case, the real implementation of this method is not important for
 the purpose of this thesis, and it's omitted.
@@ -1172,18 +1171,18 @@ contains a \texttt{UITableView}; - a \texttt{UITableViewCell}, named
 view with a viewmodel;
 
 The entry point of the application is the \texttt{WordsViewController}
-class, that is shown at app launch. The implementation is pretty similar
+class, which is shown at app launch. The implementation is pretty similar
 to the implementation of the \texttt{MainActivityFragment} of the
 previous section.
 
-The view controller creates a \texttt{WordService}, that then is passed
+The view controller creates a \texttt{WordService}, which then is passed
 to a \texttt{WordListViewModel}.
 
-After these operation, it binds the viewmodel's properties: - to set the
+After these operations, it binds the viewmodel's properties: - to set the
 visibility of the load activity indicator; - to show the list of items,
 through an helper class.
 
-The last things that the view controller performs is to register its
+The last thing that the view controller performs is to register its
 interest in the item selection events from the table view. In this
 simple use case, the view controller just shows a message in an alert
 view, but in more real use case scenario this can be the entry point for
@@ -1282,7 +1281,7 @@ class WordCellView: UITableViewCell, ReactiveView {
 }
 \end{verbatim}
 
-The \texttt{TableViewBindingHelper} is an helper class, that save the
+The \texttt{TableViewBindingHelper} is a helper class, that save the
 developer a lot of boilerplate code. The relevant part of the code is
 the following, which illustrates an initializer that takes a
 \texttt{SignalProducer} of items (viewmodels for the cells of the table
@@ -1334,8 +1333,8 @@ Both the implementation of the proposed architecture seems to be pretty
 elegant and similar in respect of each other. Also the name of each
 component is consistent over the platforms, where possible.
 
-One could also think to create a \emph{meta-meta-model} that allows to
-describe the architecture of the application with some high-level DSL
+One could also think to create a \emph{meta-meta-model} that allows 
+describing the architecture of the application with some high-level DSL
 and then generate the code for both the platforms, but this argument
 goes outside the scope of this thesis.
 

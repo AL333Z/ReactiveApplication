@@ -44,7 +44,7 @@ is a writable, single assignment container which sets the value of the
 future.
 \end{quote}
 
-Futures and Promises promotes an asynchronous and non-blocking approach
+Futures and Promises promote an asynchronous and non-blocking approach
 to programming. The scale up to use multiple cores on a machine, but
 with the currently implementations they don't scale out across nodes.
 
@@ -52,7 +52,7 @@ with the currently implementations they don't scale out across nodes.
 
 A Future is an immutable handle to a value or a failure that will become
 availlable in the future time. Another possible definition is that
-Futures are monads that handles \textbf{exceptions} and
+Futures are monads that handle \textbf{exceptions} and
 \textbf{latency}. A fist simple possible definition in Scala is:
 
 \begin{verbatim}
@@ -143,7 +143,7 @@ The the previous example shows some key points:
   If the request fails, the future itself will fail.
 \end{itemize}
 
-To obtain the value of a Future, the library offers two main solution:
+To obtain the value of a Future, the library offers two main solutions:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -152,12 +152,12 @@ To obtain the value of a Future, the library offers two main solution:
   is completed
 \item
   the client \textbf{register a callback} by using the
-  \texttt{onComplete} method, that was alredy depicted at the beginning
+  \texttt{onComplete} method, which was alredy depicted at the beginning
   of this chapter.
 \end{itemize}
 
 The library also provide the companion methods \texttt{onSuccess} and
-\texttt{onFailure}, that usually are used alternatively to
+\texttt{onFailure}, which usually are used alternatively to
 \texttt{onComplete}. All these three methods have \texttt{Unit} as the
 result type. This is intentional, since the invocations of these methods
 cannot be chained.
@@ -173,10 +173,10 @@ value of the future and produces a new future that is completed with the
 mapped value once the original future is successfully completed.
 
 The \texttt{flatMap} method takes a function that maps the value to a
-\textbf{new future} g, and then returns a future which is completed once
+\textbf{new future} g, and then returns a future that is completed once
 g is completed.
 
-The \texttt{filter} method creates a new future which contains the value
+The \texttt{filter} method creates a new future that contains the value
 of the original future only if it satisfies some predicate. Otherwise,
 the new future is failed with a \texttt{NoSuchElementException}.
 

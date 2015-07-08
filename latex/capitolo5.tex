@@ -16,7 +16,7 @@ Declarativness}\label{operators-expressions-declarativness}
 In regards to \textbf{expressing a computation in terms of a flow of
 intermediate steps}, the approach that Scala.React suggests with its
 \textbf{signal expressions} is the main difference in respect to all
-other approaches, that are instead based on the presence of
+other approaches, which are instead based on the presence of
 \textbf{operators}. Scala.React's Signal type has no operator at all,
 and lets the developer to build a ``reactive'' computation with an
 imperative-style code, at least in appearance. In Fact, signal
@@ -47,7 +47,7 @@ indeed:
   to \texttt{\textasciitilde{}\textgreater{}} operator.
 \end{itemize}
 
-All the library previously introduced presented an high level of
+All the libraries previously introduced presented a high level of
 declarativness, with a good level of integration in the ecosystem they
 belong to:
 
@@ -79,7 +79,7 @@ belong to:
 \section{Hot and Cold, Push and Pull,
 Back-pressure}\label{hot-and-cold-push-and-pull-back-pressure}
 
-Another aspect that distinguish the libraries is the way they abstract
+Another aspect that distinguishes the libraries is the way they abstract
 the notion of \textbf{who actually starts the computation}, and thus,
 the propagation of changes.
 
@@ -93,7 +93,7 @@ In RxJava this distinction is not obvious, but there're a set of types
 and operators that helps when building observables that should be
 producer-driven or demand-driven. For example, the \texttt{Subject} type
 is usually used to ``warm'' a cold observable into a hot observable.
-RxJava is also conform to Reactive Streams, just like Akka Streams.
+RxJava is also conforming to Reactive Streams, just like Akka Streams.
 Being conform to Reactive Streams means that for both libraries is valid
 the principle that a producer can never send more items than a consumer
 can handle, using the so called ``dynamic push-pull'' approach.

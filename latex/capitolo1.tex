@@ -57,7 +57,7 @@ and built a set of expressive and recursive data types, combined with a
 declarative programming language.
 
 Informally, \textbf{functional reactive programming} is a programming
-paradigm which brings a notion of \textbf{time} in the functional
+paradigm that brings a notion of \textbf{time} in the functional
 programming paradigm, providing a conceptual framework for implementing
 reactive systems. In fact, FRP let the application achieve reactivity by
 providing constructs for specifying \emph{how behaviors change in
@@ -86,7 +86,7 @@ and optimization.
 
 About the \textbf{continuous time} part, there's some confusion. Some
 claim that it's an idea somehow unnatural or impossible to implement
-considering the discrete nature of computers. To this issues, Elliott
+considering the discrete nature of computers. To these issues, Elliott
 answers in the following way:
 
 \begin{quote}
@@ -104,7 +104,7 @@ preference.
 Another name that Elliott suggests for continuous is
 \emph{resolution-independent}, and thus able to be transformed in time
 and space with ease and without propagating and amplifying sampling
-artifacts. As an example, he propose the ``finite vs infinite'' data
+artifacts. As an example, he proposes the ``finite vs infinite'' data
 structure issue:
 
 \begin{quote}
@@ -120,7 +120,7 @@ the non-strict, pure functional language Haskell. It takes a monadic
 approach and encapsulates operations over time-varying values and
 discrete events into data structures that are evaluated by an
 interpreter loop. The main idea of FRP is to model user inputs as
-functions that changes over time.
+functions that change over time.
 
 
 \subsection{Behaviors and Event Streams}\label{behaviors-and-event-streams}
@@ -176,7 +176,7 @@ Formally, the points at which an event stream is defined are termed
 \emph{events} and events are said to \emph{occur} on an \emph{event
 stream}.
 
-Example of event streams are the following:
+Examples of event streams are the following:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -209,7 +209,7 @@ without the user has to manually propagate the changes by himself.
 At the language level this means that there should be a mechanism that
 is triggered when there's an event occurrence at an event source. This
 mechanism will fire a notification about the changes to dependent
-computations, that will possibly trigger a recomputation, and so on.
+computations that will possibly trigger a recomputation, and so on.
 
 The issue of \emph{who initiates the propagation of changes} is a really
 important decision in designing a language or a framework that supports
@@ -243,7 +243,7 @@ In the literature there are two main evaluation models:
   \textbf{Push-Based}, in which when the event source has new data it
   pushes the data to its dependent computations. The propagation is said
   to be \emph{data-driven}. An example of a recent implementation that
-  use this model is Scala.React, that will be introduced later in this
+  uses this model is Scala.React, that will be introduced later in this
   thesis. This approach also brings the issue of wasteful recomputation,
   since every new data that is pushed to the consumer triggers a
   recomputation.
@@ -288,7 +288,7 @@ program results incorrect (\texttt{var3} is evaluated as 3 instead of 4)
 and that this also leads to a wasteful recomputation (since
 \texttt{var3} is computed one time more than the necessary).
 
-Glitches only happens when using a \emph{push-based} evaluation model
+Glitches only happen when using a \emph{push-based} evaluation model
 and can be avoided by arranging expressions in a topologically sorted
 graph. This implementation detail ensures that an expression is always
 evaluated after all its dependants have been evaluated.
@@ -336,8 +336,8 @@ In the literature there are at least three main lifting strategies:
 \def\labelenumi{\arabic{enumi}.}
 \item
   \textbf{Implicit lifting}, that happens when an ordinary language
-  operator is applied on a behaviour and it is automatically lifted.
-  Implicit lifting is often used by dynamically typed languages.
+  operator is applied on behaviour and it is automatically lifted.
+  Dynamically typed languages often use implicit lifting.
   Formally: \[
   f(b1)  \rightarrow f_{lifted}(b1) .
   \]
@@ -362,12 +362,12 @@ reactive programming} are two terms that create a lot of
 \textbf{confusion}, and maybe are also over-hyped.
 
 The definitions that come from Wikipedia are still pretty vague and only
-Functional reactive programming introduced by Connal Elliott has a clear
+FRP introduced by Connal Elliott has a clear
 and simple denotative semantics. In advance to this, Elliott himself
 doesn't like the name he gave to the paradigm.
 
 The concepts behind these newly introduced paradigms are pretty similar.
-Reactive programming is a paradigms that facilitates the development of
+Reactive programming is a paradigm that facilitates the development of
 applications by providing \textbf{abstractions} to express
 \emph{time-varying values} and automatically propagating the
 \emph{changes}: behaviors and events. Functional reactive programming

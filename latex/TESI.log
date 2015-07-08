@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.2.18)  7 JUL 2015 13:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2014.2.18)  8 JUL 2015 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,21 +669,21 @@ of object-oriented,
 [11
 
 ] [12] [13] [14]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 212
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 210
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 212.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 210.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 212.
+(Font)              for symbol `textbraceleft' on input line 210.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 261.
+               Default added (so using `tbp') on input line 259.
 
 [15]
-Overfull \hbox (11.15971pt too wide) in paragraph at lines 273--280
+Overfull \hbox (11.15971pt too wide) in paragraph at lines 271--278
 \OT1/cmr/m/n/12 started with an in-tu-ition of Erik Mei-jer, that the-o-rized t
 hat \OT1/cmr/bx/n/12 it-er-able/iterator
  []
@@ -691,161 +691,161 @@ hat \OT1/cmr/bx/n/12 it-er-able/iterator
 [16] <imgs/marble.png, id=107, 554.07pt x 268.00125pt>
 File: imgs/marble.png Graphic file (type png)
  <use imgs/marble.png>
-Package pdftex.def Info: imgs/marble.png used on input line 322.
+Package pdftex.def Info: imgs/marble.png used on input line 320.
 (pdftex.def)             Requested size: 415.55148pt x 201.00043pt.
 
-Overfull \hbox (31.43929pt too wide) in paragraph at lines 322--323
+Overfull \hbox (31.43929pt too wide) in paragraph at lines 320--321
  [][] 
  []
 
 
-Overfull \hbox (17.40097pt too wide) in paragraph at lines 353--358
+Overfull \hbox (17.40097pt too wide) in paragraph at lines 351--356
 []\OT1/cmr/m/n/12 An en-tity can sub-scribe its in-ter-est in the val-ues com-i
 ng from an \OT1/cmtt/m/n/12 Observalbe
  []
 
 
-Overfull \hbox (10.08989pt too wide) in paragraph at lines 353--358
+Overfull \hbox (10.08989pt too wide) in paragraph at lines 351--356
 \OT1/cmr/m/n/12 pa-ram-e-ters (that cor-re-spond to the \OT1/cmtt/m/n/12 onNext
 ( )\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 onError( ) \OT1/cmr/m/n/12 and \OT1/cmtt/
 m/n/12 onComplete(
  []
 
 [17 <./imgs/marble.png>]
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 364--364
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 362--362
 []\OT1/cmtt/m/n/12 Observable.just("Hello, world!").subscribe(s -> System.out.p
 rintln(s));[] 
  []
 
 [18]
 ! Undefined control sequence.
-l.425 \subsubsubsection
+l.423 \subsubsubsection
                        {Map}\label{map}
 ? 
 <imgs/map.png, id=115, 642.4pt x 306.14375pt>
 File: imgs/map.png Graphic file (type png)
  <use imgs/map.png>
-Package pdftex.def Info: imgs/map.png used on input line 434.
+Package pdftex.def Info: imgs/map.png used on input line 432.
 (pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 476--476
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 474--474
 []\OT1/cmtt/m/n/12 public final <R> Observable<R> map(Func1<? super T, ? extend
 s R> func) {[] 
  []
 
 [19 <./imgs/map.png>]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 476--476
+Overfull \hbox (11.088pt too wide) in paragraph at lines 474--474
 []\OT1/cmtt/m/n/12 public final class OperatorMap<T, R> implements Operator<R, 
 T> {[] 
  []
 
 
-Overfull \hbox (29.613pt too wide) in paragraph at lines 476--476
+Overfull \hbox (29.613pt too wide) in paragraph at lines 474--474
 []    \OT1/cmtt/m/n/12 public OperatorMap(Func1<? super T, ? extends R> transfo
 rmer) {[] 
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 476--476
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 474--474
 []    \OT1/cmtt/m/n/12 public Subscriber<? super T> call(final Subscriber<? sup
 er R> o) {[] 
  []
 
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 476--476
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 474--474
 []                    \OT1/cmtt/m/n/12 onError(OnErrorThrowable.addValueAsLastC
 ause(e, t));[] 
  []
 
 ! Undefined control sequence.
-l.478 \subsubsubsection
+l.476 \subsubsubsection
                        {FlatMap}\label{flatmap}
 ? 
 <imgs/flatMap.png, id=121, 642.4pt x 311.1625pt>
 File: imgs/flatMap.png Graphic file (type png)
  <use imgs/flatMap.png>
-Package pdftex.def Info: imgs/flatMap.png used on input line 487.
+Package pdftex.def Info: imgs/flatMap.png used on input line 485.
 (pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
 
 ! Undefined control sequence.
-l.491 \subsubsubsection
+l.489 \subsubsubsection
                        {Filter}\label{filter}
 ? 
 <imgs/filter.png, id=122, 642.4pt x 311.1625pt>
 File: imgs/filter.png Graphic file (type png)
  <use imgs/filter.png>
-Package pdftex.def Info: imgs/filter.png used on input line 497.
+Package pdftex.def Info: imgs/filter.png used on input line 495.
 (pdftex.def)             Requested size: 321.19922pt x 155.58087pt.
 
 ! Undefined control sequence.
-l.501 \subsubsubsection
+l.499 \subsubsubsection
                        {Scan}\label{scan}
 ? 
 [20] [21 <./imgs/flatMap.png> <./imgs/filter.png>]
 <imgs/scan.png, id=131, 642.4pt x 321.2pt>
 File: imgs/scan.png Graphic file (type png)
  <use imgs/scan.png>
-Package pdftex.def Info: imgs/scan.png used on input line 512.
+Package pdftex.def Info: imgs/scan.png used on input line 510.
 (pdftex.def)             Requested size: 321.19922pt x 160.59961pt.
 
 ! Undefined control sequence.
-l.516 \subsubsubsection
+l.514 \subsubsubsection
                        {Take}\label{take}
 ? 
 <imgs/take.png, id=132, 642.4pt x 306.14375pt>
 File: imgs/take.png Graphic file (type png)
  <use imgs/take.png>
-Package pdftex.def Info: imgs/take.png used on input line 523.
+Package pdftex.def Info: imgs/take.png used on input line 521.
 (pdftex.def)             Requested size: 321.19922pt x 153.07149pt.
 
 ! Undefined control sequence.
-l.527 \subsubsubsection
+l.525 \subsubsubsection
                        {A complex example}\label{a-complex-example}
 ? 
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 549--549
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 547--547
 []\OT1/cmtt/m/n/12 query("Hello, world!")                    // -> Observable<L
 ist<String>>[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 549--549
+Overfull \hbox (23.438pt too wide) in paragraph at lines 547--547
 []  \OT1/cmtt/m/n/12 .flatMap(urls -> Observable.from(urls)) // -> Observable<S
 tring>[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 549--549
+Overfull \hbox (23.438pt too wide) in paragraph at lines 547--547
 []  \OT1/cmtt/m/n/12 .flatMap(url -> getTitle(url))          // -> Observable<S
 tring>[] 
  []
 
 [22 <./imgs/scan.png>]
-Overfull \hbox (79.01303pt too wide) in paragraph at lines 549--549
+Overfull \hbox (79.01303pt too wide) in paragraph at lines 547--547
 []  \OT1/cmtt/m/n/12 .scan((sum, item) -> new Pair<Integer, Word>(sum.first + 1
 , item.second))[] 
  []
 
 
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 549--549
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 547--547
 []      \OT1/cmtt/m/n/12 System.out.println("Pos: " + indexItemPair.first + ": 
 title:" +[] 
  []
 
 [23 <./imgs/take.png>]
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 589--589
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 587--587
 []      \OT1/cmtt/m/n/12 public void onCompleted() { System.out.println("Comple
 ted!"); }[] 
  []
 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 589--589
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 587--587
 []      \OT1/cmtt/m/n/12 public void onError(Throwable e) { System.out.println(
 "Ouch!"); }[] 
  []
 
 [24]
-Overfull \hbox (4.53392pt too wide) in paragraph at lines 663--666
+Overfull \hbox (4.53392pt too wide) in paragraph at lines 661--664
 []\OT1/cmtt/m/n/12 immediate( )\OT1/cmr/m/n/12 , that ex-e-cutes work \OT1/cmr/
 bx/n/12 im-me-di-ately \OT1/cmr/m/n/12 on the cur-rent thread 
  []
@@ -853,65 +853,65 @@ bx/n/12 im-me-di-ately \OT1/cmr/m/n/12 on the cur-rent thread
 [25] <imgs/pubsubj.png, id=148, 642.4pt x 396.48125pt>
 File: imgs/pubsubj.png Graphic file (type png)
  <use imgs/pubsubj.png>
-Package pdftex.def Info: imgs/pubsubj.png used on input line 727.
+Package pdftex.def Info: imgs/pubsubj.png used on input line 725.
 (pdftex.def)             Requested size: 321.19922pt x 198.24013pt.
 
 <imgs/replaysub.png, id=149, 642.4pt x 406.51875pt>
 File: imgs/replaysub.png Graphic file (type png)
  <use imgs/replaysub.png>
-Package pdftex.def Info: imgs/replaysub.png used on input line 740.
+Package pdftex.def Info: imgs/replaysub.png used on input line 738.
 (pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
 
 [26] [27 <./imgs/pubsubj.png> <./imgs/replaysub.png>]
 <imgs/asyncsubj.png, id=158, 642.4pt x 406.51875pt>
 File: imgs/asyncsubj.png Graphic file (type png)
  <use imgs/asyncsubj.png>
-Package pdftex.def Info: imgs/asyncsubj.png used on input line 754.
+Package pdftex.def Info: imgs/asyncsubj.png used on input line 752.
 (pdftex.def)             Requested size: 321.19922pt x 203.25887pt.
 
 <imgs/behasubj.png, id=159, 642.4pt x 416.55624pt>
 File: imgs/behasubj.png Graphic file (type png)
  <use imgs/behasubj.png>
-Package pdftex.def Info: imgs/behasubj.png used on input line 766.
+Package pdftex.def Info: imgs/behasubj.png used on input line 764.
 (pdftex.def)             Requested size: 321.19922pt x 208.2776pt.
 
 [28 <./imgs/asyncsubj.png>] [29 <./imgs/behasubj.png>] [30] [31] [32]
-LaTeX Font Info:    Try loading font information for OML+cmtt on input line 977
+LaTeX Font Info:    Try loading font information for OML+cmtt on input line 975
 .
-LaTeX Font Info:    No file OMLcmtt.fd. on input line 977.
+LaTeX Font Info:    No file OMLcmtt.fd. on input line 975.
 
 
 LaTeX Font Warning: Font shape `OML/cmtt/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textless' on input line 977.
+(Font)              for symbol `textless' on input line 975.
 
 [33] [34]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1120--1120
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1118--1118
 []\OT1/cmtt/m/n/12 func createSignalProducer() -> SignalProducer<String, NoErro
 r> {[] 
  []
 
 [35]
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 1152--1152
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 1150--1150
 []      \OT1/cmtt/m/n/12 transform: Signal<T, E> -> Signal<U, F>) -> SignalProd
 ucer<U, F> {[] 
  []
 
 [36]
-Overfull \hbox (47.35472pt too wide) in paragraph at lines 1226--1229
+Overfull \hbox (47.35472pt too wide) in paragraph at lines 1224--1227
 \OT1/cmr/m/n/12 a Sig-nal-Pro-ducer for each in-put, with the type \OT1/cmtt/m/
 n/12 Input -\OML/cmtt/m/n/12 > \OT1/cmtt/m/n/12 SignalProducer\OML/cmtt/m/n/12 
 <\OT1/cmtt/m/n/12 Output,
  []
 
 [37] [38]
-Overfull \hbox (3.72128pt too wide) in paragraph at lines 1309--1311
+Overfull \hbox (3.72128pt too wide) in paragraph at lines 1307--1309
 []\OT1/cmr/m/n/12 The APIs also of-fer an-other core ab-strac-tion to build com
 -pu-ta-tion graphs: 
  []
 
 [39] [40]
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1418--1418
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1416--1416
 []      \OT1/cmtt/m/n/12 case (count, tweet) => println(count + " Current tweet
 : "[] 
  []
@@ -920,7 +920,7 @@ Overfull \hbox (4.913pt too wide) in paragraph at lines 1418--1418
 File: imgs/graph.png Graphic file (type png)
 
 <use imgs/graph.png>
-Package pdftex.def Info: imgs/graph.png used on input line 1552.
+Package pdftex.def Info: imgs/graph.png used on input line 1550.
 (pdftex.def)             Requested size: 300.37144pt x 84.31479pt.
  [44 <./imgs/graph.png (PNG copy)>]
 
@@ -930,11 +930,11 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1627 \end{verbatim}
+l.1625 \end{verbatim}
                      
 ? 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 1627--1627
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1625--1625
 []      \OT1/cmtt/m/n/12 merge <~ Flow[Int].buffer(10, OverflowStrategy.dropHea
 d) <~ bcast[] 
  []
@@ -997,19 +997,19 @@ tt/m/n/12 List\OML/cmtt/m/n/12 <\OT1/cmtt/m/n/12 Word\OML/cmtt/m/n/12 >>
 Underfull \vbox (badness 3826) has occurred while \output is active []
 
  [50]
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 176--176
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 175--175
 []\OT1/cmtt/m/n/12 func getWords(month: Int, year: Int) -> SignalProducer<[Word
 ], NSError>[] 
  []
 
 
-Overfull \hbox (17.263pt too wide) in paragraph at lines 197--197
+Overfull \hbox (17.263pt too wide) in paragraph at lines 196--196
 []    \OT1/cmtt/m/n/12 init(id: Int, word: String, day: Int, month: Int, year: 
 Int){[] 
  []
 
 [51]
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 231--231
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 230--230
 []    \OT1/cmtt/m/n/12 |> scan( (0, nil), { (last, current) in (last.0 + 1, cur
 rent.1) })[] 
  []
@@ -1018,15 +1018,15 @@ rent.1) })[]
 File: imgs/ios_traditional_mvc.png Graphic file (type png)
 
 <use imgs/ios_traditional_mvc.png>
-Package pdftex.def Info: imgs/ios_traditional_mvc.png used on input line 267.
+Package pdftex.def Info: imgs/ios_traditional_mvc.png used on input line 266.
 (pdftex.def)             Requested size: 386.19186pt x 147.55087pt.
 
-Overfull \hbox (2.07967pt too wide) in paragraph at lines 267--268
+Overfull \hbox (2.07967pt too wide) in paragraph at lines 266--267
  [][] 
  []
 
 
-Overfull \hbox (2.45879pt too wide) in paragraph at lines 278--281
+Overfull \hbox (2.45879pt too wide) in paragraph at lines 277--280
 []\OT1/cmr/m/n/12 a con-troller re-ceives the event and man-age ap-ply an appli
 cation-specific
  []
@@ -1034,21 +1034,21 @@ cation-specific
 <imgs/cocoa_mvc.png, id=244, 515.9275pt x 186.6975pt>
 File: imgs/cocoa_mvc.png Graphic file (type png)
  <use imgs/cocoa_mvc.png>
-Package pdftex.def Info: imgs/cocoa_mvc.png used on input line 291.
+Package pdftex.def Info: imgs/cocoa_mvc.png used on input line 290.
 (pdftex.def)             Requested size: 386.94467pt x 140.02277pt.
 
-Overfull \hbox (2.83247pt too wide) in paragraph at lines 291--292
+Overfull \hbox (2.83247pt too wide) in paragraph at lines 290--291
  [][] 
  []
 
 
-Overfull \hbox (49.72467pt too wide) in paragraph at lines 309--314
+Overfull \hbox (49.72467pt too wide) in paragraph at lines 308--313
 \OT1/cmr/m/n/12 al-ready has and man-ages a view (\OT1/cmtt/m/n/12 UIViewContro
 ller\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 UITableViewController\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (49.82364pt too wide) in paragraph at lines 309--314
+Overfull \hbox (49.82364pt too wide) in paragraph at lines 308--313
 \OT1/cmtt/m/n/12 UICollectionViewController\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 U
 ISplitViewController\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 TabBarController\OT1/cmr
 /m/n/12 ,
@@ -1058,121 +1058,121 @@ ISplitViewController\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 TabBarController\OT1/cmr
 <imgs/real_mvc.png, id=248, 374.39874pt x 74.2775pt>
 File: imgs/real_mvc.png Graphic file (type png)
  <use imgs/real_mvc.png>
-Package pdftex.def Info: imgs/real_mvc.png used on input line 326.
+Package pdftex.def Info: imgs/real_mvc.png used on input line 325.
 (pdftex.def)             Requested size: 280.79837pt x 55.70798pt.
 
 [54 <./imgs/cocoa_mvc.png> <./imgs/real_mvc.png>] [55]
 <imgs/mvvm.png, id=257, 456.20438pt x 175.40532pt>
 File: imgs/mvvm.png Graphic file (type png)
  <use imgs/mvvm.png>
-Package pdftex.def Info: imgs/mvvm.png used on input line 412.
+Package pdftex.def Info: imgs/mvvm.png used on input line 411.
 (pdftex.def)             Requested size: 342.15244pt x 131.55365pt.
  [56 <./imgs/mvvm.png>] <imgs/common_arch.png, id=261, 744.7825pt x 541.02126pt
 >
 File: imgs/common_arch.png Graphic file (type png)
 
 <use imgs/common_arch.png>
-Package pdftex.def Info: imgs/common_arch.png used on input line 482.
+Package pdftex.def Info: imgs/common_arch.png used on input line 481.
 (pdftex.def)             Requested size: 372.39034pt x 270.50996pt.
  [57] [58 <./imgs/common_arch.png>]
-Overfull \hbox (50.00052pt too wide) in paragraph at lines 528--532
+Overfull \hbox (50.00052pt too wide) in paragraph at lines 527--531
 []\OT1/cmtt/m/n/12 WordViewModel \OT1/cmr/m/n/12 is a pretty sim-ple en-tity, o
 nly con-tain-ing some \OT1/cmtt/m/n/12 ConstantProperty\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (1.31644pt too wide) in paragraph at lines 533--537
+Overfull \hbox (1.31644pt too wide) in paragraph at lines 532--536
 []\OT1/cmtt/m/n/12 MutableProperty \OT1/cmr/m/n/12 and \OT1/cmtt/m/n/12 Constan
 tProperty \OT1/cmr/m/n/12 are two ab-strac-tions that help
  []
 
 [59]
-Overfull \hbox (15.08574pt too wide) in paragraph at lines 555--558
-[]\OT1/cmr/m/n/12 Another ex-am-ple are the \OT1/cmtt/m/n/12 MutableProperty \O
-T1/cmr/m/n/12 and \OT1/cmtt/m/n/12 ConstantProperty \OT1/cmr/m/n/12 classes,
+Overfull \hbox (7.64832pt too wide) in paragraph at lines 554--557
+[]\OT1/cmr/m/n/12 Other ex-am-ples are the \OT1/cmtt/m/n/12 MutableProperty \OT
+1/cmr/m/n/12 and \OT1/cmtt/m/n/12 ConstantProperty \OT1/cmr/m/n/12 classes,
  []
 
 
-Overfull \hbox (19.60771pt too wide) in paragraph at lines 555--558
-\OT1/cmr/m/n/12 that un-der the hood are im-ple-mented as \OT1/cmtt/m/n/12 Subj
-ect \OT1/cmr/m/n/12 (or \OT1/cmtt/m/n/12 Signal/SignalProducer\OT1/cmr/m/n/12 )
-. 
+Overfull \hbox (27.76735pt too wide) in paragraph at lines 554--557
+\OT1/cmr/m/n/12 which un-der the hood are im-ple-mented as \OT1/cmtt/m/n/12 Sub
+ject \OT1/cmr/m/n/12 (or \OT1/cmtt/m/n/12 Signal/SignalProducer\OT1/cmr/m/n/12 
+). 
  []
 
 [60] [61]
-Overfull \hbox (17.263pt too wide) in paragraph at lines 705--705
+Overfull \hbox (17.263pt too wide) in paragraph at lines 704--704
 []    \OT1/cmtt/m/n/12 public static <T> MutableProperty<T> create(T defaultVal
 ue) {[] 
  []
 
 [62] [63] [64]
-Overfull \hbox (4.913pt too wide) in paragraph at lines 779--779
+Overfull \hbox (4.913pt too wide) in paragraph at lines 778--778
 []                            \OT1/cmtt/m/n/12 Log.e(TAG, throwable.getMessage(
 ));[] 
  []
 
 
-Overfull \hbox (28.70549pt too wide) in paragraph at lines 781--785
+Overfull \hbox (28.70549pt too wide) in paragraph at lines 780--784
 []\OT1/cmr/m/n/12 As pre-vi-ously in-tro-duced in the ar-chi-tec-ture di-a-gram
 , the \OT1/cmtt/m/n/12 WordListViewModel
  []
 
 [65]
-Overfull \hbox (4.913pt too wide) in paragraph at lines 820--820
+Overfull \hbox (4.913pt too wide) in paragraph at lines 819--819
 []        \OT1/cmtt/m/n/12 this.imageUrl = ConstantProperty.create(word.imageUr
 l);[] 
  []
 
 
-Overfull \hbox (35.78801pt too wide) in paragraph at lines 880--880
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 879--879
 []                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setVisibility(mProgre
 ssBar));[] 
  []
 
 [66]
-Overfull \hbox (72.83803pt too wide) in paragraph at lines 880--880
+Overfull \hbox (72.83803pt too wide) in paragraph at lines 879--879
 []        \OT1/cmtt/m/n/12 mAdapter = new WordListAdapter(wordListViewModel.wor
 ds.observe());[] 
  []
 
 
-Overfull \hbox (11.088pt too wide) in paragraph at lines 880--880
+Overfull \hbox (11.088pt too wide) in paragraph at lines 879--879
 []                        \OT1/cmtt/m/n/12 selectedWordViewModel.wordTitle.valu
 e(),[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1009--1009
 []    \OT1/cmtt/m/n/12 extends RecyclerView.Adapter<WordListAdapter.WordViewHol
 der> {[] 
  []
 
 
-Overfull \hbox (17.263pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1009--1009
 []    \OT1/cmtt/m/n/12 private List<WordViewModel> mViewModels = new LinkedList
 <>();[] 
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1009--1009
 []    \OT1/cmtt/m/n/12 private PublishSubject<WordViewModel> mAdapterSelectedIt
 emSubject;[] 
  []
 
 
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1009--1009
 []     \OT1/cmtt/m/n/12 * Constructor that returns a WordListAdapter, with an o
 bservable[] 
  []
 
 [67]
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1009--1009
 []        \OT1/cmtt/m/n/12 viewModelsObservable.subscribe(next -> updateItems(n
 ext));[] 
  []
 
 
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1009--1009
 []            \OT1/cmtt/m/n/12 .inflate(R.layout.word_list_item, viewGroup, fal
 se);[] 
  []
@@ -1181,25 +1181,25 @@ se);[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1009--1009
 []    \OT1/cmtt/m/n/12 public void onBindViewHolder(WordViewHolder holder, int 
 i) {[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1009--1009
 []        \OT1/cmtt/m/n/12 holder.viewRecycledBehavior = BehaviorSubject.create
 ();[] 
  []
 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1009--1009
 []        \OT1/cmtt/m/n/12 private TextView mDayTextView; private TextView mMon
 thTextView;[] 
  []
 
 
-Overfull \hbox (54.31302pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (54.31302pt too wide) in paragraph at lines 1009--1009
 []        \OT1/cmtt/m/n/12 private TextView mYearTextView; private TextView mWo
 rdTextView;[] 
  []
@@ -1208,135 +1208,135 @@ rdTextView;[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [69]
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1009--1009
 []                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mMonthTextVie
 w));[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1009--1009
 []                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mYearTextView
 ));[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1009--1009
 []                \OT1/cmtt/m/n/12 .subscribe(ViewActions.setText(mWordTextView
 ));[] 
  []
 
 
-Overfull \hbox (29.613pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1009--1009
 []                    \OT1/cmtt/m/n/12 .takeUntil(viewRecycledBehavior.asObserv
 able())[] 
  []
 
 
-Overfull \hbox (35.78801pt too wide) in paragraph at lines 1010--1010
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 1009--1009
 []                    \OT1/cmtt/m/n/12 .subscribe(d -> mImageView.setImageDrawa
 ble(d));[] 
  []
 
 
-Overfull \hbox (41.0565pt too wide) in paragraph at lines 1022--1028
+Overfull \hbox (41.0565pt too wide) in paragraph at lines 1021--1027
 []\OT1/cmr/m/n/12 the \OT1/cmtt/m/n/12 onClick \OT1/cmr/m/n/12 events are pushe
 d through a \OT1/cmtt/m/n/12 PublishSubject\OML/cmtt/m/n/12 <\OT1/cmtt/m/n/12 W
 ordViewModel\OML/cmtt/m/n/12 >\OT1/cmr/m/n/12 .
  []
 
 [70] [71]
-Overfull \hbox (29.613pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1141--1141
 []    \OT1/cmtt/m/n/12 let words = MutableProperty<[WordViewModel]>([WordViewMo
 del]())[] 
  []
 
 [72]
-Overfull \hbox (17.263pt too wide) in paragraph at lines 1142--1142
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1141--1141
 []        \OT1/cmtt/m/n/12 // retrieve the words, create a viewmodel for each w
 ords,[] 
  []
 
 [73]
-Overfull \hbox (20.7069pt too wide) in paragraph at lines 1167--1173
+Overfull \hbox (20.7069pt too wide) in paragraph at lines 1166--1172
 \OT1/cmr/m/n/12 The view layer is rep-re-sented by three main com-po-nents: - a
  \OT1/cmtt/m/n/12 UIViewController\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (38.46051pt too wide) in paragraph at lines 1167--1173
+Overfull \hbox (38.46051pt too wide) in paragraph at lines 1166--1172
 \OT1/cmr/m/n/12 named \OT1/cmtt/m/n/12 WordsViewController\OT1/cmr/m/n/12 , tha
 t con-tains a \OT1/cmtt/m/n/12 UITableView\OT1/cmr/m/n/12 ; - a \OT1/cmtt/m/n/1
 2 UITableViewCell\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1233--1233
 []    \OT1/cmtt/m/n/12 @IBOutlet weak var loadActivityIndicator: UIActivityIndi
 catorView![] 
  []
 
 
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1233--1233
 []    \OT1/cmtt/m/n/12 private var bindingHelper: TableViewBindingHelper<WordVi
 ewModel>![] 
  []
 
 [74]
-Overfull \hbox (29.613pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (29.613pt too wide) in paragraph at lines 1233--1233
 []        \OT1/cmtt/m/n/12 let viewModel = WordListViewModel(wordService: wordS
 ervice)[] 
  []
 
 
-Overfull \hbox (41.96301pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (41.96301pt too wide) in paragraph at lines 1233--1233
 []        \OT1/cmtt/m/n/12 bindingHelper = TableViewBindingHelper(tableView: wo
 rdsTable,[] 
  []
 
 
-Overfull \hbox (60.48802pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (60.48802pt too wide) in paragraph at lines 1233--1233
 []            \OT1/cmtt/m/n/12 sourceSignal: viewModel.words.producer, nibName:
  "WordCell")[] 
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 1234--1234
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1233--1233
 []            \OT1/cmtt/m/n/12 message: "You selected: \(wordViewModel.wordTitl
 e.value)",[] 
  []
 
 [75]
-Overfull \hbox (35.78801pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (35.78801pt too wide) in paragraph at lines 1282--1282
 []         \OT1/cmtt/m/n/12 = self.rac_prepareForReuseSignal.asSignal() |> toVo
 idSignal[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1282--1282
 []            \OT1/cmtt/m/n/12 monthLabel.rac_text <~ wordViewModel.month.produ
 cer[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1282--1282
 []            \OT1/cmtt/m/n/12 wordLabel.rac_text <~ wordViewModel.wordTitle.pr
 oducer[] 
  []
 
 
-Overfull \hbox (11.088pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (11.088pt too wide) in paragraph at lines 1282--1282
 []            \OT1/cmtt/m/n/12 picImageSignalProducer(wordViewModel.imageUrl.va
 lue)[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1282--1282
 []                \OT1/cmtt/m/n/12 |> observeOn(QueueScheduler.mainQueueSchedul
 er)[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1283--1283
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1282--1282
 []                \OT1/cmtt/m/n/12 |> on(started: { self.wordImageView.image = 
 nil })[] 
  []
@@ -1345,31 +1345,31 @@ nil })[]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [76]
-Overfull \hbox (17.263pt too wide) in paragraph at lines 1320--1320
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1319--1319
 []\OT1/cmtt/m/n/12 // a helper that makes it easier to bind to UITableView inst
 ances[] 
  []
 
 
-Overfull \hbox (48.13802pt too wide) in paragraph at lines 1320--1320
+Overfull \hbox (48.13802pt too wide) in paragraph at lines 1319--1319
 []        \OT1/cmtt/m/n/12 sourceSignal: SignalProducer<[T], NoError>, nibName:
  String) {[] 
  []
 
 
-Overfull \hbox (4.913pt too wide) in paragraph at lines 1320--1320
+Overfull \hbox (4.913pt too wide) in paragraph at lines 1319--1319
 []            \OT1/cmtt/m/n/12 self.dataSource.data = data.map { $0 as AnyObjec
 t }[] 
  []
 
 
-Overfull \hbox (23.438pt too wide) in paragraph at lines 1320--1320
+Overfull \hbox (23.438pt too wide) in paragraph at lines 1319--1319
 []    \OT1/cmtt/m/n/12 // returns a Signal which emits the items selected by th
 e user[] 
  []
 
 
-Overfull \hbox (17.263pt too wide) in paragraph at lines 1320--1320
+Overfull \hbox (17.263pt too wide) in paragraph at lines 1319--1319
 []    \OT1/cmtt/m/n/12 func getTableViewSelectedItemSignal() -> Signal<T, NoErr
 or> {[] 
  []
@@ -1885,7 +1885,7 @@ File: imgs/split.png Graphic file (type png)
 Package pdftex.def Info: imgs/split.png used on input line 83.
 (pdftex.def)             Requested size: 184.18767pt x 111.6669pt.
  [118 <./imgs/merge.png> <./imgs/split.png>]
-Overfull \hbox (23.37253pt too wide) in paragraph at lines 122--129
+Overfull \hbox (23.37253pt too wide) in paragraph at lines 121--128
 []\OT1/cmr/m/n/12 A \OT1/cmtt/m/n/12 Subscriber \OT1/cmr/m/n/12 has the canon-i
 -cal \OT1/cmtt/m/n/12 onNext( )\OT1/cmr/m/n/12 , \OT1/cmtt/m/n/12 onError( )\OT
 1/cmr/m/n/12 , and \OT1/cmtt/m/n/12 onComplete()
@@ -1936,7 +1936,7 @@ sfonts/cm/cmti12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2013basic/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on TESI.pdf (137 pages, 1843977 bytes).
+Output written on TESI.pdf (137 pages, 1843752 bytes).
 PDF statistics:
  527 PDF objects out of 1000 (max. 8388607)
  338 compressed objects within 4 object streams

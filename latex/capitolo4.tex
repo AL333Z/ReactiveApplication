@@ -148,9 +148,9 @@ in ~> mapToScore ~> mapToValutation ~> mapWithCategory
 Note that now the stream puts out a tuple of \texttt{String} and
 \texttt{Double}, that correspond to the current category and valuation
 for the \texttt{Tweet} arrived from the input. At this stage, the other
-further information about the tweet are no more necessary.
+further informations about the tweet are no more necessary.
 
-At this point, the stream of tuples needs to grouped for brand, and then
+At this point, the stream of tuples needs to be grouped for brand, and then
 reduced by applying a function that aggregates all the partial result to
 compose a result. In this simplified case, this function is a sum.
 
@@ -346,7 +346,7 @@ class TwitterStreamListener(filter: Array[String],
 }
 \end{verbatim}
 
-Once we get the source of tweets, two further steps to performs are the
+Once we get the source of tweets, two further steps to perform are the
 ones that assign to each tweet a ``static score'', and then a
 valuation.
 
@@ -380,7 +380,7 @@ At this point, the resulting observable has type
   valuations.
 \end{itemize}
 
-As in the previous implementation, the next step allows to determine in
+As in the previous implementation, the next step allows determining in
 which category (brand) each tweet in the stream belongs to. This step is
 needed, since the informations that come from the APIs refer to both the
 brands. To perform the work, a simple flatMap will take care of this
@@ -401,7 +401,7 @@ tuple of \texttt{String} and \texttt{Double}, that correspond to the
 current category and valuation for the \texttt{Tweet} arrived from the
 input.
 
-At this point, the stream of tuples needs to grouped for brand, and then
+At this point, the stream of tuples needs to be grouped for brand, and then
 reduced by applying a function that aggregates all the partial result to
 compose a result. This step has a really short and concise syntax in
 this RxScala's implementation.
